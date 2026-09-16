@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Innovix Global</title>
+  <meta name="description" content="Website management dashboard for Innovix Global." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body { background: #04060a; }
+    .admin-layout { min-height: 100vh; padding: 32px 20px 80px; }
+    .admin-wrap { max-width: 1200px; margin: 0 auto; }
+    .admin-topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(15,22,36,0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; margin-bottom: 24px; }
+    .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; margin-bottom: 24px; }
+    .admin-stat { background: rgba(21,29,48,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; }
+    .admin-stat-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .admin-stat-value { font-size: 2rem; color: var(--accent-gold); font-weight: 800; margin-top: 8px; }
+    .admin-panel { background: rgba(21,29,48,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 26px; }
+    .admin-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .admin-table th, .admin-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .status-pill { display: inline-block; border-radius: 999px; padding: 6px 10px; font-size: 0.76rem; font-weight: 700; }
+    .status-new { background: rgba(245,158,11,0.12); color: var(--accent-gold); }
+    .status-read { background: rgba(59,130,246,0.12); color: #7dd3fc; }
+    .status-replied { background: rgba(16,185,129,0.12); color: #6ee7b7; }
+    .logout-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: white; }
+    @media (max-width: 768px) { .admin-topbar { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <div class="admin-wrap">
+      <div class="admin-topbar">
+        <div class="brand-logo">
+          <div class="brand-icon">IG</div>
+          <div class="brand-info">
+            <span class="brand-name">INNOVIX GLOBAL</span>
+            <span class="brand-sub">ADMIN DASHBOARD</span>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn logout-btn">Logout</button>
+      </div>
+
+      <div class="admin-grid" id="statsGrid"></div>
+
+      <section class="admin-panel">
+        <h2 style="font-size: 1.6rem; margin-bottom: 8px;">Recent inquiries</h2>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Review and update the latest contact and quote requests.</p>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inquiriesTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    async function fetchJSON(url, options) {
+      const res = await fetch(url, options || {});
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Request failed.');
+      return payload;
+    }
+
+    function renderStats(summary) {
+      const stats = [
+        ['services', 'Services'],
+        ['projects', 'Projects'],
+        ['testimonials', 'Testimonials'],
+        ['products', 'Catalog Products'],
+        ['inquiries', 'Inquiries'],
+        ['blogPosts', 'Blog Posts']
+      ];
+
+      const grid = document.getElementById('statsGrid');
+      grid.innerHTML = stats.map(([key, label]) => `
+        <div class="admin-stat">
+          <div class="admin-stat-label">${label}</div>
+          <div class="admin-stat-value">${summary.totals[key] ?? 0}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderInquiries(items) {
+      const tbody = document.getElementById('inquiriesTable');
+      if (!items.length) {
+        tbody.innerHTML = '<tr><td colspan="5" style="color: var(--text-muted); padding: 20px;">No inquiries found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = items.map((item) => `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.subject || 'General inquiry'}</td>
+          <td>${item.email}</td>
+          <td><span class="status-pill status-${item.status || 'new'}">${(item.status || 'new').toUpperCase()}</span></td>
+          <td>
+            <select data-id="${item.id}" class="form-control" style="max-width: 160px; padding: 8px 10px;">
+              <option value="new" ${item.status === 'new' ? 'selected' : ''}>New</option>
+              <option value="read" ${item.status === 'read' ? 'selected' : ''}>Read</option>
+              <option value="replied" ${item.status === 'replied' ? 'selected' : ''}>Replied</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+
+      tbody.querySelectorAll('select').forEach((select) => {
+        select.addEventListener('change', async (event) => {
+          const id = event.target.dataset.id;
+          await fetchJSON('/api/admin/inquiries/' + id, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: event.target.value })
+          });
+          loadDashboard();
+        });
+      });
+    }
+
+    async function loadDashboard() {
+      try {
+        const summary = await fetchJSON('/api/admin/summary');
+        renderStats(summary);
+        const items = await fetchJSON('/api/admin/inquiries');
+        renderInquiries(items);
+      } catch (error) {
+        document.getElementById('inquiriesTable').innerHTML = '<tr><td colspan="5" style="color: #ef4444; padding: 20px;">' + error.message + '</td></tr>';
+      }
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/login';
+    });
+
+    loadDashboard();
+  </script>
+</body>
+</html>

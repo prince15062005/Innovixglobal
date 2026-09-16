@@ -1,0 +1,11 @@
+[
+  {
+    "id": "super-admin",
+    "name": "Super Admin",
+    "email": "admin@innovixglobal.in",
+    "role": "Super Admin",
+    "passwordHash": "$2a$10$9lP6xBRXMqGBP1tMY.7ciell43zyq71QCS3OUoiYXmXxna4/1mUpG",
+    "active": true,
+    "createdAt": "2026-09-16T03:00:18.033Z"
+  }
+]

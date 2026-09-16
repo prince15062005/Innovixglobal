@@ -1,0 +1,82 @@
+{
+  "company": {
+    "name": "Innovix Global",
+    "brand": "Luxurin Architectural Hardware",
+    "catalog": "Luxurin Catalog 2026",
+    "email": "innovixxglobal@gmail.com",
+    "address": "“Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India",
+    "contacts": [
+      {
+        "name": "Dholariya Sneh",
+        "role": "Key Accounts & Sales",
+        "phone": "+91 91061 84146",
+        "rawPhone": "919106184146"
+      },
+      {
+        "name": "Ramani Prem",
+        "role": "Business Operations",
+        "phone": "+91 82382 82481",
+        "rawPhone": "918238282481"
+      }
+    ]
+  },
+  "hero": {
+    "headline": "Luxury hardware designed for bold entrances and lasting impressions.",
+    "subheading": "Innovix Global crafts premium mortise handles, designer rose handles, statement pull handles, and security locksets for residential and commercial projects across India.",
+    "primaryCta": "Explore catalog",
+    "secondaryCta": "Request a quote"
+  },
+  "services": [
+    {
+      "title": "Mortise Handles",
+      "description": "Elegant lever and mortise solutions for premium residences, villas, and hospitality interiors.",
+      "icon": "ri-door-open-line"
+    },
+    {
+      "title": "Designer Rose Handles",
+      "description": "Minimalist rose handle collections engineered to elevate modern luxury door aesthetics.",
+      "icon": "ri-disc-line"
+    },
+    {
+      "title": "Main Door Pulls",
+      "description": "Architectural pulls designed for entrances, lobbies, showrooms, and statement façades.",
+      "icon": "ri-drag-move-fill"
+    },
+    {
+      "title": "Security Locksets",
+      "description": "High-security lock hardware and cylinders assembled for lasting safety and smooth operation.",
+      "icon": "ri-lock-2-line"
+    }
+  ],
+  "stats": [
+    { "value": "250K+", "label": "Cycle fatigue tested" },
+    { "value": "22", "label": "Core product models" },
+    { "value": "100%", "label": "Solid brass and zinc alloy" },
+    { "value": "24/7", "label": "Business support" }
+  ],
+  "process": [
+    { "title": "Consult", "description": "We align product selection with design intent, door type, and usage requirements." },
+    { "title": "Design", "description": "Our engineering team evaluates finish, metal grade, and installation compatibility." },
+    { "title": "Manufacture", "description": "Precision machining, plating, and quality control ensure consistent premium output." },
+    { "title": "Deliver", "description": "We support project delivery with efficient dispatch and sales coordination." }
+  ],
+  "projects": [
+    { "title": "Luxury Villa Entrances", "summary": "Premium door hardware packages for high-end residential and lifestyle developments." },
+    { "title": "Hospitality Suites", "summary": "Polished, tactile hardware collections for boutique hotels and premium rooms." },
+    { "title": "Commercial Lobbies", "summary": "Statement hardware systems for offices, retail spaces, and corporate reception areas." }
+  ],
+  "testimonials": [
+    { "quote": "Their finish quality and product consistency stand out in every premium project we specify.", "author": "Architectural Consultant" },
+    { "quote": "The communication, product depth, and delivery support made the entire procurement process easy.", "author": "Dealer Partner" }
+  ],
+  "faq": [
+    { "q": "Do you provide custom finish requests?", "a": "Yes, we discuss finish, size, and project-based specifications with sales and operations teams." },
+    { "q": "Can you support bulk or dealer orders?", "a": "We supply architectural and dealer channels with project coordination for volume requirements." },
+    { "q": "Are your products suitable for hospitality and commercial use?", "a": "Yes. Our hardware is chosen for durability, finish consistency, and premium everyday performance." }
+  ],
+  "seo": {
+    "title": "Innovix Global | Luxurin Architectural Hardware",
+    "description": "Premium architectural hardware and designer handles for residential and commercial applications in India.",
+    "canonical": "https://www.innovixglobal.in/"
+  }
+}
