@@ -35,7 +35,7 @@ const DEFAULT_SITE = {
   company: COMPANY_INFO,
   hero: {
     headline: 'Luxury hardware designed for bold entrances and lasting impressions.',
-    subheading: 'Innovix Global crafts premium mortise handles, designer rose handles, statement pull handles, and security locksets for residential and commercial projects across India.',
+    subheading: 'Innovix Global crafts premium mortise handles, statement pull handles, and architectural hardware for residential and commercial projects across India.',
     primaryCta: 'Explore catalog',
     secondaryCta: 'Request a quote'
   },
@@ -46,19 +46,9 @@ const DEFAULT_SITE = {
       icon: 'ri-door-open-line'
     },
     {
-      title: 'Designer Rose Handles',
-      description: 'Minimalist rose handle collections engineered to elevate modern luxury door aesthetics.',
-      icon: 'ri-disc-line'
-    },
-    {
       title: 'Main Door Pulls',
       description: 'Architectural pulls designed for entrances, lobbies, showrooms, and statement façades.',
       icon: 'ri-drag-move-fill'
-    },
-    {
-      title: 'Security Locksets',
-      description: 'High-security lock hardware and cylinders assembled for lasting safety and smooth operation.',
-      icon: 'ri-lock-2-line'
     }
   ],
   stats: [
