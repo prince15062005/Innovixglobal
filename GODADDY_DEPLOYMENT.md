@@ -131,7 +131,7 @@ If the business grows later, the current JSON-based storage can be moved to a pr
 ## 8. Contact details included in the site
 
 - Company: Innovix Global
-- Brand: Luxurin Architectural Hardware
+- Brand: Innovix Global Architectural Hardware
 - Email: innovixxglobal@gmail.com
 - Address: “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003
 - Contacts:

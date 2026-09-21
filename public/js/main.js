@@ -1,5 +1,5 @@
 /**
- * Innovix Global - Luxurin Architectural Hardware Animated Engine
+ * Innovix Global Architectural Hardware Animated Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isActive = navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open', isActive);
         mobileMenuBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         const icon = mobileMenuBtn.querySelector('i');
         if (icon) {
@@ -302,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="btn btn-outline btn-card view-details-btn" data-id="${product.id}">
               <i class="ri-eye-line"></i> Quick View
             </button>
-            <a href="https://wa.me/919106184146?text=${encodeURIComponent(`Hello Innovix Global, I would like to inquire about Luxurin model ${product.modelCode} (${product.name}). Please share details.`)}" 
+            <a href="https://wa.me/919106184146?text=${encodeURIComponent(`Hello Innovix Global, I would like to inquire about model ${product.modelCode} (${product.name}). Please share details.`)}"
                target="_blank" 
                class="btn btn-whatsapp btn-card">
               <i class="ri-whatsapp-line"></i> Inquire
@@ -357,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <label style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">Select Representative for Instant WhatsApp Inquiry:</label>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             ${CONTACT_PERSONS.map(person => `
-              <a href="https://wa.me/${person.waNumber}?text=${encodeURIComponent(`Hello ${person.name}, I am inquiring about Luxurin Catalog item ${product.modelCode} (${product.name}).`)}"
+              <a href="https://wa.me/${person.waNumber}?text=${encodeURIComponent(`Hello ${person.name}, I am inquiring about catalog item ${product.modelCode} (${product.name}).`)}"
                  target="_blank" 
                  class="btn btn-whatsapp" 
                  style="padding: 11px 12px; font-size: 0.85rem; flex-direction: column; gap: 2px;">

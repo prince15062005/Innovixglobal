@@ -1,7 +1,7 @@
 [
   {
     "id": "IGM-001",
-    "name": "Luxurin Royal Mortise Handle",
+    "name": "Royal Mortise Handle",
     "modelCode": "IGM-001",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -14,7 +14,7 @@
   },
   {
     "id": "IGM-002",
-    "name": "Luxurin Linear Designer Rose Handle",
+    "name": "Linear Designer Rose Handle",
     "modelCode": "IGM-002",
     "category": "rose",
     "categoryName": "Designer Rose Handles",
@@ -27,7 +27,7 @@
   },
   {
     "id": "IGM-003",
-    "name": "Luxurin Grand Entrance Pull Handle",
+    "name": "Grand Entrance Pull Handle",
     "modelCode": "IGM-003",
     "category": "pull",
     "categoryName": "Main Door Pull Handles",
@@ -40,7 +40,7 @@
   },
   {
     "id": "IGM-004",
-    "name": "Luxurin Diamond Cut Mortise Handle",
+    "name": "Diamond Cut Mortise Handle",
     "modelCode": "IGM-004",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -53,7 +53,7 @@
   },
   {
     "id": "IGM-005",
-    "name": "Luxurin Curved Elegance Mortise Handle",
+    "name": "Curved Elegance Mortise Handle",
     "modelCode": "IGM-005",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -66,7 +66,7 @@
   },
   {
     "id": "IGM-006",
-    "name": "Luxurin Matrix Architectural Mortise Handle",
+    "name": "Matrix Architectural Mortise Handle",
     "modelCode": "IGM-006",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -79,7 +79,7 @@
   },
   {
     "id": "IGM-007",
-    "name": "Luxurin Slimline Square Rose Handle",
+    "name": "Slimline Square Rose Handle",
     "modelCode": "IGM-007",
     "category": "rose",
     "categoryName": "Designer Rose Handles",
@@ -92,7 +92,7 @@
   },
   {
     "id": "IGM-008",
-    "name": "Luxurin Heritage Vintage Mortise Handle",
+    "name": "Heritage Vintage Mortise Handle",
     "modelCode": "IGM-008",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -105,7 +105,7 @@
   },
   {
     "id": "IGM-009",
-    "name": "Luxurin Wave Series Mortise Handle",
+    "name": "Wave Series Mortise Handle",
     "modelCode": "IGM-009",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -118,7 +118,7 @@
   },
   {
     "id": "IGM-010",
-    "name": "Luxurin Zenith Luxury Entrance Handle",
+    "name": "Zenith Luxury Entrance Handle",
     "modelCode": "IGM-010",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -131,7 +131,7 @@
   },
   {
     "id": "IGM-011",
-    "name": "Luxurin Apex Geometric Rose Handle",
+    "name": "Apex Geometric Rose Handle",
     "modelCode": "IGM-011",
     "category": "rose",
     "categoryName": "Designer Rose Handles",
@@ -144,7 +144,7 @@
   },
   {
     "id": "IGM-012",
-    "name": "Luxurin Titan Main Door Pull Handle",
+    "name": "Titan Main Door Pull Handle",
     "modelCode": "IGM-012",
     "category": "pull",
     "categoryName": "Main Door Pull Handles",
@@ -157,7 +157,7 @@
   },
   {
     "id": "IGM-013",
-    "name": "Luxurin Prism Mortise Handle",
+    "name": "Prism Mortise Handle",
     "modelCode": "IGM-013",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -170,7 +170,7 @@
   },
   {
     "id": "IGM-014",
-    "name": "Luxurin Opal Round Rose Handle",
+    "name": "Opal Round Rose Handle",
     "modelCode": "IGM-014",
     "category": "rose",
     "categoryName": "Designer Rose Handles",
@@ -183,7 +183,7 @@
   },
   {
     "id": "IGM-015",
-    "name": "Luxurin Stellar Main Door Handle Set",
+    "name": "Stellar Main Door Handle Set",
     "modelCode": "IGM-015",
     "category": "pull",
     "categoryName": "Main Door Pull Handles",
@@ -196,7 +196,7 @@
   },
   {
     "id": "IGM-016",
-    "name": "Luxurin Orion Mortise Handle",
+    "name": "Orion Mortise Handle",
     "modelCode": "IGM-016",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -209,7 +209,7 @@
   },
   {
     "id": "IGM-017",
-    "name": "Luxurin Crown Luxury Mortise Handle",
+    "name": "Crown Luxury Mortise Handle",
     "modelCode": "IGM-017",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -222,7 +222,7 @@
   },
   {
     "id": "IGM-018",
-    "name": "Luxurin Vista Cabinet & Drawer Pull",
+    "name": "Vista Cabinet & Drawer Pull",
     "modelCode": "IGM-018",
     "category": "rose",
     "categoryName": "Cabinet Handles & Knobs",
@@ -235,7 +235,7 @@
   },
   {
     "id": "IGM-019",
-    "name": "Luxurin Cylinder High-Security Mortise Lockset",
+    "name": "Cylinder High-Security Mortise Lockset",
     "modelCode": "IGM-019",
     "category": "locks",
     "categoryName": "Locks & Cylinders",
@@ -248,7 +248,7 @@
   },
   {
     "id": "IGM-020",
-    "name": "Luxurin Vanguard Architectural Mortise Handle",
+    "name": "Vanguard Architectural Mortise Handle",
     "modelCode": "IGM-020",
     "category": "mortise",
     "categoryName": "Mortise Handles",
@@ -261,7 +261,7 @@
   },
   {
     "id": "IGM-021",
-    "name": "Luxurin Elegance Knob & Rose Set",
+    "name": "Elegance Knob & Rose Set",
     "modelCode": "IGM-021",
     "category": "rose",
     "categoryName": "Designer Rose Handles",
@@ -274,7 +274,7 @@
   },
   {
     "id": "IGM-022",
-    "name": "Luxurin Solitaire Premium Mortise Handle",
+    "name": "Solitaire Premium Mortise Handle",
     "modelCode": "IGM-022",
     "category": "mortise",
     "categoryName": "Mortise Handles",

@@ -1,7 +1,7 @@
 {
-  "name": "innovix-global-luxurin",
+  "name": "innovix-global",
   "version": "1.0.0",
-  "description": "Innovix Global - Luxurin Architectural Hardware Catalog & Corporate Website",
+  "description": "Innovix Global Architectural Hardware Catalog & Corporate Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,7 +9,6 @@
   },
   "keywords": [
     "innovix-global",
-    "luxurin",
     "architectural-hardware",
     "mortise-handles",
     "designer-handles",

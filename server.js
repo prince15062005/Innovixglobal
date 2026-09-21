@@ -21,8 +21,8 @@ const useSecureCookies = process.env.SESSION_SECURE === 'true';
 
 const COMPANY_INFO = {
   name: 'Innovix Global',
-  brand: 'Luxurin Architectural Hardware',
-  catalog: 'Luxurin Catalog 2026',
+  brand: 'Innovix Global Architectural Hardware',
+  catalog: 'Innovix Global Catalog 2026',
   email: 'innovixxglobal@gmail.com',
   address: '“Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India',
   contacts: [
@@ -78,7 +78,7 @@ const DEFAULT_SITE = {
     { q: 'Are your products suitable for hospitality and commercial use?', a: 'Yes. Our hardware is chosen for durability, finish consistency, and premium everyday performance.' }
   ],
   seo: {
-    title: 'Innovix Global | Luxurin Architectural Hardware',
+    title: 'Innovix Global | Architectural Hardware',
     description: 'Premium architectural hardware and designer handles for residential and commercial applications in India.',
     canonical: 'https://www.innovixglobal.in/'
   }
