@@ -54,7 +54,7 @@ const DEFAULT_SITE = {
   stats: [
     { value: '250K+', label: 'Cycle fatigue tested' },
     { value: '22', label: 'Core product models' },
-    { value: '100%', label: 'Solid brass and zinc alloy' },
+    { value: '100%', label: 'Solid brass construction' },
     { value: '24/7', label: 'Business support' }
   ],
   process: [
