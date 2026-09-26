@@ -10,8 +10,105 @@
   <link rel="icon" type="image/png" href="images/innovix-global-logo.png">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="home-page">
+
+  <header class="showcase-header">
+    <a class="showcase-brand" href="index.html" aria-label="Innovix Global home">
+      <span class="showcase-brand-name">INNOVIX GLOBAL</span>
+      <span class="showcase-brand-sub">ARCHITECTURAL HARDWARE</span>
+    </a>
+    <div class="showcase-nav">
+      <button class="showcase-menu-toggle" id="showcaseMenuToggle" type="button" aria-expanded="false" aria-controls="showcaseMenu">
+        <span>Menu</span>
+        <i class="ri-menu-line" aria-hidden="true"></i>
+      </button>
+      <nav class="showcase-menu" id="showcaseMenu" aria-label="Main navigation" hidden>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="manufacturing.html">Quality</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="showcase-main">
+    <section class="showcase-hero" aria-label="Featured hardware">
+      <img class="showcase-hero-image" id="showcaseHeroImage" src="/catalog-images/img_004.jpg" alt="Innovix Global Royal Mortise Handle" fetchpriority="high">
+      <div class="showcase-hero-shade"></div>
+      <div class="showcase-hero-copy" aria-live="polite">
+        <p class="showcase-kicker" id="showcaseHeroCategory">Mortise Handles <span> / </span> IGM-001</p>
+        <h1 id="showcaseHeroTitle">Royal Mortise Handle</h1>
+        <p class="showcase-hero-description" id="showcaseHeroDescription">A considered detail for distinctive entrances and interiors.</p>
+        <a class="showcase-cta" id="showcaseHeroLink" href="products.html?category=mortise">Explore the collection <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+      </div>
+      <div class="showcase-controls" aria-label="Featured products">
+        <button class="showcase-arrow" id="showcasePrevious" type="button" aria-label="Previous featured product"><i class="ri-arrow-left-line" aria-hidden="true"></i></button>
+        <div class="showcase-dots" id="showcaseDots"></div>
+        <button class="showcase-arrow" id="showcaseNext" type="button" aria-label="Next featured product"><i class="ri-arrow-right-line" aria-hidden="true"></i></button>
+      </div>
+    </section>
+
+    <section class="home-categories" aria-labelledby="homeCategoriesTitle">
+      <div class="home-section-heading">
+        <div>
+          <p class="home-eyebrow">Made for considered spaces</p>
+          <h2 id="homeCategoriesTitle">Explore our collections</h2>
+        </div>
+        <a class="home-all-products" href="products.html">View complete catalog <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+      </div>
+      <div class="home-category-grid" id="homeCategoryGrid" aria-live="polite">
+        <a class="home-category" href="products.html?category=mortise">
+          <span class="home-category-image"><img src="images/IGM-001.jpg" alt="" loading="lazy"></span>
+          <span class="home-category-name">Mortise Handles</span>
+          <span class="home-category-meta">Explore collection <i class="ri-arrow-right-line" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
+    <section class="home-story" aria-labelledby="homeStoryTitle">
+      <div class="home-story-inner">
+        <div class="home-story-copy">
+          <p class="home-eyebrow">Who We Are?</p>
+          <h2 id="homeStoryTitle">Innovix Global</h2>
+          <p>Innovix Global creates architectural hardware from Rajkot, Gujarat, pairing distinctive forms with careful finishing for contemporary homes, hospitality, and commercial spaces.</p>
+          <p>From statement entrance handles to everyday cabinet fittings, our collection brings considered details to every part of a space.</p>
+          <a class="home-all-products" href="about.html">Discover our story <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+    <section class="home-reasons" aria-labelledby="homeReasonsTitle">
+      <div class="home-reasons-inner">
+        <div class="home-reasons-heading">
+          <p class="home-eyebrow">Why Work With Us?</p>
+          <h2 id="homeReasonsTitle">Hardware with purpose</h2>
+          <p>Design, everyday performance, and responsive project support in one considered range.</p>
+        </div>
+        <div class="home-reasons-grid">
+          <article class="home-reason">
+            <i class="ri-shape-line" aria-hidden="true"></i>
+            <h3>Distinctive Designs</h3>
+            <p>Explore a considered selection of shapes, profiles, and finishes for contemporary spaces.</p>
+          </article>
+          <article class="home-reason">
+            <i class="ri-shield-check-line" aria-hidden="true"></i>
+            <h3>Quality in the Details</h3>
+            <p>Materials, finishing, and mechanical details chosen for dependable everyday use.</p>
+          </article>
+          <article class="home-reason">
+            <i class="ri-customer-service-2-line" aria-hidden="true"></i>
+            <h3>Direct Support</h3>
+            <p>Our team helps coordinate product selection, project quantities, and dealer inquiries.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="home-contact-strip">
+      <p>Designed and made in Rajkot, India</p>
+      <a href="contact.html">Talk to our team <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+    </section>
+  </main>
 
   <!-- Header / Navigation Bar -->
   <header class="header">
@@ -298,5 +395,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

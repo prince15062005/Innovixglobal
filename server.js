@@ -210,17 +210,18 @@ const authLimiter = rateLimit({
 app.use(publicLimiter);
 
 app.use(express.static(PUBLIC_DIR, { index: false }));
+app.use('/catalog-images', express.static(path.join(__dirname, 'extracted_pdf_images'), { index: false }));
 
 function requireAuth(req, res, next) {
   if (req.session && req.session.isAuthenticated) return next();
   return res.redirect('/admin/login');
 }
 
-app.get(['/','/index','/index.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'index.html')));
-app.get(['/about','/about.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'about.html')));
-app.get(['/products','/products.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'products.html')));
+app.get(['/','/index','/index.html','/home'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'index.html')));
+app.get(['/about','/about.html','/aboutus'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'about.html')));
+app.get(['/products','/products.html','/product'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'products.html')));
 app.get(['/services','/services.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'services.html')));
-app.get(['/manufacturing','/manufacturing.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'manufacturing.html')));
+app.get(['/manufacturing','/manufacturing.html','/quality'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'manufacturing.html')));
 app.get(['/dealership','/dealership.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'dealership.html')));
 app.get(['/contact','/contact.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'contact.html')));
 app.get(['/privacy-policy','/privacy-policy.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'privacy-policy.html')));
