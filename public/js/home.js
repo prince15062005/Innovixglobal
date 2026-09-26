@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let featuredProducts = [];
   let activeSlide = 0;
+  let heroTransitionAnimation = null;
   const heroSceneSources = {
     'IGM-001': '/catalog-images/img_004.jpg',
     'IGM-018': '/catalog-images/img_002.jpg'
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDots();
       showSlide(0);
       renderCategories(products);
+      window.setInterval(() => showSlide(activeSlide + 1), 5000);
     })
     .catch((error) => console.error('Unable to load homepage catalog:', error));
 
@@ -70,6 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
     activeSlide = (index + featuredProducts.length) % featuredProducts.length;
     const product = featuredProducts[activeSlide];
     heroImage.src = heroSceneSources[product.id] || product.image;
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      heroTransitionAnimation?.cancel();
+      heroTransitionAnimation = heroImage.animate(
+        [
+          { opacity: 0.65, transform: 'scale(1.035)' },
+          { opacity: 1, transform: 'scale(1)' }
+        ],
+        { duration: 700, easing: 'ease-out' }
+      );
+    }
     heroImage.alt = product.name;
     heroCategory.textContent = `${product.categoryName || 'Hardware'} / ${product.modelCode || product.id}`;
     heroTitle.textContent = product.name;
