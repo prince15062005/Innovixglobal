@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     categoryGrid.replaceChildren();
     categories.forEach(({ category, products: categoryProducts }) => {
+      if (category === 'rose' || category === 'locks') return;
+
       const sample = categoryProducts.find((product) => product.image);
       if (!sample) return;
 
