@@ -44,24 +44,38 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 4px;
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid #4a4a4a;
 }
 
+.showcase-brand-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.88; transform: scale(0.97); }
+}
+
 .showcase-brand-name {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 54px;
+  font-size: 36px;
   line-height: 0.95;
   font-weight: 600;
   white-space: nowrap;
 }
 
 .showcase-brand-sub {
-  margin-top: 7px;
-  font-size: 13px;
+  margin-top: 5px;
+  font-size: 11px;
   line-height: 1;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   color: #e0dfdc;
 }
 

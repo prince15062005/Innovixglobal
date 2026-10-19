@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none">
+  <!-- Outer square frame -->
+  <rect x="40" y="20" width="120" height="120" stroke="white" stroke-width="2" fill="none"/>
+
+  <!-- Curved sweep line from top-left corner area -->
+  <path d="M 40 20 Q 120 80 160 140" stroke="white" stroke-width="1.5" fill="none"/>
+
+  <!-- Large white filled circle, center-left -->
+  <circle cx="90" cy="85" r="28" fill="white"/>
+
+  <!-- Small hollow circle, upper-right -->
+  <circle cx="138" cy="50" r="9" stroke="white" stroke-width="2" fill="none"/>
+
+  <!-- Small filled circle, lower-left -->
+  <circle cx="57" cy="118" r="7" fill="white"/>
+
+  <!-- INNOVIX text -->
+  <text x="100" y="170" font-family="'Outfit', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle" letter-spacing="6">INNOVIX</text>
+
+  <!-- GLOBAL text -->
+  <text x="100" y="192" font-family="'Outfit', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="300" fill="white" text-anchor="middle" letter-spacing="7">GLOBAL</text>
+</svg>
