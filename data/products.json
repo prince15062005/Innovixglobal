@@ -7,10 +7,25 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-001.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["200mm (8 Inch)", "250mm (10 Inch)", "300mm (12 Inch)"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "200mm (8 Inch)",
+      "250mm (10 Inch)",
+      "300mm (12 Inch)"
+    ],
     "description": "Exquisite royal design featuring a sleek dual-tone finish with precision-carved ergonomic grip. Designed for luxury interior and entrance doors.",
-    "features": ["High Corrosion Resistance", "Anti-Friction Nylon Bushing", "Tested over 250,000 Operations", "Ultra-Smooth Movement"]
+    "features": [
+      "High Corrosion Resistance",
+      "Anti-Friction Nylon Bushing",
+      "Tested over 250,000 Operations",
+      "Ultra-Smooth Movement"
+    ]
   },
   {
     "id": "IGM-002",
@@ -20,10 +35,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-002.jpg",
     "material": "Forged Solid Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["Standard 50mm Square Rose", "55mm Premium Rose"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "Standard 50mm Square Rose",
+      "55mm Premium Rose"
+    ],
     "description": "Minimalist linear geometry crafted from solid brass. Delivers a sophisticated contemporary feel to modern architectural spaces.",
-    "features": ["Solid Brass Body", "PVD Vacuum Plating", "Concealed Screw Fixing", "Heavy Duty Spring Mechanism"]
+    "features": [
+      "Solid Brass Body",
+      "PVD Vacuum Plating",
+      "Concealed Screw Fixing",
+      "Heavy Duty Spring Mechanism"
+    ]
   },
   {
     "id": "IGM-003",
@@ -33,10 +62,25 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-003.jpg",
     "material": "Premium Solid Brass & Stainless Steel 304",
-    "finishes": ["SS Matt", "Antique Matt", "Graphite Black / Matt Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["450mm (18 Inch)", "600mm (24 Inch)", "900mm (36 Inch)"],
+    "finishes": [
+      "SS Matt",
+      "Antique Matt",
+      "Graphite Black / Matt Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
     "description": "Statement entrance pull handle designed for large wooden, glass, and metal main doors. Offers exceptional strength and luxury presence.",
-    "features": ["Heavy Weight Solid Construction", "All-Weather Protection", "Back-to-Back Mounting Kit Included", "UV Resistant Finish"]
+    "features": [
+      "Heavy Weight Solid Construction",
+      "All-Weather Protection",
+      "Back-to-Back Mounting Kit Included",
+      "UV Resistant Finish"
+    ]
   },
   {
     "id": "IGM-004",
@@ -46,10 +90,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-004.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["200mm", "250mm"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm"
+    ],
     "description": "Precision diamond-textured handle grip that blends industrial art with tactile perfection. Ideal for high-end residential interiors.",
-    "features": ["Textured Anti-Slip Grip", "Multi-Layer Electroplating", "Universal Handing (Left/Right)", "Heavy Duty Latch Compatibility"]
+    "features": [
+      "Textured Anti-Slip Grip",
+      "Multi-Layer Electroplating",
+      "Universal Handing (Left/Right)",
+      "Heavy Duty Latch Compatibility"
+    ]
   },
   {
     "id": "IGM-005",
@@ -59,10 +117,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-005.jpg",
     "material": "Forged Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["200mm (8 Inch)", "250mm (10 Inch)"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "200mm (8 Inch)",
+      "250mm (10 Inch)"
+    ],
     "description": "Fluid curved lever design engineered for effortless operation and timeless aesthetic charm.",
-    "features": ["Ergonomic Palm Contour", "Silent Spring Return", "Scratch Protection Shield", "Salt Spray Tested 48 Hours"]
+    "features": [
+      "Ergonomic Palm Contour",
+      "Silent Spring Return",
+      "Scratch Protection Shield",
+      "Salt Spray Tested 48 Hours"
+    ]
   },
   {
     "id": "IGM-006",
@@ -72,10 +144,23 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-006.jpg",
     "material": "Solid Brass",
-    "finishes": ["Antique", "Z-Black / Gold", "Gold PVD", "Rose Gold PVD"],
-    "sizes": ["250mm (10 Inch)", "300mm (12 Inch)"],
+    "finishes": [
+      "Antique",
+      "Z-Black / Gold",
+      "Gold PVD",
+      "Rose Gold PVD"
+    ],
+    "sizes": [
+      "250mm (10 Inch)",
+      "300mm (12 Inch)"
+    ],
     "description": "Architectural grade mortise handle featuring bold geometric lines and contrasting dual-finish elements.",
-    "features": ["Architectural Grade Strength", "Dual-Layer Protective Clear Coat", "Precision Keyway Alignment", "Heavy Duty Escutcheon"]
+    "features": [
+      "Architectural Grade Strength",
+      "Dual-Layer Protective Clear Coat",
+      "Precision Keyway Alignment",
+      "Heavy Duty Escutcheon"
+    ]
   },
   {
     "id": "IGM-007",
@@ -85,10 +170,22 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-007.jpg",
     "material": "Solid Brass",
-    "finishes": ["Antique", "Z-Black / Gold", "Gold PVD", "Rose Gold PVD"],
-    "sizes": ["50mm Square Rose"],
+    "finishes": [
+      "Antique",
+      "Z-Black / Gold",
+      "Gold PVD",
+      "Rose Gold PVD"
+    ],
+    "sizes": [
+      "50mm Square Rose"
+    ],
     "description": "Ultra-slim profile square rose handle designed for sleek modern interior doors and minimalist door frames.",
-    "features": ["Ultra-Slim Escutcheon Ring", "Rust Free Solid Brass", "Quick Fix Installation System", "High Tensile Spring"]
+    "features": [
+      "Ultra-Slim Escutcheon Ring",
+      "Rust Free Solid Brass",
+      "Quick Fix Installation System",
+      "High Tensile Spring"
+    ]
   },
   {
     "id": "IGM-008",
@@ -98,10 +195,25 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-008.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["200mm", "250mm", "300mm"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm",
+      "300mm"
+    ],
     "description": "Vintage classical motif handle with intricate surface engraving, blending traditional artistry with modern durability.",
-    "features": ["Vintage Engraved Motif", "Antiqued Hand-Crafted Finish", "Heavy-Duty Reversible Latch", "5-Year Surface Warranty"]
+    "features": [
+      "Vintage Engraved Motif",
+      "Antiqued Hand-Crafted Finish",
+      "Heavy-Duty Reversible Latch",
+      "5-Year Surface Warranty"
+    ]
   },
   {
     "id": "IGM-009",
@@ -111,10 +223,22 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-009.jpg",
     "material": "Solid Brass",
-    "finishes": ["Antique", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["200mm", "250mm"],
+    "finishes": [
+      "Antique",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm"
+    ],
     "description": "Dynamic organic wave curve handle contoured for maximum ergonomic comfort during daily use.",
-    "features": ["Organic Curved Grip", "Seamless Seamless Surface", "Smooth Return Spring", "High Abrasion Resistance"]
+    "features": [
+      "Organic Curved Grip",
+      "Seamless Seamless Surface",
+      "Smooth Return Spring",
+      "High Abrasion Resistance"
+    ]
   },
   {
     "id": "IGM-010",
@@ -124,10 +248,21 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-010.jpg",
     "material": "Solid Brass",
-    "finishes": ["Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["250mm", "300mm"],
+    "finishes": [
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "250mm",
+      "300mm"
+    ],
     "description": "Flagship entrance mortise handle set offering superior locking integration and grand visual presence.",
-    "features": ["Flagship Entrance Design", "High Security Cylinder Ready", "Dual Tone Electroplate", "Dust & Weather Sealed"]
+    "features": [
+      "Flagship Entrance Design",
+      "High Security Cylinder Ready",
+      "Dual Tone Electroplate",
+      "Dust & Weather Sealed"
+    ]
   },
   {
     "id": "IGM-011",
@@ -137,10 +272,22 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-011.jpg",
     "material": "Solid Brass",
-    "finishes": ["Z-Black / SS", "Antique", "Z-Black / Rose Gold PVD", "Z-Black / Gold PVD"],
-    "sizes": ["52mm Round Rose"],
+    "finishes": [
+      "Z-Black / SS",
+      "Antique",
+      "Z-Black / Rose Gold PVD",
+      "Z-Black / Gold PVD"
+    ],
+    "sizes": [
+      "52mm Round Rose"
+    ],
     "description": "Facet-cut geometric lever handle resting on a circular rose base, crafted for modern luxury apartments.",
-    "features": ["Precision Facet Cutting", "Scratch Resistant Coating", "Anti-Sag Mechanism", "Easy Surface Mount"]
+    "features": [
+      "Precision Facet Cutting",
+      "Scratch Resistant Coating",
+      "Anti-Sag Mechanism",
+      "Easy Surface Mount"
+    ]
   },
   {
     "id": "IGM-012",
@@ -150,10 +297,25 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-012.jpg",
     "material": "Stainless Steel 304 & Brass Knurling",
-    "finishes": ["SS", "Antique", "Graphite Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["600mm", "900mm", "1200mm"],
+    "finishes": [
+      "SS",
+      "Antique",
+      "Graphite Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "600mm",
+      "900mm",
+      "1200mm"
+    ],
     "description": "Heavy-duty architectural pull handle with knurled grip accents designed for villa entrance doors.",
-    "features": ["Knurled Tactile Accents", "304 Grade Stainless Steel", "Heavy Commercial Grade", "Weather-Proof Finish"]
+    "features": [
+      "Knurled Tactile Accents",
+      "304 Grade Stainless Steel",
+      "Heavy Commercial Grade",
+      "Weather-Proof Finish"
+    ]
   },
   {
     "id": "IGM-013",
@@ -163,10 +325,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-013.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS", "Antique", "Z-Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["200mm", "250mm"],
+    "finishes": [
+      "SS",
+      "Antique",
+      "Z-Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm"
+    ],
     "description": "Crisp chamfered edges and clean prismatic lines make this mortise handle a favorite for luxury office and interior projects.",
-    "features": ["Prismatic Edge Detailing", "Corrosion Protection", "Smooth Mechanical Action", "Standard Lock Fitment"]
+    "features": [
+      "Prismatic Edge Detailing",
+      "Corrosion Protection",
+      "Smooth Mechanical Action",
+      "Standard Lock Fitment"
+    ]
   },
   {
     "id": "IGM-014",
@@ -176,10 +352,21 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-014.jpg",
     "material": "Solid Brass",
-    "finishes": ["Antique", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["50mm Round Rose"],
+    "finishes": [
+      "Antique",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "50mm Round Rose"
+    ],
     "description": "Softly rounded tubular brass handle delivering seamless elegance and gentle ergonomic touch.",
-    "features": ["Smooth Rounded Tube Lever", "Concealed Screw Rose", "Rust-Proof Solid Brass", "Long Life Tension Spring"]
+    "features": [
+      "Smooth Rounded Tube Lever",
+      "Concealed Screw Rose",
+      "Rust-Proof Solid Brass",
+      "Long Life Tension Spring"
+    ]
   },
   {
     "id": "IGM-015",
@@ -189,10 +376,22 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-015.jpg",
     "material": "Brass & High-Grade Alloy",
-    "finishes": ["Antique Matt / Gold PVD", "Graphite Matt / Z-Black", "Rose Gold PVD"],
-    "sizes": ["450mm", "600mm"],
+    "finishes": [
+      "Antique Matt / Gold PVD",
+      "Graphite Matt / Z-Black",
+      "Rose Gold PVD"
+    ],
+    "sizes": [
+      "450mm",
+      "600mm"
+    ],
     "description": "High-impact main door handle set featuring a bold central bar design for grand architectural entrances.",
-    "features": ["Solid Heavy Core", "All-Season Weather Coating", "Universal Wooden/Glass Mount", "Reinforced Stud Bolts"]
+    "features": [
+      "Solid Heavy Core",
+      "All-Season Weather Coating",
+      "Universal Wooden/Glass Mount",
+      "Reinforced Stud Bolts"
+    ]
   },
   {
     "id": "IGM-016",
@@ -202,10 +401,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-016.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS / Z-Black", "Z-Black / Antique", "Z-Black / Copper", "Z-Black / Rose Gold PVD", "Antique / Gold PVD"],
-    "sizes": ["200mm", "250mm"],
+    "finishes": [
+      "SS / Z-Black",
+      "Z-Black / Antique",
+      "Z-Black / Copper",
+      "Z-Black / Rose Gold PVD",
+      "Antique / Gold PVD"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm"
+    ],
     "description": "Contemporary rectangular profile lever handle with subtle tapered front for refined architectural spaces.",
-    "features": ["Tapered Ergonomic Edge", "Multi-Layer Electrocoat", "Silent Nylon Bearing", "5-Year Guarantee"]
+    "features": [
+      "Tapered Ergonomic Edge",
+      "Multi-Layer Electrocoat",
+      "Silent Nylon Bearing",
+      "5-Year Guarantee"
+    ]
   },
   {
     "id": "IGM-017",
@@ -215,10 +428,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-017.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS", "Antique", "Z-Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["250mm", "300mm"],
+    "finishes": [
+      "SS",
+      "Antique",
+      "Z-Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "250mm",
+      "300mm"
+    ],
     "description": "Opulent crown motif handle crafted for premium bedroom suites and executive villa doors.",
-    "features": ["Opulent Crown Design", "High Wear Resistance", "Reversible Left/Right Mounting", "Premium Lock Body Compatible"]
+    "features": [
+      "Opulent Crown Design",
+      "High Wear Resistance",
+      "Reversible Left/Right Mounting",
+      "Premium Lock Body Compatible"
+    ]
   },
   {
     "id": "IGM-018",
@@ -228,10 +455,23 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-018.jpg",
     "material": "Solid Brass",
-    "finishes": ["Antique / Gold PVD", "Z-Black / Rose Gold PVD", "Z-Black / Gold PVD"],
-    "sizes": ["128mm (5 Inch)", "160mm (6.3 Inch)", "224mm (8.8 Inch)"],
+    "finishes": [
+      "Antique / Gold PVD",
+      "Z-Black / Rose Gold PVD",
+      "Z-Black / Gold PVD"
+    ],
+    "sizes": [
+      "128mm (5 Inch)",
+      "160mm (6.3 Inch)",
+      "224mm (8.8 Inch)"
+    ],
     "description": "Precision machined solid brass cabinet pull designed for luxury kitchen cabinetry, wardrobes, and furniture.",
-    "features": ["Solid Brass Bar", "Threaded Steel Bushings", "Stain & Fingerprint Resistant", "Modern Minimal Profile"]
+    "features": [
+      "Solid Brass Bar",
+      "Threaded Steel Bushings",
+      "Stain & Fingerprint Resistant",
+      "Modern Minimal Profile"
+    ]
   },
   {
     "id": "IGM-019",
@@ -241,10 +481,25 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-019.jpg",
     "material": "Solid Brass Cylinder & Stainless Steel Latch",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Z-Black / Gold", "Z-Black / Copper"],
-    "sizes": ["70mm Cylinder (35/35)", "80mm Cylinder (40/40)", "85mm C-C Lock Body"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Z-Black / Gold",
+      "Z-Black / Copper"
+    ],
+    "sizes": [
+      "70mm Cylinder (35/35)",
+      "80mm Cylinder (40/40)",
+      "85mm C-C Lock Body"
+    ],
     "description": "High-security computer key mortise lock body and euro profile cylinder for maximum home protection.",
-    "features": ["Anti-Pick Computer Keys", "Hardened Steel Anti-Drill Pins", "Heavy Duty Latch & Deadbolt", "Smooth Key Rotation"]
+    "features": [
+      "Anti-Pick Computer Keys",
+      "Hardened Steel Anti-Drill Pins",
+      "Heavy Duty Latch & Deadbolt",
+      "Smooth Key Rotation"
+    ]
   },
   {
     "id": "IGM-020",
@@ -254,10 +509,24 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-020.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS / Z-Black", "Z-Black / Antique", "Z-Black / Copper", "Z-Black / Rose Gold PVD", "Antique / Gold PVD"],
-    "sizes": ["250mm", "300mm"],
+    "finishes": [
+      "SS / Z-Black",
+      "Z-Black / Antique",
+      "Z-Black / Copper",
+      "Z-Black / Rose Gold PVD",
+      "Antique / Gold PVD"
+    ],
+    "sizes": [
+      "250mm",
+      "300mm"
+    ],
     "description": "Architectural handle with a sleek inlaid gold accent stripe that creates a stunning visual highlight on dark wood doors.",
-    "features": ["Inlaid Accent Stripe", "Heavy Duty Solid Brass", "Precision Bearings", "All-Weather Sealed"]
+    "features": [
+      "Inlaid Accent Stripe",
+      "Heavy Duty Solid Brass",
+      "Precision Bearings",
+      "All-Weather Sealed"
+    ]
   },
   {
     "id": "IGM-021",
@@ -267,10 +536,22 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-021.jpg",
     "material": "Solid Brass",
-    "finishes": ["SS / Z-Black", "Z-Black / Rose Gold PVD", "Antique / Gold PVD", "Rose Gold PVD"],
-    "sizes": ["50mm Rose / 45mm Knob"],
+    "finishes": [
+      "SS / Z-Black",
+      "Z-Black / Rose Gold PVD",
+      "Antique / Gold PVD",
+      "Rose Gold PVD"
+    ],
+    "sizes": [
+      "50mm Rose / 45mm Knob"
+    ],
     "description": "Round tactile door knob mounted on a sleek rose plate, perfect for luxury interior suite doors.",
-    "features": ["Tactile Ergonomic Knob", "Concealed Mount", "Heavy Brass Weight", "Smooth Turning Action"]
+    "features": [
+      "Tactile Ergonomic Knob",
+      "Concealed Mount",
+      "Heavy Brass Weight",
+      "Smooth Turning Action"
+    ]
   },
   {
     "id": "IGM-022",
@@ -280,9 +561,556 @@
     "categoryName": "Mortise Handles",
     "image": "/images/IGM-022.jpg",
     "material": "Forged Brass",
-    "finishes": ["SS, Graphite Black", "Antique", "Z-Black", "Rose Gold PVD", "Gold PVD"],
-    "sizes": ["200mm", "250mm", "300mm"],
+    "finishes": [
+      "SS, Graphite Black",
+      "Antique",
+      "Z-Black",
+      "Rose Gold PVD",
+      "Gold PVD"
+    ],
+    "sizes": [
+      "200mm",
+      "250mm",
+      "300mm"
+    ],
     "description": "Mastercrafted mortise lever featuring clean sculpted geometry and ultra-durable multi-layer finish coating.",
-    "features": ["Sculpted Master Craftsmanship", "5-Layer Protective Finish", "Smooth Mechanical Spring Back", "Universal Mortise Fit"]
+    "features": [
+      "Sculpted Master Craftsmanship",
+      "5-Layer Protective Finish",
+      "Smooth Mechanical Spring Back",
+      "Universal Mortise Fit"
+    ]
+  },
+  {
+    "id": "IGPH-211",
+    "name": "Aura Lattice Imperial Pull Handle",
+    "modelCode": "IGPH-211",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-211.jpg",
+    "material": "Solid Forged Brass & CNC Laser-Cut Mesh",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Signature cylindrical main entrance pull featuring an intricate laser-lattice outer mantle enclosing a mirrored core. Mounted on heavy turned brass stanchions for majestic grand doors.",
+    "features": [
+      "CNC Precision Lattice Sleeve",
+      "Back-to-Back Glass & Wood Mounting Kit",
+      "PVD High-Durability Vacuum Coating",
+      "Heavy Weight Forged Brass Stanchions"
+    ]
+  },
+  {
+    "id": "IGPH-212",
+    "name": "Celestial Dual-Jewel Pull Handle",
+    "modelCode": "IGPH-212",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-212.jpg",
+    "material": "Solid Brass & Faceted Architectural Crystal",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Titanium Gold"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Fluted twin crystal jewel sections flanked by multi-tiered brass collars and geometric finials. Engineered to create a dramatic play of light upon entering.",
+    "features": [
+      "Faceted Optical Grade Crystal/Acrylic",
+      "Corrosion Proof PVD Finish",
+      "Integrated Heavy Mounting Bolts",
+      "High Tensile Pull Strength"
+    ]
+  },
+  {
+    "id": "IGPH-213",
+    "name": "Solaris Lattice Bubble Glass Pull Handle",
+    "modelCode": "IGPH-213",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-213.jpg",
+    "material": "Virgin Brass & Effervescent Bubble Crystal",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Captivating sunburst laser lattice brass outer rings holding an illuminated bubble crystal cylinder. Supported by bold square architectural mounts.",
+    "features": [
+      "Solid Core Bubble Glass Infusion",
+      "Square Stanchions with Concealed Fasteners",
+      "Zero Rust Multi-Layer Lacquer",
+      "Designed for High-Traffic Villa Entrances"
+    ]
+  },
+  {
+    "id": "IGPH-214",
+    "name": "Dynasty Fluted Cylindrical Pull Handle",
+    "modelCode": "IGPH-214",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-214.jpg",
+    "material": "Forged Brass & 304 Grade Stainless Steel",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "800mm (32 Inch)"
+    ],
+    "description": "Masterfully turned fluted barrel with delicate micro-knurled transition collars. Delivers a tactile, non-slip grip paired with imperial architectural balance.",
+    "features": [
+      "Linear Fluted Ergonomic Grip",
+      "Heavy Turned Solid Caps",
+      "Concealed Screw Fixing Mechanism",
+      "Weather Sealed for Exterior Front Portals"
+    ]
+  },
+  {
+    "id": "IGPH-215",
+    "name": "Honeycomb Grand Entrance Pull Handle",
+    "modelCode": "IGPH-215",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-215.jpg",
+    "material": "Solid Brass & Mirror Polished Inner Core",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Hexagonal honeycomb filigree design creating a rich three-dimensional shadow effect over a contrasting electroplated internal shaft.",
+    "features": [
+      "Geometric Honeycomb Lattice",
+      "Dual-Finish Electrostatic Coating",
+      "Universal Glass, Timber & Metal Door Fixings",
+      "Tested to 300,000 Pull Cycles"
+    ]
+  },
+  {
+    "id": "IGPH-216",
+    "name": "Twisted Helix Fluted Pull Handle",
+    "modelCode": "IGPH-216",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-216.jpg",
+    "material": "Solid Forged Brass",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Sculptural spiral twist flute flowing seamlessly across the vertical shaft, flanked by polished crown sleeves and solid bracket mounts.",
+    "features": [
+      "Seamless Spiral Twist Machining",
+      "Anti-Tarnish Protective Shield",
+      "Direct Bolt-Through Installation Kit",
+      "Superior Structural Rigidity"
+    ]
+  },
+  {
+    "id": "IGPH-217",
+    "name": "Imperial Filigree Pillar Pull Handle",
+    "modelCode": "IGPH-217",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-217.jpg",
+    "material": "Virgin Brass & Multi-Layer PVD",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Regal palace-inspired architectural handle featuring twin filigree sleeve inserts and domed end bosses. Designed for imposing double doors and grand villas.",
+    "features": [
+      "Palace Architecture Ornamentation",
+      "Thick-Wall Brass Tube Construction",
+      "UV & Marine-Air Resistant",
+      "Supplied in Back-to-Back Pair or Single Mount"
+    ]
+  },
+  {
+    "id": "IGPH-218",
+    "name": "Monolith Faceted Main Door Pull Handle",
+    "modelCode": "IGPH-218",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-218.jpg",
+    "material": "Solid Forged Brass & 304 Stainless Steel",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "800mm (32 Inch)"
+    ],
+    "description": "Bold rectangular monolith profile featuring beveled diamond facet relief and precision stepped pedestals for modern luxury entrances.",
+    "features": [
+      "Faceted Architectural Geometry",
+      "Stepped Mount Pedestals",
+      "High Load Capacity",
+      "Precision CNC Finished Corners"
+    ]
+  },
+  {
+    "id": "IGPH-219",
+    "name": "Linear Groove Architectural Pull Handle",
+    "modelCode": "IGPH-219",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-219.jpg",
+    "material": "Solid Brass & Heavy-Gauge Stainless Steel",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Linear segmented architectural pull featuring rhythmic parallel grooving and balanced offset mounting stanchions.",
+    "features": [
+      "Precision Grooved Grip Pattern",
+      "Heavy Stanchions with Anti-Spin Pins",
+      "Salt Spray Tested for Coastal Resiliency",
+      "Refined Contemporary Styling"
+    ]
+  },
+  {
+    "id": "IGPH-220",
+    "name": "Noble Hardwood & Brass Pull Handle",
+    "modelCode": "IGPH-220",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-220.jpg",
+    "material": "Solid Natural Hardwood & Forged Brass Lattice",
+    "finishes": [
+      "Natural Teak / Rose Gold PVD",
+      "Walnut Finish / Antique Brass",
+      "Ebony Wood / Gold PVD",
+      "Mocha Wood / Bronze"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Rare fusion of hand-finished solid organic hardwood with precision laser-etched brass sleeve and cast end capitals. Warm tactile wood feel with royal metallic luxury.",
+    "features": [
+      "Organic Hardwood Body",
+      "CNC Laser-Etched Brass Accent Collar",
+      "Moisture-Resistant Wood Sealer",
+      "Architectural Statement Piece"
+    ]
+  },
+  {
+    "id": "IGPH-221",
+    "name": "Crown Sovereign Fluted Pull Handle",
+    "modelCode": "IGPH-221",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-221.jpg",
+    "material": "Heavy Cast Solid Brass",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Neoclassical mastercraft pull handle with fine ribbed fluting, crown capitals, and stepped tiered bases. Tailored for heritage estates and premier luxury doors.",
+    "features": [
+      "Neoclassical Crown Capital Motifs",
+      "Solid Brass Casting",
+      "Multi-Pass PVD Finish",
+      "Extreme Heavyweight Presence"
+    ]
+  },
+  {
+    "id": "IGPH-222",
+    "name": "Victorian Filigree Grand Entrance Pull",
+    "modelCode": "IGPH-222",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-222.jpg",
+    "material": "Virgin Solid Brass",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Opulent Victorian-inspired filigree lattice sleeve over mirrored core with baroque turned pedestals. Adds unmatched grandeur to double entry doors.",
+    "features": [
+      "Baroque Turned Pedestals",
+      "Intricate Laser Mesh Sleeve",
+      "Heavy-Duty Through-Bolt Fixing",
+      "Non-Fading PVD Color Lock"
+    ]
+  },
+  {
+    "id": "IGPH-331",
+    "name": "Apex Knurled Modern Pull Handle",
+    "modelCode": "IGPH-331",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-331.jpg",
+    "material": "Forged Brass & Solid 304 Stainless Steel",
+    "finishes": [
+      "Matt Black / Gold PVD",
+      "Mocha Bronze / Rose Gold",
+      "Antique Brass / Gold",
+      "Matt Black / Rose Gold"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "800mm (32 Inch)"
+    ],
+    "description": "Clean contemporary cylindrical pull featuring a centered diamond cross-hatch knurled grip band and dual-tone PVD transition accents.",
+    "features": [
+      "Industrial Diamond Knurled Grip",
+      "Dual-Tone PVD Metallurgy",
+      "Concealed Fixing Bolts Included",
+      "Ultra-Sleek Modern Profile"
+    ]
+  },
+  {
+    "id": "IGPH-332",
+    "name": "Vanguard Contoured Entrance Pull Handle",
+    "modelCode": "IGPH-332",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-332.jpg",
+    "material": "Solid Brass & Marine Grade SS",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Architectural contoured pull with sleek chamfered posts and continuous ergonomic grip channel. Designed for frameless glass and solid timber pivot doors.",
+    "features": [
+      "Ergonomic Finger Recess",
+      "Sturdy Back-to-Back Mounting Kit",
+      "Scratch-Resistant PVD Coating",
+      "Minimalist European Styling"
+    ]
+  },
+  {
+    "id": "IGPH-333",
+    "name": "Dual-Pillar Geometric Pull Handle",
+    "modelCode": "IGPH-333",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-333.jpg",
+    "material": "Solid Brass",
+    "finishes": [
+      "Matt Black / Gold PVD",
+      "Antique Brass / Rose Gold",
+      "Mocha Bronze / Gold",
+      "Matt Black / Rose Gold"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Substantial architectural pull handle featuring balanced dual gold inlay rings and robust rectangular standoffs.",
+    "features": [
+      "Dual Gold Inlay Rings",
+      "Solid Brass Standoffs",
+      "Corrosion Resistant Finish",
+      "Heavy Structural Rigidity"
+    ]
+  },
+  {
+    "id": "IGPH-334",
+    "name": "Prism Chamfered Main Door Pull Handle",
+    "modelCode": "IGPH-334",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-334.jpg",
+    "material": "Solid Forged Brass & 304 Stainless Steel",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "800mm (32 Inch)"
+    ],
+    "description": "Sculpted prismatic geometry with beveled 45-degree edge facets and contrasting central inlay. Fits seamlessly into contemporary residences.",
+    "features": [
+      "45-Degree Beveled Prismatic Edges",
+      "Dual-Tone Metallic Accents",
+      "Heavy Gauge Fastening Hardware",
+      "Smooth Tactile Feel"
+    ]
+  },
+  {
+    "id": "IGPH-335",
+    "name": "Aero Sculptural Architectural Pull Handle",
+    "modelCode": "IGPH-335",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-335.jpg",
+    "material": "Solid Forged Brass",
+    "finishes": [
+      "Matt Black / Gold PVD",
+      "Antique Brass / Rose Gold",
+      "Mocha Bronze / Gold",
+      "Matt Black / Rose Gold"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Fluid aerodynamic silhouette inspired by modern aerospace architecture. Perfectly contoured to the palm with radiant two-tone finish transitions.",
+    "features": [
+      "Fluid Aerodynamic Contouring",
+      "Ergonomic Palm Fit",
+      "PVD Vacuum Sputter Plating",
+      "Rigid Heavy Brass Backbone"
+    ]
+  },
+  {
+    "id": "IGPH-336",
+    "name": "Matrix Diamond-Knurled Pull Handle",
+    "modelCode": "IGPH-336",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-336.jpg",
+    "material": "Solid Brass & 304 Stainless Steel",
+    "finishes": [
+      "Matt Black / Rose Gold PVD",
+      "Antique Brass / Gold PVD",
+      "Mocha Bronze / Gold",
+      "Matt Black / Gold PVD"
+    ],
+    "sizes": [
+      "300mm (12 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Subtle tactile micro-knurled zones set against silky satin brass tubing. Engineered for high-end residential entrances and corporate boardrooms.",
+    "features": [
+      "Tactile Micro-Knurling",
+      "High Resistance to Fingerprints & Smudges",
+      "Universal Glass & Wood Fixing Kit",
+      "Solid Turning End Plugs"
+    ]
+  },
+  {
+    "id": "IGPH-337",
+    "name": "Titan Stepped Architectural Pull Handle",
+    "modelCode": "IGPH-337",
+    "category": "pull",
+    "categoryName": "Main Door Pull Handles",
+    "image": "/images/IGPH-337.jpg",
+    "material": "Heavy Solid Brass",
+    "finishes": [
+      "Matt Black / Gold PVD",
+      "Antique Brass / Rose Gold",
+      "Mocha Bronze / Gold",
+      "Matt Black / Rose Gold"
+    ],
+    "sizes": [
+      "350mm (14 Inch)",
+      "450mm (18 Inch)",
+      "600mm (24 Inch)",
+      "900mm (36 Inch)"
+    ],
+    "description": "Uncompromising heavyweight pull handle featuring stepped architectural stanchions and twin finish collars for grand scale entrance doors.",
+    "features": [
+      "Stepped Stanchion Pedestals",
+      "Extra-Heavy Brass Core",
+      "All-Weather Sealed Coatings",
+      "Engineered for Massive Oversized Doors"
+    ]
   }
 ]

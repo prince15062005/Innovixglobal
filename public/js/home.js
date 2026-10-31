@@ -16,10 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let heroTransitionAnimation = null;
   const heroSceneSources = {
     'IGM-001': '/catalog-images/img_004.jpg',
-    'IGM-018': '/catalog-images/img_002.jpg'
+    'IGM-018': '/catalog-images/img_002.jpg',
+    'IGPH-211': '/images/IGPH-211.jpg',
+    'IGPH-331': '/images/IGPH-331.jpg'
   };
   const categorySceneSources = {
     mortise: '/catalog-images/img_004.jpg',
+    pull: '/images/IGPH-211.jpg',
     rose: '/catalog-images/img_002.jpg'
   };
 
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!products.length) return;
 
       const productsById = new Map(products.map((product) => [product.id, product]));
-      featuredProducts = ['IGM-001', 'IGM-003', 'IGM-018', 'IGM-019']
+      featuredProducts = ['IGM-001', 'IGPH-211', 'IGM-018', 'IGPH-331']
         .map((id) => productsById.get(id))
         .filter((product) => product && product.image);
 

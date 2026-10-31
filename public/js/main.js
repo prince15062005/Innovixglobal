@@ -235,6 +235,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/api/products');
       const data = await response.json();
       allProducts = data.products || [];
+
+      // Update tab counts dynamically if tabs exist
+      const allTab = document.querySelector('.category-tab[data-category="all"]');
+      const mortiseTab = document.querySelector('.category-tab[data-category="mortise"]');
+      const pullTab = document.querySelector('.category-tab[data-category="pull"]');
+      if (allTab) allTab.innerHTML = `<i class="ri-apps-2-line"></i> All Hardware (${allProducts.length})`;
+      if (mortiseTab) {
+        const mortiseCount = allProducts.filter(p => p.category === 'mortise').length;
+        mortiseTab.innerHTML = `<i class="ri-door-open-line"></i> Mortise Handles (${mortiseCount})`;
+      }
+      if (pullTab) {
+        const pullCount = allProducts.filter(p => p.category === 'pull').length;
+        pullTab.innerHTML = `<i class="ri-drag-move-fill"></i> Main Door Pull Handles (${pullCount})`;
+      }
+
       filterAndRenderProducts();
     } catch (error) {
       console.error('Failed to fetch products catalog:', error);
