@@ -1,83 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Innovix Global</title>
-  <meta name="description" content="Privacy policy for Innovix Global website visitors and inquiry submissions." />
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INNOVIX GLOBAL Privacy Policy - How we collect, use, and protect your personal information.">
+  <title>Privacy Policy | INNOVIX GLOBAL - Architectural Hardware</title>
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
 </head>
 <body>
-  <header class="header">
+  <div id="toastContainer" class="toast-container"></div>
+
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Privacy Policy</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Privacy <span class="text-gold">Policy</span></h1>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <section class="section">
-    <div class="container" style="max-width:860px; color: var(--text-muted); line-height:1.8; font-size:1rem;">
-      <p>Innovix Global respects the privacy of visitors and business inquiry submitters. This policy explains how we collect, use, and protect information submitted through our website.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Information we collect</h3>
-      <p>We may collect name, email address, phone number, project details, and inquiry messages submitted through contact or quote forms.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">How we use the information</h3>
-      <p>Information is used to respond to product procurement requests, provide sales support, process inquiries, and improve customer communication.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Data protection</h3>
-      <p>We apply reasonable administrative, technical, and operational safeguards to protect submitted information from unauthorized access and misuse.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Third-party services</h3>
-      <p>We may use hosting, analytics, and communication services as needed. These services are used only to support website operation and customer communication.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Contact</h3>
-      <p>If you have questions about this privacy policy, please contact us at innovixxglobal@gmail.com.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved.</p>
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
       </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">LEGAL</span>
+          <h1 class="page-header-title">Privacy Policy</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">Last updated: January 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="section" aria-labelledby="policyContent">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">1. Introduction</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8;">
+              INNOVIX GLOBAL ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or interact with us. Please read this policy carefully to understand our practices regarding your personal data.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">2. Information We Collect</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">We collect the following types of information:</p>
+            <h3 style="font-family: var(--font-serif); font-size: 1.125rem; margin-bottom: 12px; color: var(--color-white);">Personal Information</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; color: var(--color-neutral); margin-bottom: 24px;">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Name, email address, phone number</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Company name and business details</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Inquiry and message content</li>
+            </ul>
+            <h3 style="font-family: var(--font-serif); font-size: 1.125rem; margin-bottom: 12px; color: var(--color-white);">Automatic Information</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; color: var(--color-neutral); margin-bottom: 24px;">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> IP address and browser type</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Pages visited and time spent</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Referring website</li>
+            </ul>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">3. How We Use Your Information</h2>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Respond to your inquiries and provide customer support</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Process quote requests and dealership applications</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Send product information and updates (with consent)</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Improve our website and services</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Comply with legal obligations</li>
+            </ul>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">4. Information Sharing</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">We do not sell your personal information. We may share information with:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Service providers who assist with our operations</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Legal authorities when required by law</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Business partners in connection with a merger or acquisition</li>
+            </ul>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">5. Data Security</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">6. Your Rights</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">You have the right to:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Access your personal information</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Request correction of inaccurate data</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Request deletion of your data</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Object to processing of your data</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Data portability</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Withdraw consent at any time</li>
+            </ul>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-top: 16px;">To exercise these rights, contact us at innovixxglobal@gmail.com</p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">6. Cookies</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">Our website uses cookies to enhance your experience. These include:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral); margin-bottom: 24px;">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> <strong>Essential cookies:</strong> Required for website functionality</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> <strong>Analytics cookies:</strong> Help us understand website usage</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> <strong>Session cookies:</strong> Maintain your session during visit</li>
+            </ul>
+            <p style="color: var(--color-neutral); line-height: 1.8;">You can control cookies through your browser settings.</p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">7. Contact Us</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8;">If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+            <div style="margin-top: 16px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <p style="color: var(--color-neutral); margin-bottom: 8px;"><strong>Email:</strong> innovixxglobal@gmail.com</p>
+              <p style="color: var(--color-neutral); margin-bottom: 8px;"><strong>Phone:</strong> +91 91061 84146</p>
+              <p style="color: var(--color-neutral);"><strong>Address:</strong> "Matel", Brahmaniyapara-19, Near Govindbag Vegetable Market, Pedak Road, Rajkot-360003, Gujarat, India</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Dholariya Sneh</span></a>
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Ramani Prem</span></a>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon"><img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="brand-info"><span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span><span class="brand-tagline">THE STRUCTURE OF STYLE</span></div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links"><li><a href="products.html?category=pull">Main Door Handles</a></li><li><a href="products.html?category=mortise">Mortise Handles</a></li></ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;"><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p></address>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

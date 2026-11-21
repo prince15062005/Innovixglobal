@@ -1,81 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms & Conditions | Innovix Global</title>
-  <meta name="description" content="Terms and conditions for customers and partners working with Innovix Global." />
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INNOVIX GLOBAL Terms and Conditions - Terms of use for our website and services.">
+  <title>Terms & Conditions | INNOVIX GLOBAL - Architectural Hardware</title>
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
 </head>
 <body>
-  <header class="header">
+  <div id="toastContainer" class="toast-container"></div>
+
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Terms & Conditions</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Terms & <span class="text-gold">Conditions</span></h1>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <section class="section">
-    <div class="container" style="max-width:860px; color: var(--text-muted); line-height:1.8; font-size:1rem;">
-      <p>The website and product information provided by Innovix Global are intended for informational and business communication purposes. All content is subject to change without notice.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Product information</h3>
-      <p>Product specifications, finish options, and availability may vary depending on production, order volume, and project-specific requirements. Final confirmation is made through direct communication with our sales team.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Orders and pricing</h3>
-      <p>Pricing and commercial terms are subject to confirmation. All orders are accepted subject to final review by Innovix Global and applicable commercial agreements.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Website use</h3>
-      <p>Users agree not to misuse the site, attempt unauthorized access, or submit unlawful or inappropriate content through forms or communications.</p>
-      <h3 style="margin:24px 0 12px; color:#fff;">Liability</h3>
-      <p>Innovix Global makes reasonable efforts to provide accurate information but does not warrant perfection or guarantee specific outcomes from website use.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved.</p>
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
       </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">LEGAL</span>
+          <h1 class="page-header-title">Terms & Conditions</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">Last updated: January 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="section" aria-labelledby="termsContent">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">1. Acceptance of Terms</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8;">
+              By accessing and using the INNOVIX GLOBAL website ("Website") and services, you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree with any part of these Terms, please do not use our Website or services.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">2. Use of Website</h2>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> You must be at least 18 years old to use this Website</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> You agree to use the Website only for lawful purposes</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> You will not interfere with the security or integrity of the Website</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> You will not attempt to gain unauthorized access to any part of the Website</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> You will not use the Website to transmit harmful code or viruses</li>
+            </ul>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">3. Intellectual Property</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              All content on this Website, including but not limited to text, graphics, logos, images, product designs, photographs, and software, is the property of INNOVIX GLOBAL and is protected by Indian and international copyright, trademark, and other intellectual property laws.
+            </p>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              You may not reproduce, distribute, modify, create derivative works, publicly display, or commercially exploit any content from this Website without our prior written consent.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">4. Product Information</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              We strive to provide accurate product information, including specifications, finishes, sizes, and pricing. However, we do not warrant that product descriptions, images, or specifications are complete, accurate, current, or error-free. Product availability, finishes, and specifications may change without notice.
+            </p>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              Colors and finishes shown on screen may vary from actual products due to monitor settings and lighting conditions. We recommend requesting physical samples before making purchase decisions.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">5. Enquiries and Orders</h2>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Enquiries submitted through our Website are not binding orders</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Quotes provided are valid for 30 days unless otherwise stated</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> Final terms, pricing, and conditions are confirmed in writing</li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px;"></i> We reserve the right to decline any enquiry or order</li>
+            </ul>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">6. Warranty & Liability</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              INNOVIX GLOBAL products are manufactured to the highest quality standards. However, we provide no warranties, express or implied, regarding the Website or its content, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+            </p>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              In no event shall INNOVIX GLOBAL be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Website or products, even if advised of the possibility of such damages.
+            </p>
+            <p style="color: var(--color-neutral); line-height: 1.8;">
+              Our liability for any claim arising from product defects shall be limited to the replacement of the defective product or refund of the purchase price, at our option.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">7. Cleaning & Maintenance</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              Proper care is essential to maintain the appearance and functionality of our architectural hardware. Please follow our <a href="how-to-clean.html" style="color: var(--color-gold);">cleaning instructions</a> carefully.
+            </p>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              <strong>Failure to follow the recommended cleaning procedures will void any warranty coverage.</strong> We are not responsible for damage caused by improper cleaning, use of harsh chemicals, abrasive materials, or failure to follow maintenance guidelines.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">8. Links to Third Parties</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              Our Website may contain links to third-party websites or services. These links are provided for convenience only. We do not endorse, control, or assume responsibility for the content, privacy policies, or practices of any third-party websites.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">9. Modifications to Terms</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on this page. Your continued use of the Website after any changes constitutes acceptance of the new Terms.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">10. Governing Law & Jurisdiction</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from these Terms or your use of the Website shall be subject to the exclusive jurisdiction of the courts in Rajkot, Gujarat, India.
+            </p>
+          </article>
+
+          <article class="reveal" style="margin-bottom: 48px;">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px; color: var(--color-gold);">11. Contact Information</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 16px;">
+              If you have questions about these Terms and Conditions, please contact us:
+            </p>
+            <div style="padding: 24px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+              <p style="color: var(--color-neutral); margin-bottom: 8px;"><strong>Email:</strong> innovixxglobal@gmail.com</p>
+              <p style="color: var(--color-neutral); margin-bottom: 8px;"><strong>Phone:</strong> +91 91061 84146</p>
+              <p style="color: var(--color-neutral);"><strong>Address:</strong> "Matel", Brahmaniyapara-19, Near Govindbag Vegetable Market, Pedak Road, Rajkot-360003, Gujarat, India</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Dholariya Sneh</span></a>
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Ramani Prem</span></a>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon"><img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="brand-info"><span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span><span class="brand-tagline">THE STRUCTURE OF STYLE</span></div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links"><li><a href="products.html?category=pull">Main Door Handles</a></li><li><a href="products.html?category=mortise">Mortise Handles</a></li></ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;"><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p></address>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

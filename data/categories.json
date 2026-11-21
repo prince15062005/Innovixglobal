@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Main Door Handles",
+    "slug": "main-door-handles",
+    "description": "Premium main door handles crafted with precision and elegance",
+    "image": "/images/IGPH-211.jpg",
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-2",
+    "name": "Mortise Handles",
+    "slug": "mortise-handles",
+    "description": "Exquisite mortise handles for sophisticated interiors",
+    "image": "/images/IGM-001.jpg",
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

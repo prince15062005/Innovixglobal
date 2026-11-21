@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories Management | INNOVIX GLOBAL Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <a href="dashboard.html" class="admin-brand">
+          <div class="admin-brand-icon">
+            <img src="../images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <span class="admin-brand-name">INNOVIX GLOBAL</span>
+        </a>
+      </div>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="dashboard.html" class="admin-nav-item"><i class="ri-dashboard-line"></i> Dashboard</a>
+        <a href="products.html" class="admin-nav-item"><i class="ri-grid-line"></i> Products</a>
+        <a href="categories.html" class="admin-nav-item active"><i class="ri-folder-line"></i> Categories</a>
+        <a href="enquiries.html" class="admin-nav-item"><i class="ri-message-3-line"></i> Enquiries</a>
+        <a href="settings.html" class="admin-nav-item"><i class="ri-settings-3-line"></i> Settings</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-user">
+          <div class="admin-user-avatar"><span id="adminInitials">SA</span></div>
+          <div class="admin-user-info">
+            <div class="admin-user-name" id="adminName">Super Admin</div>
+            <div class="admin-user-role" id="adminRole">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mobile-menu-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="mobile-menu-btn" id="sidebarToggle" aria-label="Toggle sidebar" style="display: none;"><i class="ri-menu-line"></i></button>
+          <h1 class="admin-header-title">Categories Management</h1>
+        </div>
+        <div class="admin-header-actions">
+          <button class="btn btn-primary" id="addCategoryBtn"><i class="ri-add-line"></i> Add Category</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="admin-page-header">
+          <h1 class="admin-page-title">Categories</h1>
+          <div style="color: var(--color-neutral-muted);">Manage product categories</div>
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Image</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th style="width: 120px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="categoriesTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Category Modal -->
+  <div class="modal-overlay" id="categoryModal" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle">
+    <div class="modal" style="max-width: 600px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="categoryModalTitle">Add Category</h2>
+        <button class="modal-close" id="categoryModalClose" aria-label="Close modal"><i class="ri-close-line"></i></button>
+      </div>
+      <form class="modal-body" id="categoryForm">
+        <input type="hidden" name="id" id="categoryId">
+        
+        <div class="form-group">
+          <label for="categoryName" class="form-label">Category Name <span style="color: var(--color-gold);">*</span></label>
+          <input type="text" id="categoryName" name="name" class="form-input" placeholder="e.g., Main Door Handles" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="categorySlug" class="form-label">Slug <span style="color: var(--color-gold);">*</span></label>
+          <input type="text" id="categorySlug" name="slug" class="form-input" placeholder="e.g., main-door-handles" required>
+          <p class="form-hint">URL-friendly identifier (lowercase, hyphens only)</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="categoryDescription" class="form-label">Description</label>
+          <textarea id="categoryDescription" name="description" class="form-textarea" placeholder="Category description..." rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="categoryImage" class="form-label">Image URL</label>
+          <input type="url" id="categoryImage" name="image" class="form-input" placeholder="/images/category-image.jpg">
+        </div>
+        
+        <div class="form-group">
+          <label for="categoryStatus" class="form-label">Status</label>
+          <select id="categoryStatus" name="status" class="form-select">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="categoryModalCancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="categoryModalSubmit">Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile sidebar toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const adminSidebar = document.getElementById('adminSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (sidebarToggle && adminSidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        adminSidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('active');
+      });
+      sidebarOverlay.addEventListener('click', () => {
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      });
+    }
+
+    function checkScreenSize() {
+      if (window.innerWidth < 992) sidebarToggle.style.display = 'flex';
+      else { sidebarToggle.style.display = 'none'; adminSidebar.classList.remove('open'); sidebarOverlay.classList.remove('active'); }
+    }
+    window.addEventListener('resize', checkScreenSize);
+    checkScreenSize();
+
+    let allCategories = [];
+
+    async function fetchJSON(url, options) {
+      const res = await fetch(url, options || {});
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Request failed.');
+      return payload;
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer') || createToastContainer();
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = { success: '<i class="ri-checkbox-circle-line toast-icon"></i>', error: '<i class="ri-error-warning-line toast-icon"></i>', warning: '<i class="ri-alert-line toast-icon"></i>', info: '<i class="ri-information-line toast-icon"></i>' };
+      toast.innerHTML = `${icons[type] || icons.info}<span class="toast-message">${message}</span><button class="toast-close" onclick="this.parentElement.remove()"><i class="ri-close-line"></i></button>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.style.animation = 'slideInRight 0.3s ease-out reverse'; setTimeout(() => toast.remove(), 300); }, 5000);
+    }
+    function createToastContainer() { const c = document.createElement('div'); c.id = 'toastContainer'; c.className = 'toast-container'; document.body.appendChild(c); return c; }
+
+    async function loadCategories() {
+      try {
+        const data = await fetchJSON('/api/admin/categories');
+        allCategories = data.categories || [];
+        renderCategories();
+      } catch (error) {
+        showToast(error.message, 'error');
+      }
+    }
+
+    function getStatusClass(status) {
+      return status === 'active' ? 'status-published' : 'status-draft';
+    }
+    function getStatusLabel(status) { return status === 'active' ? 'Active' : 'Inactive'; }
+
+    function renderCategories() {
+      const tbody = document.getElementById('categoriesTableBody');
+      if (!allCategories.length) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: var(--color-neutral-muted);">No categories found.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = allCategories.map(c => `
+        <tr>
+          <td><img src="${c.image || '/images/placeholder.jpg'}" alt="${c.name}" class="product-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm);"></td>
+          <td style="font-weight: 500;">${c.name}</td>
+          <td><code style="color: var(--color-gold);">${c.slug}</code></td>
+          <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${c.description || '-'}</td>
+          <td><span class="status-badge ${getStatusClass(c.status)}">${getStatusLabel(c.status)}</span></td>
+          <td>
+            <div class="admin-actions">
+              <button class="admin-action-btn" data-id="${c.id}" data-action="edit" aria-label="Edit"><i class="ri-edit-line"></i></button>
+              <button class="admin-action-btn delete" data-id="${c.id}" data-action="delete" aria-label="Delete"><i class="ri-delete-bin-line"></i></button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      tbody.querySelectorAll('.admin-action-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const action = btn.dataset.action;
+          if (action === 'edit') openCategoryModal(id);
+          if (action === 'delete') openDeleteModal(id);
+        });
+      });
+    }
+
+    const categoryModal = document.getElementById('categoryModal');
+    const categoryForm = document.getElementById('categoryForm');
+    const categoryModalClose = document.getElementById('categoryModalClose');
+    const categoryModalCancel = document.getElementById('categoryModalCancel');
+    const addCategoryBtn = document.getElementById('addCategoryBtn');
+
+    function openCategoryModal(id = null) {
+      const category = id ? allCategories.find(c => c.id === id) : null;
+      const isEdit = !!category;
+      
+      document.getElementById('categoryModalTitle').textContent = isEdit ? 'Edit Category' : 'Add Category';
+      categoryForm.reset();
+      document.getElementById('categoryId').value = '';
+      
+      if (isEdit) {
+        document.getElementById('categoryId').value = category.id;
+        document.getElementById('categoryName').value = category.name;
+        document.getElementById('categorySlug').value = category.slug;
+        document.getElementById('categoryDescription').value = category.description || '';
+        document.getElementById('categoryImage').value = category.image || '';
+        document.getElementById('categoryStatus').value = category.status || 'active';
+      }
+      
+      categoryModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCategoryModal() {
+      categoryModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    categoryModalClose.addEventListener('click', closeCategoryModal);
+    categoryModalCancel.addEventListener('click', closeCategoryModal);
+    categoryModal.addEventListener('click', (e) => { if (e.target === categoryModal) closeCategoryModal(); });
+    addCategoryBtn.addEventListener('click', () => openCategoryModal());
+
+    categoryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('categoryModalSubmit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+
+      const id = document.getElementById('categoryId').value;
+      const isEdit = !!id;
+      
+      const payload = {
+        name: document.getElementById('categoryName').value.trim(),
+        slug: document.getElementById('categorySlug').value.trim(),
+        description: document.getElementById('categoryDescription').value.trim(),
+        image: document.getElementById('categoryImage').value.trim(),
+        status: document.getElementById('categoryStatus').value
+      };
+
+      try {
+        const url = isEdit ? `/api/admin/categories/${id}` : '/api/admin/categories';
+        const method = isEdit ? 'PUT' : 'POST';
+        
+        await fetchJSON(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        showToast(isEdit ? 'Category updated' : 'Category created', 'success');
+        closeCategoryModal();
+        loadCategories();
+      } catch (error) {
+        showToast(error.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
+    // Delete modal (reuse product delete modal pattern)
+    let deleteCategoryId = null;
+    const deleteModal = document.createElement('div');
+    deleteModal.className = 'modal-overlay';
+    deleteModal.innerHTML = `
+      <div class="modal" style="max-width: 480px;">
+        <div class="modal-header">
+          <h2 class="modal-title">Delete Category</h2>
+          <button class="modal-close" id="deleteCategoryModalClose"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+          <p style="color: var(--color-neutral);">Are you sure you want to delete <strong id="deleteCategoryName"></strong>? This action cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="deleteCategoryModalCancel">Cancel</button>
+          <button type="button" class="btn btn-danger" id="deleteCategoryModalConfirm">Delete</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(deleteModal);
+
+    function openDeleteModal(id) {
+      const category = allCategories.find(c => c.id === id);
+      if (!category) return;
+      deleteCategoryId = id;
+      document.getElementById('deleteCategoryName').textContent = category.name;
+      deleteModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDeleteModal() {
+      deleteModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      deleteCategoryId = null;
+    }
+
+    document.getElementById('deleteCategoryModalClose').addEventListener('click', closeDeleteModal);
+    document.getElementById('deleteCategoryModalCancel').addEventListener('click', closeDeleteModal);
+    deleteModal.addEventListener('click', (e) => { if (e.target === deleteModal) closeDeleteModal(); });
+
+    document.getElementById('deleteCategoryModalConfirm').addEventListener('click', async () => {
+      if (!deleteCategoryId) return;
+      const btn = document.getElementById('deleteCategoryModalConfirm');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Deleting...';
+      
+      try {
+        await fetchJSON(`/api/admin/categories/${deleteCategoryId}`, { method: 'DELETE' });
+        showToast('Category deleted', 'success');
+        closeDeleteModal();
+        loadCategories();
+      } catch (error) {
+        showToast(error.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/login';
+    });
+
+    loadCategories();
+  </script>
+</body>
+</html>

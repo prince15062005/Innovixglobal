@@ -3,261 +3,337 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Innovix Global</title>
-  <meta name="description" content="Learn about Innovix Global, India's premier manufacturer of premium architectural hardware and forged brass handles in Rajkot, Gujarat.">
+  <meta name="description" content="Learn about INNOVIX GLOBAL - Premium architectural hardware manufacturer. Our story, values, and commitment to craftsmanship excellence.">
+  <meta name="keywords" content="INNOVIX GLOBAL, About Us, Architectural Hardware Manufacturer, Company Profile, Rajkot, Gujarat">
+  <meta name="author" content="INNOVIX GLOBAL">
   
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us | INNOVIX GLOBAL - Architectural Hardware">
+  <meta property="og:description" content="Premium architectural hardware manufacturer. Our story, values, and commitment to craftsmanship excellence.">
+  <meta property="og:image" content="/images/IGPH-211.jpg">
+  
+  <link rel="canonical" href="https://www.innovixglobal.in/about.html">
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
+  
+  <title>About Us | INNOVIX GLOBAL - Architectural Hardware</title>
 </head>
 <body>
+  <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Header / Navigation Bar -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+          <li><a href="about.html" class="nav-link active"><i class="ri-building-4-line"></i> About Us</a></li>
           <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
-          <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="how-to-clean.html" class="nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>About Us</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="how-to-clean.html" class="mobile-nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">About <span class="text-gold">Innovix Global</span></h1>
-      <p class="page-subtitle">
-        Building the future of luxury door hardware through metallurgical precision, modern aesthetics, and uncompromising durability.
-      </p>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <!-- Brand Story & Heritage -->
-  <section class="section">
-    <div class="container">
-      <div class="split-grid">
-        <div>
-          <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;">
-            Our Heritage & Vision
-          </div>
-          <h2 style="font-size: 2.4rem; margin-bottom: 20px; line-height: 1.25;">
-            Pioneering Architectural <br><span class="text-gold">Hardware Excellence</span>
-          </h2>
-          <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; line-height: 1.7;">
-            <strong>Innovix Global</strong> was established with a singular mission: to design and engineer world-class architectural door handles and security locksets.
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">ABOUT US</span>
+          <h1 class="page-header-title">The Structure of Style</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">
+            INNOVIX GLOBAL stands at the forefront of architectural hardware innovation, 
+            creating premium door handles and mortise handles that define luxury living spaces.
           </p>
-          <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; line-height: 1.7;">
-            Based in <strong>Rajkot, Gujarat</strong> — India's renowned heartland of precision engineering and metal casting — our facility combines traditional hand-carved toolmaking with advanced computerized finishing technology.
-          </p>
-
-          <div class="form-row">
-            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 16px; border-radius: var(--radius-md);">
-              <h4 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 4px;">Vision</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">To become the premier architectural hardware brand trusted by top architects across India and globally.</p>
-            </div>
-            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 16px; border-radius: var(--radius-md);">
-              <h4 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 4px;">Quality Promise</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Zero compromise on raw metal purity, salt spray resistance, and mechanical tension life.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 40px;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #fff; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
-            Company Quick Facts
-          </h3>
-          <div class="facts-list">
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Company Name:</span>
-              <strong style="color: #fff;">Innovix Global</strong>
-            </div>
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Brand Name:</span>
-              <strong style="color: var(--accent-gold);">Innovix Global Architectural Hardware</strong>
-            </div>
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Headquarters:</span>
-              <strong style="color: #fff;">Rajkot, Gujarat, India</strong>
-            </div>
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Catalog Edition:</span>
-              <strong style="color: #fff;">2026 Collection</strong>
-            </div>
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Product Range:</span>
-              <strong style="color: #fff;">Mortise, Rose & Pull Handles, Locksets</strong>
-            </div>
-            <div class="fact-row">
-              <span style="color: var(--text-muted);">Email:</span>
-              <strong style="color: var(--accent-gold);">innovixxglobal@gmail.com</strong>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Leadership & Representatives -->
-  <section class="section" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 50px auto;">
-        <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;">
-          Key Leadership & Operations
-        </div>
-        <h2 style="font-size: 2.4rem; margin-bottom: 12px;">
-          Direct Contact <span class="text-gold">Representatives</span>
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1rem;">
-          Our leadership team works directly with wholesale dealers, architects, and corporate clients to deliver seamless sales and custom project supply.
-        </p>
-      </div>
-
-      <div class="split-grid gap-md narrow">
-        <!-- Dholariya Sneh -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
-          <div style="width: 70px; height: 70px; background: rgba(245, 158, 11, 0.12); border: 2px solid var(--border-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 2rem; margin: 0 auto 16px auto;">
-            <i class="ri-user-star-line"></i>
+    <!-- Brand Philosophy -->
+    <section class="section" aria-labelledby="philosophyTitle">
+      <div class="container">
+        <div class="grid grid-2 gap-lg items-center">
+          <div class="reveal">
+            <span class="section-eyebrow">BRAND PHILOSOPHY</span>
+            <h2 id="philosophyTitle" class="section-title gold-divider-left">Our Brand Philosophy</h2>
+            <div style="color: var(--color-neutral); line-height: 1.8;">
+              <p style="margin-bottom: 16px;">
+                At INNOVIX GLOBAL, we believe that architectural hardware is more than just 
+                functional components—it's the jewelry of architecture. Every handle, every 
+                mortise lock, every finish tells a story of craftsmanship and design excellence.
+              </p>
+              <p style="margin-bottom: 16px;">
+                Our journey began with a simple vision: to create architectural hardware that 
+                elevates spaces from ordinary to extraordinary. Today, that vision drives 
+                every product we design, every finish we perfect, and every detail we refine.
+              </p>
+              <p>
+                We specialize in two core categories—Main Door Handles and Mortise Handles—each 
+                engineered with precision using premium materials including brass, stainless steel, 
+                and specialized alloys. Our finishes range from classic gold and rose gold to 
+                contemporary black, graphite, and PVD coatings, ensuring the perfect match for 
+                any architectural style.
+              </p>
+            </div>
           </div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 4px; color: #fff;">Dholariya Sneh</h3>
-          <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px;">
-            Key Accounts & Sales Management
-          </div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
-            Oversees wholesale distribution networks, architect relationships, and key client accounts across India.
-          </p>
-          <div class="action-row">
-            <a href="tel:+919106184146" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
-              <i class="ri-phone-line"></i> Call +91 91061 84146
-            </a>
-            <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp" style="padding: 8px 16px; font-size: 0.85rem;">
-              <i class="ri-whatsapp-line"></i> WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <!-- Ramani Prem -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
-          <div style="width: 70px; height: 70px; background: rgba(245, 158, 11, 0.12); border: 2px solid var(--border-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 2rem; margin: 0 auto 16px auto;">
-            <i class="ri-user-settings-line"></i>
-          </div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 4px; color: #fff;">Ramani Prem</h3>
-          <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px;">
-            Business Operations & Logistics
-          </div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
-            Directs manufacturing operations, inventory logistics, quality assurance standards, and custom order dispatch.
-          </p>
-          <div class="action-row">
-            <a href="tel:+918238282481" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
-              <i class="ri-phone-line"></i> Call +91 82382 82481
-            </a>
-            <a href="https://wa.me/918238282481" target="_blank" class="btn btn-whatsapp" style="padding: 8px 16px; font-size: 0.85rem;">
-              <i class="ri-whatsapp-line"></i> WhatsApp
-            </a>
+          
+          <div class="reveal">
+            <div style="aspect-ratio: 4/3; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-primary);">
+              <img src="/images/IGPH-218.jpg" alt="INNOVIX GLOBAL Manufacturing" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Floating WhatsApp Action -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/919106184146" target="_blank" class="wa-btn" aria-label="Chat with Dholariya Sneh">
+    <!-- Core Values -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="valuesTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">CORE VALUES</span>
+          <h2 id="valuesTitle" class="section-title">What Drives Us</h2>
+          <p class="section-subtitle">The principles that guide every decision and every product we create</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-award-line"></i></div>
+            <h3 class="feature-title">Craftsmanship Excellence</h3>
+            <p class="feature-description">Every piece is meticulously crafted by skilled artisans who understand the nuances of premium architectural hardware.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-gem-line"></i></div>
+            <h3 class="feature-title">Premium Materials</h3>
+            <p class="feature-description">We source only the finest brass, stainless steel, and specialized alloys to ensure lasting beauty and durability.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-palette-line"></i></div>
+            <h3 class="feature-title">Innovative Design</h3>
+            <p class="feature-description">Our design team continuously pushes boundaries, creating hardware that combines timeless elegance with modern functionality.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-shield-check-line"></i></div>
+            <h3 class="feature-title">Quality Assurance</h3>
+            <p class="feature-description">Rigorous quality control at every stage ensures each product meets our exacting standards before it reaches you.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-customer-service-2-line"></i></div>
+            <h3 class="feature-title">Customer Centricity</h3>
+            <p class="feature-description">We listen to architects, designers, and homeowners to create solutions that truly enhance living spaces.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-truck-line"></i></div>
+            <h3 class="feature-title">Reliable Delivery</h3>
+            <p class="feature-description">Pan-India distribution network with secure packaging ensures your products arrive in perfect condition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialization -->
+    <section class="section" aria-labelledby="specializationTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">SPECIALIZATION</span>
+          <h2 id="specializationTitle" class="section-title">Architectural Hardware Expertise</h2>
+          <p class="section-subtitle">Focused mastery in premium door hardware categories</p>
+        </div>
+
+        <div class="grid grid-2 gap-lg">
+          <article class="card reveal" style="padding: 40px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: rgba(197, 161, 90, 0.05); border-radius: 50%; filter: blur(80px);"></div>
+            <div style="position: relative; z-index: 1;">
+              <div class="feature-icon" style="margin: 0 0 24px;"><i class="ri-door-open-line"></i></div>
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 16px;">Main Door Handles</h3>
+              <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+                Our main door handles collection features 19 distinct designs (IGPH-211 through IGPH-337), 
+                each available in multiple premium finishes and sizes ranging from 200mm to 1200mm. 
+                Materials include SS + Brass combinations, Full Brass, SS + Aluminum, and Brass + Wood 
+                for natural warmth.
+              </p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> 19 unique designs</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> Multiple finish options</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> Sizes: 200-1200mm</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> Premium material combinations</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card reveal" style="padding: 40px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: rgba(197, 161, 90, 0.05); border-radius: 50%; filter: blur(80px);"></div>
+            <div style="position: relative; z-index: 1;">
+              <div class="feature-icon" style="margin: 0 0 24px;"><i class="ri-gem-line"></i></div>
+              <h3 style="font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 16px;">Mortise Handles</h3>
+              <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+                Our mortise handles collection features 22 sophisticated designs (IGM-001 through IGM-022), 
+                all crafted from Full Brass with Rose sizing. Finishes include SS, Graphite Black, AB, 
+                Z.Black, and premium PVD coatings in Gold, Rose Gold, and Copper variations.
+              </p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> 22 unique designs</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> Full Brass construction</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> PVD premium finishes</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold);"></span> Rose size standard</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); position: relative; overflow: hidden;" aria-labelledby="statsTitle">
+      <div style="position: absolute; inset: 0; opacity: 0.03; background-image: url('/images/IGPH-211.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="section-header reveal" style="margin-bottom: 48px;">
+          <h2 id="statsTitle" class="section-title">Our Journey in Numbers</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="reveal" style="text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; color: var(--color-gold); line-height: 1; margin-bottom: 8px;">41+</div>
+            <div style="color: var(--color-neutral-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Product Designs</div>
+          </div>
+          <div class="reveal" style="text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; color: var(--color-gold); line-height: 1; margin-bottom: 8px;">2</div>
+            <div style="color: var(--color-neutral-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Core Categories</div>
+          </div>
+          <div class="reveal" style="text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; color: var(--color-gold); line-height: 1; margin-bottom: 8px;">100%</div>
+            <div style="color: var(--color-neutral-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Quality Checked</div>
+          </div>
+          <div class="reveal" style="text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 600; color: var(--color-gold); line-height: 1; margin-bottom: 8px;">Pan India</div>
+            <div style="color: var(--color-neutral-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Delivery Network</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="ctaTitle">
+      <div class="container">
+        <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2 id="ctaTitle" class="section-title">Experience the Difference</h2>
+          <p class="section-subtitle">Explore our complete collection of premium architectural hardware</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <a href="products.html" class="btn btn-primary btn-lg">
+              View Catalogue
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Dholariya Sneh</span>
     </a>
-    <a href="https://wa.me/918238282481" target="_blank" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Ramani Prem</span>
     </a>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon"><img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark"></div>
-            <div class="brand-info">
-              <span class="brand-name" style="color: #fff;">INNOVIX GLOBAL</span>
-              <span class="brand-sub">Innovix Architectural Products</span>
-            </div>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon">
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            Manufacturer of premium Mortise Handles, Main Door Pull Handles, and premium architectural hardware solutions.
-          </p>
+            <div class="brand-info">
+              <span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span>
+              <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
+            </div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
         </div>
-
         <div>
-          <h4>Navigation</h4>
+          <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products Catalog</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="manufacturing.html">Manufacturing</a></li>
-            <li><a href="dealership.html">Dealership</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="how-to-clean.html">How to Clean</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div>
-          <h4>Product Lines</h4>
+          <h4 class="footer-title">Products</h4>
           <ul class="footer-links">
+            <li><a href="products.html?category=pull">Main Door Handles</a></li>
             <li><a href="products.html?category=mortise">Mortise Handles</a></li>
-            <li><a href="products.html?category=pull">Main Door Pull Handles</a></li>
           </ul>
         </div>
-
         <div>
-          <h4>Contact & Address</h4>
-          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
-            “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px;">
-            <i class="ri-mail-line" style="color: var(--accent-gold);"></i> innovixxglobal@gmail.com
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem;">
-            <i class="ri-phone-line" style="color: var(--accent-gold);"></i> +91 91061 84146 / +91 82382 82481
-          </p>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;">
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p>
+          </address>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved. Architectural Hardware.</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
 

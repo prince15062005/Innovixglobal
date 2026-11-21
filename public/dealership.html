@@ -3,249 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dealership & Partner Portal | Innovix Global</title>
-  <meta name="description" content="Partner with Innovix Global. Apply for hardware dealership, wholesale distribution, architect project specs, and hardware retail displays across India.">
-  
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta name="description" content="Become an INNOVIX GLOBAL Dealer - Join our network of premium architectural hardware dealers across India.">
+  <title>Dealership | INNOVIX GLOBAL - Architectural Hardware</title>
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
 </head>
 <body>
+  <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Header / Navigation Bar -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
+          <li><a href="dealership.html" class="nav-link active"><i class="ri-store-2-line"></i> Dealership</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Dealership Portal</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="dealership.html" class="mobile-nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Dealership & <span class="text-gold">Partner Network</span></h1>
-      <p class="page-subtitle">
-        Grow your hardware business with Innovix Global. Become an authorized dealer or architect partner for the 2026 door hardware collection.
-      </p>
-    </div>
-  </section>
-
-  <!-- Partnership Privileges -->
-  <section class="section">
-    <div class="container">
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 50px auto;">
-        <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;">
-          Partner Benefits
-        </div>
-        <h2 style="font-size: 2.5rem; margin-bottom: 12px;">
-          Authorised Dealer <span class="text-gold">Privileges</span>
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1rem;">
-          We support our distribution network with premium showroom display stands, sample kits, marketing support, and priority factory dispatches from Rajkot.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-store-2-line"></i></div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: #fff;">Innovix Global Showroom Display Towers</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            Custom wooden & velvet-backed display towers showcasing live samples of all 41 IGM & IGPH models for retail showrooms.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-truck-line"></i></div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: #fff;">Priority Factory Dispatch</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            Direct express logistics dispatch from our Rajkot unit ensuring 48 to 72-hour delivery to your regional warehouse.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-draft-line"></i></div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: #fff;">Architect & Project Specs</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            Dedicated technical specification assistance for large residential schemes, hotel towers, and commercial townships.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dealership Application Form -->
-  <section class="section" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-subtle);">
-    <div class="container" style="max-width: 900px;">
-      <div class="form-card">
-        <div style="text-align: center; margin-bottom: 30px;">
-          <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px;">
-            Application Portal
-          </div>
-          <h2 style="font-size: 2.3rem; margin-bottom: 8px;">
-            Apply For <span class="text-gold">Authorised Dealership</span>
-          </h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">
-            Fill out the form below. Sales Director Dholariya Sneh or Operations Manager Ramani Prem will contact you.
-          </p>
-        </div>
-
-        <div id="dealerNotification" style="display: none; padding: 14px; border-radius: var(--radius-sm); margin-bottom: 20px; background: rgba(255,255,255,0.05); font-size: 0.9rem;"></div>
-
-        <form id="dealerForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="dealerName">Your Full Name *</label>
-              <input type="text" id="dealerName" name="name" class="form-control" placeholder="Enter contact name" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="dealerBusiness">Firm / Showroom Name *</label>
-              <input type="text" id="dealerBusiness" name="firmName" class="form-control" placeholder="e.g. Royal Hardware Studio" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="dealerPhone">Mobile Number *</label>
-              <input type="tel" id="dealerPhone" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="dealerEmail">Email Address *</label>
-              <input type="email" id="dealerEmail" name="email" class="form-control" placeholder="name@company.com" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="dealerCity">City / District *</label>
-              <input type="text" id="dealerCity" name="city" class="form-control" placeholder="e.g. Rajkot, Ahmedabad, Mumbai" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="dealerType">Business Category *</label>
-              <select id="dealerType" name="businessType" class="form-control" required style="color: #fff;">
-                <option value="Wholesale Hardware Dealer">Wholesale Hardware Dealer</option>
-                <option value="Retail Showroom Owner">Retail Showroom Owner</option>
-                <option value="Architect / Interior Designer">Architect / Interior Designer</option>
-                <option value="Builder / Developer">Builder / Contractor</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="dealerMessage">Additional Details / Brands Currently Handled</label>
-            <textarea id="dealerMessage" name="message" class="form-control" placeholder="Mention your showroom location, experience, or initial order requirement..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-gold" style="width: 100%;">
-            <i class="ri-checkbox-circle-line"></i> Submit Dealership Application
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating WhatsApp Action -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/919106184146?text=Hello%20Dholariya%20Sneh,%20I%20want%20to%20apply%20for%20Innovix%20Global%20Dealership." target="_blank" class="wa-btn" aria-label="Chat with Dholariya Sneh">
-      <i class="ri-whatsapp-line"></i>
-      <span class="wa-tooltip">Chat with Dholariya Sneh</span>
-    </a>
-    <a href="https://wa.me/918238282481?text=Hello%20Ramani%20Prem,%20I%20want%20to%20apply%20for%20Innovix%20Global%20Dealership." target="_blank" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
-      <i class="ri-whatsapp-line"></i>
-      <span class="wa-tooltip">Chat with Ramani Prem</span>
-    </a>
+    </nav>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">BECOME A DEALER</span>
+          <h1 class="page-header-title">Dealership Opportunities</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">
+            Join our growing network of premium architectural hardware dealers across India. Partner with INNOVIX GLOBAL to offer your customers the finest in luxury door hardware.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Partner -->
+    <section class="section" aria-labelledby="whyPartnerTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">WHY PARTNER WITH US</span>
+          <h2 id="whyPartnerTitle" class="section-title">Benefits of Partnership</h2>
+          <p class="section-subtitle">Comprehensive support for your business growth</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-gem-line"></i></div>
+            <h3 class="feature-title">Premium Product Portfolio</h3>
+            <p class="feature-description">Access to 41+ exclusive designs in Main Door Handles and Mortise Handles with multiple finishes and sizes.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-shield-check-line"></i></div>
+            <h3 class="feature-title">Quality Assurance</h3>
+            <p class="feature-description">Every product tested to 250,000+ cycles with PVD coatings and strict quality control standards.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-bar-chart-line"></i></div>
+            <h3 class="feature-title">Competitive Margins</h3>
+            <p class="feature-description">Attractive dealer pricing with volume-based incentives and promotional support.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-truck-line"></i></div>
+            <h3 class="feature-title">Pan-India Logistics</h3>
+            <p class="feature-description">Efficient dispatch network with secure packaging and timely delivery across India.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-customer-service-2-line"></i></div>
+            <h3 class="feature-title">Dedicated Support</h3>
+            <p class="feature-description">Sales team coordination for product selection, project quantities, and technical queries.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-marketing-line"></i></div>
+            <h3 class="feature-title">Marketing Support</h3>
+            <p class="feature-description">Catalogue materials, display support, and co-branded marketing collateral available.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="requirementsTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">DEALERSHIP REQUIREMENTS</span>
+          <h2 id="requirementsTitle" class="section-title">What We Look For</h2>
+          <p class="section-subtitle">Criteria for becoming an authorized INNOVIX GLOBAL dealer</p>
+        </div>
+
+        <div class="grid grid-2 gap-lg">
+          <div class="reveal">
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px; color: var(--color-gold);">Minimum Requirements</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Established business in architectural hardware, building materials, or interior finishes</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Physical showroom or retail space in a commercial area</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Valid GST registration and business licenses</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Minimum annual purchase commitment</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-checkbox-circle-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Trained sales staff for product demonstration</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px; color: var(--color-gold);">Preferred Qualifications</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-star-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Existing relationships with architects, interior designers, and builders</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-star-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Experience with premium/luxury hardware brands</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-star-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Multiple locations or distribution network</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-star-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Digital presence (website, social media)</li>
+              <li style="display: flex; align-items: flex-start; gap: 12px; color: var(--color-neutral);"><i class="ri-star-line" style="color: var(--color-gold); margin-top: 2px; font-size: 1.25rem;"></i> Project execution capability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="section" aria-labelledby="applyTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">APPLY NOW</span>
+          <h2 id="applyTitle" class="section-title">Dealership Application</h2>
+          <p class="section-subtitle">Submit your application for review by our sales team</p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+          <form id="dealerForm" class="contact-form reveal">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dealerName" class="form-label">Full Name <span style="color: var(--color-gold);">*</span></label>
+                <input type="text" id="dealerName" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="dealerEmail" class="form-label">Email <span style="color: var(--color-gold);">*</span></label>
+                <input type="email" id="dealerEmail" name="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dealerPhone" class="form-label">Phone Number <span style="color: var(--color-gold);">*</span></label>
+                <input type="tel" id="dealerPhone" name="phone" class="form-input" placeholder="+91 XXXXXXXXXX" required>
+              </div>
+              <div class="form-group">
+                <label for="dealerCity" class="form-label">City <span style="color: var(--color-gold);">*</span></label>
+                <input type="text" id="dealerCity" name="city" class="form-input" placeholder="Your city" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="dealerCompany" class="form-label">Company/Business Name <span style="color: var(--color-gold);">*</span></label>
+              <input type="text" id="dealerCompany" name="company" class="form-input" placeholder="Your business name" required>
+            </div>
+            <div class="form-group">
+              <label for="dealerMessage" class="form-label">Message <span style="color: var(--color-gold);">*</span></label>
+              <textarea id="dealerMessage" name="message" class="form-textarea" placeholder="Tell us about your business, current brands, showroom details, and why you want to partner with INNOVIX GLOBAL..." required rows="5"></textarea>
+            </div>
+            <div id="dealerNotification" style="display: none; padding: 12px 16px; border-radius: var(--radius-md); margin-top: 16px;"></div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary btn-lg" style="flex: 1;">
+                <i class="ri-send-plane-line"></i> Submit Application
+              </button>
+              <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" style="flex: 1; text-align: center;">
+                <i class="ri-whatsapp-line"></i> WhatsApp Us
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="contactDealerTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">CONTACT</span>
+          <h2 id="contactDealerTitle" class="section-title">Direct Contact</h2>
+          <p class="section-subtitle">Prefer to talk directly? Reach out to our dealership team</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="contact-person reveal">
+            <div>
+              <h3 class="contact-name">Dholariya Sneh</h3>
+              <div class="contact-role">Key Accounts & Sales Management</div>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:+919106184146" class="btn btn-outline"><i class="ri-phone-line"></i> +91 91061 84146</a>
+              <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class="ri-whatsapp-line"></i> WhatsApp</a>
+            </div>
+          </article>
+          <article class="contact-person reveal">
+            <div>
+              <h3 class="contact-name">Ramani Prem</h3>
+              <div class="contact-role">Business Operations & Logistics</div>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:+918238282481" class="btn btn-outline"><i class="ri-phone-line"></i> +91 82382 82481</a>
+              <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class="ri-whatsapp-line"></i> WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Dholariya Sneh</span></a>
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Ramani Prem</span></a>
+  </div>
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon"><img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark"></div>
-            <div class="brand-info">
-              <span class="brand-name" style="color: #fff;">INNOVIX GLOBAL</span>
-              <span class="brand-sub">Innovix Architectural Products</span>
-            </div>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            Manufacturer of premium Mortise Handles, Main Door Pull Handles, and premium architectural hardware solutions.
-          </p>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon"><img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="brand-info"><span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span><span class="brand-tagline">THE STRUCTURE OF STYLE</span></div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
         </div>
-
         <div>
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products Catalog</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="manufacturing.html">Manufacturing</a></li>
-            <li><a href="dealership.html">Dealership</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="dealership.html">Dealership</a></li><li><a href="contact.html">Contact</a></li></ul>
         </div>
-
         <div>
-          <h4>Product Lines</h4>
-          <ul class="footer-links">
-            <li><a href="products.html?category=mortise">Mortise Handles</a></li>
-            <li><a href="products.html?category=pull">Main Door Pull Handles</a></li>
-          </ul>
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links"><li><a href="products.html?category=pull">Main Door Handles</a></li><li><a href="products.html?category=mortise">Mortise Handles</a></li></ul>
         </div>
-
         <div>
-          <h4>Contact & Address</h4>
-          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
-            “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px;">
-            <i class="ri-mail-line" style="color: var(--accent-gold);"></i> innovixxglobal@gmail.com
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem;">
-            <i class="ri-phone-line" style="color: var(--accent-gold);"></i> +91 91061 84146 / +91 82382 82481
-          </p>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;"><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p></address>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved. Architectural Hardware.</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dealerForm = document.getElementById('dealerForm');
+      const dealerNotification = document.getElementById('dealerNotification');
+      
+      if (dealerForm) {
+        dealerForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(dealerForm);
+          const payload = Object.fromEntries(formData.entries());
+          
+          const submitBtn = dealerForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Submitting...';
+          
+          dealerNotification.style.display = 'block';
+          dealerNotification.style.background = 'rgba(197, 161, 90, 0.1)';
+          dealerNotification.style.border = '1px solid var(--border-gold)';
+          dealerNotification.style.color = 'var(--color-gold)';
+          dealerNotification.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Submitting your application...';
+          
+          try {
+            const response = await fetch('/api/dealership', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const res = await response.json();
+            
+            if (response.ok && res.success) {
+              dealerNotification.style.background = 'rgba(34, 197, 94, 0.1)';
+              dealerNotification.style.border = '1px solid rgba(34, 197, 94, 0.3)';
+              dealerNotification.style.color = '#22c55e';
+              dealerNotification.innerHTML = '<i class="ri-checkbox-circle-line"></i> ' + res.message;
+              dealerForm.reset();
+            } else {
+              throw new Error(res.error || 'Failed to submit application');
+            }
+          } catch (err) {
+            dealerNotification.style.background = 'rgba(239, 68, 68, 0.1)';
+            dealerNotification.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+            dealerNotification.style.color = '#EF4444';
+            dealerNotification.innerHTML = '<i class="ri-error-warning-line"></i> ' + err.message;
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

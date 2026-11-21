@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #05050A;
+    --color-secondary: #17171D;
+    --color-gold: #C5A15A;
+    --color-gold-light: #E5C98D;
+    --color-white: #FFFFFF;
+    --color-neutral: #D5D0C7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply font-medium tracking-wide;
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium text-primary bg-gold transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-primary;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-transparent border border-gold transition-all duration-300 hover:bg-gold hover:text-primary focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-primary;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-green-600 transition-all duration-300 hover:bg-green-700 hover:shadow-lg hover:shadow-green-600/30 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-primary;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-medium text-gold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-neutral max-w-3xl;
+  }
+
+  .product-card {
+    @apply relative group overflow-hidden bg-secondary transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-gold/10;
+  }
+
+  .product-card-image {
+    @apply w-full h-64 md:h-72 object-cover transition-transform duration-700 group-hover:scale-105;
+  }
+
+  .product-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-secondary border border-neutral/20 text-white placeholder-neutral/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300;
+  }
+
+  .label-field {
+    @apply block text-sm font-medium text-neutral mb-1;
+  }
+
+  .gold-divider {
+    @apply w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent my-8;
+  }
+
+  .nav-link {
+    @apply relative text-neutral hover:text-gold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold after:transition-all hover:after:w-full;
+  }
+
+  .gold-text {
+    @apply text-gold;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-gold/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-primary;
+}
+
+/* Selection */
+::selection {
+  @apply bg-gold/30 text-white;
+}

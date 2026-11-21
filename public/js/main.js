@@ -1,9 +1,10 @@
 /**
- * Innovix Global Architectural Hardware Animated Engine
+ * INNOVIX GLOBAL - Architectural Hardware
+ * Main JavaScript Module
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // State variables
+  // State
   let allProducts = [];
   let currentCategory = 'all';
   let searchQuery = '';
@@ -12,19 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const productGrid = document.getElementById('productGrid');
   const categoryTabs = document.querySelectorAll('.category-tab');
   const searchInput = document.getElementById('searchInput');
-  const modalBackdrop = document.getElementById('productModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalBodyContent = document.getElementById('modalBodyContent');
   const contactForm = document.getElementById('contactForm');
   const formNotification = document.getElementById('formNotification');
   const dealerForm = document.getElementById('dealerForm');
   const dealerNotification = document.getElementById('dealerNotification');
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const navLinks = document.getElementById('navLinks');
+  const navMenu = document.getElementById('navMenu');
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  const header = document.querySelector('.header');
 
-  // Contact Persons Details
+  // Contact Persons
   const CONTACT_PERSONS = [
-    { name: 'Dholariya Sneh', role: 'Sales Management', phone: '+91 91061 84146', waNumber: '919106184146' },
+    { name: 'Dholariya Sneh', role: 'Key Accounts & Sales', phone: '+91 91061 84146', waNumber: '919106184146' },
     { name: 'Ramani Prem', role: 'Business Operations', phone: '+91 82382 82481', waNumber: '918238282481' }
   ];
 
@@ -35,42 +36,37 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     setupScrollAnimations();
     setupAnimatedCounters();
+    setupHeaderScroll();
     checkUrlQueryParams();
     if (productGrid) {
       await fetchProducts();
     }
   }
 
-  // IntersectionObserver Scroll Reveal Animation Setup
+  // Scroll Animations
   function setupScrollAnimations() {
-    const targets = document.querySelectorAll('.section, .feature-card, .process-card, .contact-info-card, .form-card, .hero-content, .hero-stats');
-    targets.forEach((el) => {
-      if (!el.classList.contains('reveal-up')) {
-        el.classList.add('reveal-up');
-      }
-    });
+    const targets = document.querySelectorAll('.reveal');
+    if (targets.length === 0) return;
 
     const observerOptions = {
       root: null,
-      threshold: 0.12,
-      rootMargin: '0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-active');
+          entry.target.classList.add('active');
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom').forEach(el => {
-      revealObserver.observe(el);
-    });
+    targets.forEach(el => revealObserver.observe(el));
   }
 
-  // Animated Number Counter on Scroll
+  // Animated Counters
   function setupAnimatedCounters() {
     const statValues = document.querySelectorAll('.stat-value');
     if (statValues.length === 0) return;
@@ -104,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         element.innerText = current.toLocaleString() + '+';
       } else if (originalText.includes('%')) {
         element.innerText = current + '%';
+      } else if (originalText.includes(',')) {
+        element.innerText = current.toLocaleString();
       } else {
         element.innerText = current.toLocaleString();
       }
@@ -118,7 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.requestAnimationFrame(step);
   }
 
-  // Highlight active page link based on URL
+  // Header Scroll Effect
+  function setupHeaderScroll() {
+    if (!header) return;
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+  }
+
+  // Highlight Active Page
   function highlightActivePage() {
     let rawPath = window.location.pathname.toLowerCase();
     let currentFileName = rawPath.split('/').pop() || 'index.html';
@@ -142,9 +155,26 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.remove('active');
       }
     });
+
+    // Mobile menu links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      let linkFileName = href.split('/').pop() || 'index.html';
+      if (linkFileName === '' || href === '/') {
+        linkFileName = 'index.html';
+      }
+
+      const currentClean = currentFileName.replace('.html', '');
+      const linkClean = linkFileName.replace('.html', '');
+
+      if (currentClean === linkClean) {
+        link.style.background = 'rgba(197, 161, 90, 0.1)';
+        link.style.color = '#C5A15A';
+      }
+    });
   }
 
-  // Check URL params for category filter (e.g. ?category=mortise)
+  // URL Query Params
   function checkUrlQueryParams() {
     const params = new URLSearchParams(window.location.search);
     const catParam = params.get('category');
@@ -160,37 +190,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Event Listeners
   function setupEventListeners() {
-    // Mobile menu toggle & interactions
-    const navMenu = document.getElementById('navMenu') || navLinks;
-    if (mobileMenuBtn && navMenu) {
-      mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isActive = navMenu.classList.toggle('active');
-        document.body.classList.toggle('menu-open', isActive);
-        mobileMenuBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (icon) {
-          icon.className = isActive ? 'ri-close-line' : 'ri-menu-line';
-        }
+    // Mobile Menu Toggle
+    if (mobileMenuBtn && mobileMenuOverlay) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
       });
+    }
 
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          const icon = mobileMenuBtn.querySelector('i');
-          if (icon) icon.className = 'ri-menu-line';
-        });
+    if (mobileMenuClose && mobileMenuOverlay) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
       });
+    }
 
-      document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') && !e.target.closest('.header')) {
-          navMenu.classList.remove('active');
-          const icon = mobileMenuBtn.querySelector('i');
-          if (icon) icon.className = 'ri-menu-line';
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileMenuOverlay) {
+          mobileMenuOverlay.classList.remove('active');
+          document.body.style.overflow = 'auto';
         }
       });
     }
+
+    // Mobile nav links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenuOverlay) {
+          mobileMenuOverlay.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
 
     // Category Tabs
     categoryTabs.forEach(tab => {
@@ -202,21 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Live Search
+    // Search Input
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value.trim().toLowerCase();
         filterAndRenderProducts();
-      });
-    }
-
-    // Modal Close
-    if (modalCloseBtn) {
-      modalCloseBtn.addEventListener('click', closeModal);
-    }
-    if (modalBackdrop) {
-      modalBackdrop.addEventListener('click', (e) => {
-        if (e.target === modalBackdrop) closeModal();
       });
     }
 
@@ -227,27 +251,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dealerForm) {
       dealerForm.addEventListener('submit', (e) => handleFormSubmit(e, '/api/dealership', dealerForm, dealerNotification));
     }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   }
 
-  // Fetch Products from API
+  // Fetch Products
   async function fetchProducts() {
     try {
       const response = await fetch('/api/products');
       const data = await response.json();
       allProducts = data.products || [];
 
-      // Update tab counts dynamically if tabs exist
+      // Update tab counts
       const allTab = document.querySelector('.category-tab[data-category="all"]');
       const mortiseTab = document.querySelector('.category-tab[data-category="mortise"]');
       const pullTab = document.querySelector('.category-tab[data-category="pull"]');
-      if (allTab) allTab.innerHTML = `<i class="ri-apps-2-line"></i> All Hardware (${allProducts.length})`;
+      if (allTab) allTab.innerHTML = `<i class="ri-apps-2-line"></i> All Products (${allProducts.length})`;
       if (mortiseTab) {
         const mortiseCount = allProducts.filter(p => p.category === 'mortise').length;
         mortiseTab.innerHTML = `<i class="ri-door-open-line"></i> Mortise Handles (${mortiseCount})`;
       }
       if (pullTab) {
         const pullCount = allProducts.filter(p => p.category === 'pull').length;
-        pullTab.innerHTML = `<i class="ri-drag-move-fill"></i> Main Door Pull Handles (${pullCount})`;
+        pullTab.innerHTML = `<i class="ri-drag-move-fill"></i> Main Door Handles (${pullCount})`;
       }
 
       filterAndRenderProducts();
@@ -255,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to fetch products catalog:', error);
       if (productGrid) {
         productGrid.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">
-            <i class="ri-error-warning-line" style="font-size: 2rem; color: #ef4444;"></i>
-            <p style="margin-top: 12px;">Unable to load catalog products right now. Please try refreshing.</p>
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);" class="reveal active">
+            <i class="ri-error-warning-line" style="font-size: 2rem; color: #EF4444;"></i>
+            <p style="margin-top: 12px;">Unable to load catalog products. Please try refreshing.</p>
           </div>
         `;
       }
@@ -285,119 +322,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (filtered.length === 0) {
       productGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);" class="reveal-up reveal-active">
-          <i class="ri-search-line" style="font-size: 3rem; color: var(--accent-gold);"></i>
-          <h3 style="margin-top: 16px; font-size: 1.4rem; color: #ffffff;">No Products Found</h3>
-          <p style="color: var(--text-muted); margin-top: 8px;">Try adjusting your category filter or search terms.</p>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);" class="reveal active">
+          <i class="ri-search-line" style="font-size: 3rem; color: var(--color-gold);"></i>
+          <h3 style="margin-top: 16px; font-size: 1.4rem; color: var(--color-white);">No Products Found</h3>
+          <p style="color: var(--color-neutral-muted); margin-top: 8px;">Try adjusting your category filter or search terms.</p>
         </div>
       `;
       return;
     }
 
     productGrid.innerHTML = filtered.map((product, idx) => `
-      <div class="product-card reveal-up reveal-active" style="transition-delay: ${Math.min(idx * 0.04, 0.3)}s;">
-        <div class="product-image-wrap">
-          <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
-          <span class="product-badge">${product.modelCode}</span>
+      <article class="product-card reveal" style="transition-delay: ${Math.min(idx * 0.04, 0.3)}s;">
+        <a href="product-detail.html?id=${product.id}" class="product-card-link">
+          <div class="product-card-image-wrapper">
+            <img src="${product.image}" alt="${product.name}" class="product-card-image" loading="lazy">
+            <div class="product-card-badges">
+              <span class="badge badge-primary">${product.categoryName}</span>
+            </div>
+          </div>
+          <div class="product-card-overlay">
+            <div class="product-card-overlay-content">
+              <span class="product-card-category">${product.categoryName}</span>
+              <h3 class="product-card-code">${product.modelCode}</h3>
+              <p class="product-card-material">${product.material}</p>
+            </div>
+          </div>
+        </a>
+        <div class="product-card-content">
+          <div class="product-card-finishes">
+            ${product.finishes.slice(0, 3).map(f => `<span class="finish-tag">${f}</span>`).join('')}
+            ${product.finishes.length > 3 ? `<span class="finish-tag more">+${product.finishes.length - 3} more</span>` : ''}
+          </div>
+          <div class="product-card-footer">
+            <div class="product-card-specs">
+              <span><i class="ri-ruler-line"></i> ${product.sizes.length} size${product.sizes.length !== 1 ? 's' : ''}</span>
+              <span><i class="ri-palette-line"></i> ${product.finishes.length} finish${product.finishes.length !== 1 ? 'es' : ''}</span>
+            </div>
+            <span class="product-card-action">View Details <i class="ri-arrow-right-line"></i></span>
+          </div>
         </div>
-        <div class="product-details">
-          <div class="product-category">${product.categoryName}</div>
-          <h3 class="product-title">${product.name}</h3>
-          
-          <div class="product-spec-row">
-            <i class="ri-shield-flash-line" style="color: var(--accent-gold);"></i>
-            <span>${product.material}</span>
-          </div>
-
-          <div class="finishes-tags">
-            ${product.finishes.slice(0, 3).map(f => `<span class="finish-chip">${f}</span>`).join('')}
-            ${product.finishes.length > 3 ? `<span class="finish-chip">+${product.finishes.length - 3} More</span>` : ''}
-          </div>
-
-          <div class="card-actions">
-            <button class="btn btn-outline btn-card view-details-btn" data-id="${product.id}">
-              <i class="ri-eye-line"></i> Quick View
-            </button>
-            <a href="https://wa.me/919106184146?text=${encodeURIComponent(`Hello Innovix Global, I would like to inquire about model ${product.modelCode} (${product.name}). Please share details.`)}"
-               target="_blank" 
-               class="btn btn-whatsapp btn-card">
-              <i class="ri-whatsapp-line"></i> Inquire
-            </a>
-          </div>
-        </div>
-      </div>
+      </article>
     `).join('');
 
-    // Attach click handlers
-    document.querySelectorAll('.view-details-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const productId = btn.dataset.id;
-        const item = allProducts.find(p => p.id === productId);
-        if (item) openProductModal(item);
-      });
+    // Re-observe new elements for scroll animations
+    const newReveals = productGrid.querySelectorAll('.reveal');
+    newReveals.forEach(el => {
+      el.classList.add('active');
     });
   }
 
-  // Open Product Lightbox Modal
-  function openProductModal(product) {
-    if (!modalBackdrop || !modalBodyContent) return;
-
-    modalBodyContent.innerHTML = `
-      <div class="modal-image-wrap">
-        <img src="${product.image}" alt="${product.name}" class="modal-image">
-      </div>
-      <div>
-        <div class="product-category">${product.categoryName} • ${product.modelCode}</div>
-        <h2 style="font-size: 1.8rem; margin: 8px 0 14px 0; color: #ffffff;">${product.name}</h2>
-        <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 22px; line-height: 1.6;">
-          ${product.description}
-        </p>
-
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 18px; border-radius: var(--radius-md); margin-bottom: 20px;">
-          <h4 style="font-size: 0.98rem; color: var(--accent-gold); margin-bottom: 10px; font-weight: 800;">Technical Specifications</h4>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 0.92rem; color: var(--text-muted);">
-            <div><strong style="color: #ffffff;">Material Grade:</strong> ${product.material}</div>
-            <div><strong style="color: #ffffff;">Available Sizes:</strong> ${product.sizes.join(', ')}</div>
-            <div><strong style="color: #ffffff;">Available Finishes:</strong> ${product.finishes.join(', ')}</div>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 24px;">
-          <h4 style="font-size: 0.98rem; color: #ffffff; margin-bottom: 10px; font-weight: 800;">Quality & Engineering Features</h4>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--text-muted);">
-            ${product.features.map(f => `<li style="display: flex; align-items: center; gap: 8px;"><i class="ri-checkbox-circle-fill" style="color: var(--accent-gold);"></i> ${f}</li>`).join('')}
-          </ul>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <label style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">Select Representative for Instant WhatsApp Inquiry:</label>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            ${CONTACT_PERSONS.map(person => `
-              <a href="https://wa.me/${person.waNumber}?text=${encodeURIComponent(`Hello ${person.name}, I am inquiring about catalog item ${product.modelCode} (${product.name}).`)}"
-                 target="_blank" 
-                 class="btn btn-whatsapp" 
-                 style="padding: 11px 12px; font-size: 0.85rem; flex-direction: column; gap: 2px;">
-                <span style="font-weight: 700;">Chat with ${person.name.split(' ')[0]}</span>
-                <span style="font-size: 0.75rem; opacity: 0.9;">${person.phone}</span>
-              </a>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-    `;
-
-    modalBackdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    if (modalBackdrop) {
-      modalBackdrop.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-  }
-
-  // Generic Form Submission Handler
+  // Form Submission Handler
   async function handleFormSubmit(e, endpoint, formElem, notificationElem) {
     e.preventDefault();
     const formData = new FormData(formElem);
@@ -405,8 +379,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (notificationElem) {
       notificationElem.style.display = 'block';
-      notificationElem.innerHTML = '<span style="color: var(--accent-gold);"><i class="ri-loader-4-line spin"></i> Submitting details...</span>';
+      notificationElem.innerHTML = '<span style="color: var(--color-gold);"><i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Submitting details...</span>';
     }
+
+    const submitBtn = formElem.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
 
     try {
       const response = await fetch(endpoint, {
@@ -426,8 +403,56 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (err) {
       if (notificationElem) {
-        notificationElem.innerHTML = `<span style="color: #ef4444;"><i class="ri-error-warning-line"></i> ${err.message}</span>`;
+        notificationElem.innerHTML = `<span style="color: #EF4444;"><i class="ri-error-warning-line"></i> ${err.message}</span>`;
       }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   }
+
+  // Toast Notification System
+  window.showToast = function(message, type = 'info') {
+    const container = document.getElementById('toastContainer') || createToastContainer();
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icons = {
+      success: '<i class="ri-checkbox-circle-line toast-icon"></i>',
+      error: '<i class="ri-error-warning-line toast-icon"></i>',
+      warning: '<i class="ri-alert-line toast-icon"></i>',
+      info: '<i class="ri-information-line toast-icon"></i>'
+    };
+
+    toast.innerHTML = `
+      ${icons[type] || icons.info}
+      <span class="toast-message">${message}</span>
+      <button class="toast-close" onclick="this.parentElement.remove()"><i class="ri-close-line"></i></button>
+    `;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.animation = 'slideInRight 0.3s ease-out reverse';
+      setTimeout(() => toast.remove(), 300);
+    }, 5000);
+  };
+
+  function createToastContainer() {
+    const container = document.createElement('div');
+    container.id = 'toastContainer';
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+    return container;
+  }
 });
+
+// Spin animation for loader
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .spin { animation: spin 1s linear infinite; }
+`;
+document.head.appendChild(style);

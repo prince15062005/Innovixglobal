@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | INNOVIX GLOBAL Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <a href="dashboard.html" class="admin-brand">
+          <div class="admin-brand-icon">
+            <img src="../images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <span class="admin-brand-name">INNOVIX GLOBAL</span>
+        </a>
+      </div>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="dashboard.html" class="admin-nav-item"><i class="ri-dashboard-line"></i> Dashboard</a>
+        <a href="products.html" class="admin-nav-item"><i class="ri-grid-line"></i> Products</a>
+        <a href="categories.html" class="admin-nav-item"><i class="ri-folder-line"></i> Categories</a>
+        <a href="enquiries.html" class="admin-nav-item"><i class="ri-message-3-line"></i> Enquiries</a>
+        <a href="settings.html" class="admin-nav-item active"><i class="ri-settings-3-line"></i> Settings</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-user">
+          <div class="admin-user-avatar"><span id="adminInitials">SA</span></div>
+          <div class="admin-user-info">
+            <div class="admin-user-name" id="adminName">Super Admin</div>
+            <div class="admin-user-role" id="adminRole">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mobile-menu-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="mobile-menu-btn" id="sidebarToggle" aria-label="Toggle sidebar" style="display: none;"><i class="ri-menu-line"></i></button>
+          <h1 class="admin-header-title">Settings</h1>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="admin-page-header">
+          <h1 class="admin-page-title">Website Settings</h1>
+          <div style="color: var(--color-neutral-muted);">Manage website configuration and content</div>
+        </div>
+
+        <div style="display: grid; gap: 32px;">
+          <!-- Company Information -->
+          <section class="admin-panel">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px;">Company Information</h2>
+            <form id="companyForm" class="space-y-6">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="companyName" class="form-label">Company Name</label>
+                  <input type="text" id="companyName" name="name" class="form-input" value="INNOVIX GLOBAL">
+                </div>
+                <div class="form-group">
+                  <label for="companyTagline" class="form-label">Tagline</label>
+                  <input type="text" id="companyTagline" name="tagline" class="form-input" value="THE STRUCTURE OF STYLE">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="companyEmail" class="form-label">Email</label>
+                <input type="email" id="companyEmail" name="email" class="form-input" value="innovixxglobal@gmail.com">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="companyPhone1" class="form-label">Phone 1</label>
+                  <input type="tel" id="companyPhone1" name="phone1" class="form-input" value="+91 91061 84146">
+                </div>
+                <div class="form-group">
+                  <label for="companyPhone2" class="form-label">Phone 2</label>
+                  <input type="tel" id="companyPhone2" name="phone2" class="form-input" value="+91 82382 82481">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="companyAddress" class="form-label">Address</label>
+                <textarea id="companyAddress" name="address" class="form-textarea" rows="3">"Matel", Brahmaniyapara-19, Near Govindbag Vegetable Market, Pedak Road, Rajkot-360003, Gujarat, India</textarea>
+              </div>
+              <div class="form-group">
+                <label for="companyWhatsApp" class="form-label">WhatsApp Number</label>
+                <input type="tel" id="companyWhatsApp" name="whatsapp" class="form-input" value="919106184146" placeholder="91XXXXXXXXXX">
+              </div>
+              <button type="submit" class="btn btn-primary">Save Company Info</button>
+            </form>
+          </section>
+
+          <!-- Hero Section -->
+          <section class="admin-panel">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px;">Hero Section</h2>
+            <form id="heroForm" class="space-y-6">
+              <div class="form-group">
+                <label for="heroHeadline" class="form-label">Headline</label>
+                <input type="text" id="heroHeadline" name="headline" class="form-input" value="Mastercrafting Premium Architectural Door Hardware">
+              </div>
+              <div class="form-group">
+                <label for="heroSubheading" class="form-label">Subheading</label>
+                <textarea id="heroSubheading" name="subheading" class="form-textarea" rows="3">INNOVIX GLOBAL presents its 2026 Collection — precision-forged Mortise Handles, Grand Pull Handles, and premium architectural hardware engineered in Rajkot, India.</textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="heroPrimaryCta" class="form-label">Primary CTA Text</label>
+                  <input type="text" id="heroPrimaryCta" name="primaryCta" class="form-input" value="Explore Collection">
+                </div>
+                <div class="form-group">
+                  <label for="heroSecondaryCta" class="form-label">Secondary CTA Text</label>
+                  <input type="text" id="heroSecondaryCta" name="secondaryCta" class="form-input" value="Request a Quote">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Save Hero Settings</button>
+            </form>
+          </section>
+
+          <!-- SEO Settings -->
+          <section class="admin-panel">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px;">SEO Settings</h2>
+            <form id="seoForm" class="space-y-6">
+              <div class="form-group">
+                <label for="seoTitle" class="form-label">Site Title</label>
+                <input type="text" id="seoTitle" name="title" class="form-input" value="INNOVIX GLOBAL | Architectural Hardware">
+              </div>
+              <div class="form-group">
+                <label for="seoDescription" class="form-label">Meta Description</label>
+                <textarea id="seoDescription" name="description" class="form-textarea" rows="3">Premium architectural hardware and designer handles for residential and commercial applications in India.</textarea>
+              </div>
+              <div class="form-group">
+                <label for="seoCanonical" class="form-label">Canonical URL</label>
+                <input type="url" id="seoCanonical" name="canonical" class="form-input" value="https://www.innovixglobal.in/">
+              </div>
+              <button type="submit" class="btn btn-primary">Save SEO Settings</button>
+            </form>
+          </section>
+
+          <!-- Admin Account -->
+          <section class="admin-panel">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px;">Admin Account</h2>
+            <form id="adminProfileForm" class="space-y-6">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="adminName" class="form-label">Name</label>
+                  <input type="text" id="adminName" name="name" class="form-input" value="Super Admin">
+                </div>
+                <div class="form-group">
+                  <label for="adminEmail" class="form-label">Email</label>
+                  <input type="email" id="adminEmail" name="email" class="form-input" value="admin@innovixglobal.in">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Change Password</label>
+                <div style="display: grid; gap: 16px;">
+                  <input type="password" id="currentPassword" class="form-input" placeholder="Current password">
+                  <input type="password" id="newPassword" class="form-input" placeholder="New password">
+                  <input type="password" id="confirmPassword" class="form-input" placeholder="Confirm new password">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Mobile sidebar toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const adminSidebar = document.getElementById('adminSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (sidebarToggle && adminSidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        adminSidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('active');
+      });
+      sidebarOverlay.addEventListener('click', () => {
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      });
+    }
+
+    function checkScreenSize() {
+      if (window.innerWidth < 992) sidebarToggle.style.display = 'flex';
+      else { sidebarToggle.style.display = 'none'; adminSidebar.classList.remove('open'); sidebarOverlay.classList.remove('active'); }
+    }
+    window.addEventListener('resize', checkScreenSize);
+    checkScreenSize();
+
+    async function fetchJSON(url, options) {
+      const res = await fetch(url, options || {});
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Request failed.');
+      return payload;
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer') || createToastContainer();
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = { success: '<i class="ri-checkbox-circle-line toast-icon"></i>', error: '<i class="ri-error-warning-line toast-icon"></i>', warning: '<i class="ri-alert-line toast-icon"></i>', info: '<i class="ri-information-line toast-icon"></i>' };
+      toast.innerHTML = `${icons[type] || icons.info}<span class="toast-message">${message}</span><button class="toast-close" onclick="this.parentElement.remove()"><i class="ri-close-line"></i></button>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.style.animation = 'slideInRight 0.3s ease-out reverse'; setTimeout(() => toast.remove(), 300); }, 5000);
+    }
+    function createToastContainer() { const c = document.createElement('div'); c.id = 'toastContainer'; c.className = 'toast-container'; document.body.appendChild(c); return c; }
+
+    // Load settings
+    async function loadSettings() {
+      try {
+        const site = await fetchJSON('/api/admin/settings');
+        if (site.company) {
+          document.getElementById('companyName').value = site.company.name || '';
+          document.getElementById('companyTagline').value = site.company.brand || '';
+          document.getElementById('companyEmail').value = site.company.email || '';
+          document.getElementById('companyPhone1').value = site.company.contacts?.[0]?.phone || '';
+          document.getElementById('companyPhone2').value = site.company.contacts?.[1]?.phone || '';
+          document.getElementById('companyAddress').value = site.company.address || '';
+          document.getElementById('companyWhatsApp').value = site.company.contacts?.[0]?.rawPhone || '';
+        }
+        if (site.hero) {
+          document.getElementById('heroHeadline').value = site.hero.headline || '';
+          document.getElementById('heroSubheading').value = site.hero.subheading || '';
+          document.getElementById('heroPrimaryCta').value = site.hero.primaryCta || '';
+          document.getElementById('heroSecondaryCta').value = site.hero.secondaryCta || '';
+        }
+        if (site.seo) {
+          document.getElementById('seoTitle').value = site.seo.title || '';
+          document.getElementById('seoDescription').value = site.seo.description || '';
+          document.getElementById('seoCanonical').value = site.seo.canonical || '';
+        }
+        // Admin profile
+        const profile = await fetchJSON('/api/admin/profile');
+        if (profile.user) {
+          document.getElementById('adminName').value = profile.user.name || '';
+          document.getElementById('adminEmail').value = profile.user.email || '';
+        }
+      } catch (error) {
+        console.error('Failed to load settings:', error);
+      }
+    }
+
+    // Form handlers
+    document.getElementById('companyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+      try {
+        const payload = {
+          company: {
+            name: document.getElementById('companyName').value,
+            brand: document.getElementById('companyName').value,
+            tagline: document.getElementById('companyTagline').value,
+            email: document.getElementById('companyEmail').value,
+            address: document.getElementById('companyAddress').value,
+            contacts: [
+              { name: 'Dholariya Sneh', role: 'Key Accounts & Sales', phone: document.getElementById('companyPhone1').value, rawPhone: document.getElementById('companyWhatsApp').value },
+              { name: 'Ramani Prem', role: 'Business Operations', phone: document.getElementById('companyPhone2').value, rawPhone: document.getElementById('companyPhone2').value.replace(/\D/g, '') }
+            ]
+          }
+        };
+        await fetchJSON('/api/admin/settings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        showToast('Company information saved', 'success');
+      } catch (error) { showToast(error.message, 'error'); }
+      finally { btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    document.getElementById('heroForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+      try {
+        await fetchJSON('/api/admin/settings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ hero: { headline: document.getElementById('heroHeadline').value, subheading: document.getElementById('heroSubheading').value, primaryCta: document.getElementById('heroPrimaryCta').value, secondaryCta: document.getElementById('heroSecondaryCta').value } }) });
+        showToast('Hero settings saved', 'success');
+      } catch (error) { showToast(error.message, 'error'); }
+      finally { btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    document.getElementById('seoForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+      try {
+        await fetchJSON('/api/admin/settings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ seo: { title: document.getElementById('seoTitle').value, description: document.getElementById('seoDescription').value, canonical: document.getElementById('seoCanonical').value } }) });
+        showToast('SEO settings saved', 'success');
+      } catch (error) { showToast(error.message, 'error'); }
+      finally { btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    document.getElementById('adminProfileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      const newPass = document.getElementById('newPassword').value;
+      const confirmPass = document.getElementById('confirmPassword').value;
+      
+      if (newPass || confirmPass) {
+        if (newPass !== confirmPass) { showToast('Passwords do not match', 'error'); return; }
+        if (newPass.length < 8) { showToast('Password must be at least 8 characters', 'error'); return; }
+      }
+      
+      btn.disabled = true; btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+      try {
+        const payload = { name: document.getElementById('adminName').value, email: document.getElementById('adminEmail').value };
+        if (newPass) payload.password = newPass;
+        await fetchJSON('/api/admin/profile', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        showToast('Profile updated', 'success');
+        document.getElementById('currentPassword').value = '';
+        document.getElementById('newPassword').value = '';
+        document.getElementById('confirmPassword').value = '';
+      } catch (error) { showToast(error.message, 'error'); }
+      finally { btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/login';
+    });
+
+    loadSettings();
+  </script>
+</body>
+</html>

@@ -13,6 +13,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const DATA_DIR = path.join(__dirname, 'data');
 const PRODUCTS_FILE = path.join(DATA_DIR, 'products.json');
+const CATEGORIES_FILE = path.join(DATA_DIR, 'categories.json');
 const SITE_FILE = path.join(DATA_DIR, 'site.json');
 const INQUIRIES_FILE = path.join(DATA_DIR, 'inquiries.json');
 const USERS_FILE = path.join(DATA_DIR, 'user-store.json');
@@ -34,22 +35,14 @@ const COMPANY_INFO = {
 const DEFAULT_SITE = {
   company: COMPANY_INFO,
   hero: {
-    headline: 'Luxury hardware designed for bold entrances and lasting impressions.',
-    subheading: 'Innovix Global crafts premium mortise handles, statement pull handles, and architectural hardware for residential and commercial projects across India.',
-    primaryCta: 'Explore catalog',
-    secondaryCta: 'Request a quote'
+    headline: 'Mastercrafting Premium Architectural Door Hardware',
+    subheading: 'INNOVIX GLOBAL presents its 2026 Collection — precision-forged Mortise Handles, Grand Pull Handles, and premium architectural hardware engineered in Rajkot, India.',
+    primaryCta: 'Explore Collection',
+    secondaryCta: 'Request a Quote'
   },
   services: [
-    {
-      title: 'Mortise Handles',
-      description: 'Elegant lever and mortise solutions for premium residences, villas, and hospitality interiors.',
-      icon: 'ri-door-open-line'
-    },
-    {
-      title: 'Main Door Pulls',
-      description: 'Architectural pulls designed for entrances, lobbies, showrooms, and statement façades.',
-      icon: 'ri-drag-move-fill'
-    }
+    { title: 'Mortise Handles', description: 'Elegant lever and mortise solutions for premium residences, villas, and hospitality interiors.', icon: 'ri-door-open-line' },
+    { title: 'Main Door Pulls', description: 'Architectural pulls designed for entrances, lobbies, showrooms, and statement façades.', icon: 'ri-drag-move-fill' }
   ],
   stats: [
     { value: '250K+', label: 'Cycle fatigue tested' },
@@ -78,11 +71,16 @@ const DEFAULT_SITE = {
     { q: 'Are your products suitable for hospitality and commercial use?', a: 'Yes. Our hardware is chosen for durability, finish consistency, and premium everyday performance.' }
   ],
   seo: {
-    title: 'Innovix Global | Architectural Hardware',
+    title: 'INNOVIX GLOBAL | Architectural Hardware',
     description: 'Premium architectural hardware and designer handles for residential and commercial applications in India.',
     canonical: 'https://www.innovixglobal.in/'
   }
 };
+
+const DEFAULT_CATEGORIES = [
+  { id: 'cat-1', name: 'Main Door Handles', slug: 'main-door-handles', description: 'Premium main door handles crafted with precision and elegance', image: '/images/IGPH-211.jpg', status: 'active' },
+  { id: 'cat-2', name: 'Mortise Handles', slug: 'mortise-handles', description: 'Exquisite mortise handles for sophisticated interiors', image: '/images/IGM-001.jpg', status: 'active' }
+];
 
 function ensureDirectory(dirPath) {
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
@@ -115,6 +113,18 @@ function readProducts() {
     console.error('Failed to read product catalog:', error.message);
   }
   return [];
+}
+
+function writeProducts(products) {
+  writeJson(PRODUCTS_FILE, products);
+}
+
+function readCategories() {
+  return readJson(CATEGORIES_FILE, DEFAULT_CATEGORIES);
+}
+
+function writeCategories(categories) {
+  writeJson(CATEGORIES_FILE, categories);
 }
 
 function readSiteData() {
@@ -158,25 +168,42 @@ async function ensureSeedAdminUser() {
 const app = express();
 
 app.disable('x-powered-by');
+
+// Build CSP header manually to avoid Helmet 7+ default upgrade-insecure-requests
+const cspDirectives = {
+  'default-src': ["'self'"],
+  'script-src': ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+  'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'https://cdn.jsdelivr.net'],
+  'img-src': ["'self'", 'data:', 'https:', 'blob:'],
+  'font-src': ["'self'", 'https://fonts.gstatic.com', 'https://cdn.jsdelivr.net'],
+  'connect-src': ["'self'"],
+  'frame-src': ["'self'"],
+  'object-src': ["'none'"],
+  'base-uri': ["'self'"],
+  'form-action': ["'self'"],
+  'frame-ancestors': ["'self'"],
+  'script-src-attr': ["'none'"]
+};
+
+if (isProduction) {
+  cspDirectives['upgrade-insecure-requests'] = [];
+}
+
+const cspHeader = Object.entries(cspDirectives)
+  .map(([key, values]) => values.length > 0 ? `${key} ${values.join(' ')}` : key)
+  .join('; ');
+
 app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
-      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'https://cdn.jsdelivr.net'],
-      imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'https://cdn.jsdelivr.net'],
-      connectSrc: ["'self'", 'https://maps.google.com'],
-      frameSrc: ["'self'", 'https://maps.google.com'],
-      objectSrc: ["'none'"],
-      baseUri: ["'self'"],
-      formAction: ["'self'"],
-      upgradeInsecureRequests: isProduction ? [] : null
-    }
-  },
+  contentSecurityPolicy: false, // Disable Helmet's CSP, we'll set it manually
   crossOriginEmbedderPolicy: false,
-  hsts: { maxAge: 31536000, includeSubDomains: true, preload: true }
+  hsts: isProduction ? { maxAge: 31536000, includeSubDomains: true, preload: true } : false
 }));
+
+// Custom CSP middleware
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', cspHeader);
+  next();
+});
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -217,19 +244,78 @@ function requireAuth(req, res, next) {
   return res.redirect('/admin/login');
 }
 
+// Public routes
 app.get(['/','/index','/index.html','/home'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'index.html')));
 app.get(['/about','/about.html','/aboutus'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'about.html')));
 app.get(['/products','/products.html','/product'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'products.html')));
-app.get(['/services','/services.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'services.html')));
-app.get(['/manufacturing','/manufacturing.html','/quality'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'manufacturing.html')));
-app.get(['/dealership','/dealership.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'dealership.html')));
+app.get(['/product-detail','/product-detail.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'product-detail.html')));
+app.get(['/how-to-clean','/how-to-clean.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'how-to-clean.html')));
 app.get(['/contact','/contact.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'contact.html')));
 app.get(['/privacy-policy','/privacy-policy.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'privacy-policy.html')));
 app.get(['/terms-and-conditions','/terms-and-conditions.html'], (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'terms-and-conditions.html')));
 app.get('/robots.txt', (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'robots.txt')));
-app.get('/sitemap.xml', (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'sitemap.xml')));
+
+// Dynamic Sitemap Generation
+app.get('/sitemap.xml', async (req, res) => {
+  try {
+    const products = readProducts();
+    const baseUrl = 'https://www.innovixglobal.in';
+    const today = new Date().toISOString().split('T')[0];
+    
+    let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    
+    // Static pages
+    const staticPages = [
+      { url: '', priority: '1.0', changefreq: 'weekly' },
+      { url: '/about.html', priority: '0.8', changefreq: 'monthly' },
+      { url: '/products.html', priority: '0.9', changefreq: 'weekly' },
+      { url: '/how-to-clean.html', priority: '0.6', changefreq: 'monthly' },
+      { url: '/contact.html', priority: '0.7', changefreq: 'monthly' },
+      { url: '/products.html?category=pull', priority: '0.8', changefreq: 'weekly' },
+      { url: '/products.html?category=mortise', priority: '0.8', changefreq: 'weekly' },
+      { url: '/services.html', priority: '0.7', changefreq: 'monthly' },
+      { url: '/manufacturing.html', priority: '0.7', changefreq: 'monthly' },
+      { url: '/dealership.html', priority: '0.6', changefreq: 'monthly' }
+    ];
+    
+    staticPages.forEach(page => {
+      sitemap += `
+  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+    });
+    
+    // Product pages
+    products.forEach(product => {
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/product-detail.html?id=${product.id}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+    });
+    
+    sitemap += `
+</urlset>`;
+    
+    res.set('Content-Type', 'application/xml');
+    res.send(sitemap);
+  } catch (error) {
+    console.error('Sitemap generation error:', error);
+    res.set('Content-Type', 'application/xml');
+    res.sendFile(path.join(PUBLIC_DIR, 'sitemap.xml'));
+  }
+});
+
+app.get('/404.html', (req, res) => res.sendFile(path.join(PUBLIC_DIR, '404.html')));
 app.get('/404.html', (req, res) => res.sendFile(path.join(PUBLIC_DIR, '404.html')));
 
+// Public API
 app.get('/api/company', (req, res) => res.json(COMPANY_INFO));
 
 app.get('/api/site', (req, res) => {
@@ -254,7 +340,7 @@ app.post('/api/site', requireAuth, (req, res) => {
 app.get('/api/products', (req, res) => {
   const products = readProducts();
   let filtered = products;
-  const { category, search, id } = req.query;
+  const { category, search, id, status } = req.query;
 
   if (id) {
     const found = filtered.find((product) => String(product.id).toLowerCase() === String(id).toLowerCase());
@@ -264,6 +350,10 @@ app.get('/api/products', (req, res) => {
 
   if (category && category !== 'all') {
     filtered = filtered.filter((product) => product.category === category);
+  }
+
+  if (status && status !== 'all') {
+    filtered = filtered.filter((product) => product.status === status);
   }
 
   if (search) {
@@ -284,8 +374,9 @@ app.get('/api/products', (req, res) => {
   res.json({ total: filtered.length, products: filtered });
 });
 
+// Public contact forms
 app.post('/api/contact', (req, res) => {
-  const { name, email, phone, subject, message } = req.body || {};
+  const { name, email, phone, subject, message, productCode, company } = req.body || {};
   if (!name || !email || !phone) {
     return res.status(400).json({ error: 'Please provide your name, email, and contact number.' });
   }
@@ -298,6 +389,8 @@ app.post('/api/contact', (req, res) => {
     phone: String(phone).trim(),
     subject: String(subject || 'General inquiry').trim(),
     message: String(message || '').trim(),
+    productCode: productCode || null,
+    company: company || null,
     status: 'new',
     createdAt: new Date().toISOString()
   });
@@ -350,9 +443,14 @@ app.post('/api/dealership', (req, res) => {
   res.json({ success: true, message: 'Thank you for your dealership application. Our sales manager will contact you within 24 hours.' });
 });
 
+// Admin routes
 app.get('/admin/login', (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'login.html')));
 app.get('/admin', requireAuth, (req, res) => res.redirect('/admin/dashboard'));
 app.get('/admin/dashboard', requireAuth, (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'dashboard.html')));
+app.get('/admin/products', requireAuth, (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'products.html')));
+app.get('/admin/categories', requireAuth, (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'categories.html')));
+app.get('/admin/enquiries', requireAuth, (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'enquiries.html')));
+app.get('/admin/settings', requireAuth, (req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin', 'settings.html')));
 
 app.post('/admin/login', authLimiter, async (req, res) => {
   const { email, password } = req.body || {};
@@ -395,6 +493,26 @@ app.get('/api/admin/profile', requireAuth, (req, res) => {
   res.json({ user: req.session.user });
 });
 
+app.put('/api/admin/profile', requireAuth, async (req, res) => {
+  const { name, email, password } = req.body || {};
+  const users = readJson(USERS_FILE, []);
+  const userIndex = users.findIndex(u => u.id === req.session.user.id);
+  
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+  
+  if (name) users[userIndex].name = name;
+  if (email) users[userIndex].email = email;
+  if (password) users[userIndex].passwordHash = await bcrypt.hash(password, 10);
+  users[userIndex].updatedAt = new Date().toISOString();
+  
+  writeJson(USERS_FILE, users);
+  
+  req.session.user = { ...req.session.user, name: users[userIndex].name, email: users[userIndex].email };
+  res.json({ success: true, user: req.session.user });
+});
+
 app.get('/api/admin/summary', requireAuth, (req, res) => {
   const site = readSiteData();
   const inquiries = readInquiries();
@@ -413,25 +531,274 @@ app.get('/api/admin/summary', requireAuth, (req, res) => {
   });
 });
 
-app.get('/api/admin/inquiries', requireAuth, (req, res) => {
-  res.json(readInquiries());
+// Admin Products API
+app.get('/api/admin/products', requireAuth, (req, res) => {
+  const products = readProducts();
+  let filtered = products;
+  const { category, search, status } = req.query;
+
+  if (category && category !== 'all') {
+    filtered = filtered.filter((product) => product.category === category);
+  }
+
+  if (status && status !== 'all') {
+    filtered = filtered.filter((product) => product.status === status);
+  }
+
+  if (search) {
+    const searchTerm = String(search).toLowerCase();
+    filtered = filtered.filter((product) => {
+      const values = [
+        product.name,
+        product.modelCode,
+        product.categoryName,
+        product.description,
+        product.material,
+        ...(Array.isArray(product.finishes) ? product.finishes : [])
+      ];
+      return values.some((value) => String(value).toLowerCase().includes(searchTerm));
+    });
+  }
+
+  res.json({ total: filtered.length, products: filtered });
 });
 
-app.patch('/api/admin/inquiries/:id', requireAuth, (req, res) => {
+app.post('/api/admin/products', requireAuth, (req, res) => {
+  const products = readProducts();
+  const { productCode, name, category, status, description, material, featured, finishes, sizes, image } = req.body || {};
+  
+  if (!productCode || !name || !category || !material || !finishes || !sizes) {
+    return res.status(400).json({ error: 'Missing required fields: productCode, name, category, material, finishes, sizes' });
+  }
+  
+  if (products.find(p => p.productCode === productCode || p.id === productCode)) {
+    return res.status(400).json({ error: 'Product code already exists' });
+  }
+
+  const newProduct = {
+    id: productCode,
+    productCode,
+    name,
+    modelCode: productCode,
+    category,
+    categoryName: category === 'pull' ? 'Main Door Handles' : 'Mortise Handles',
+    status: status || 'published',
+    description: description || '',
+    material,
+    featured: featured || false,
+    finishes: Array.isArray(finishes) ? finishes : finishes.split('\n').map(f => f.trim()).filter(f => f),
+    sizes: Array.isArray(sizes) ? sizes : sizes.split('\n').map(s => s.trim()).filter(s => s),
+    image: image || `/images/${productCode.toLowerCase()}.jpg`,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+
+  products.push(newProduct);
+  writeProducts(products);
+  res.status(201).json({ success: true, product: newProduct });
+});
+
+app.put('/api/admin/products/:id', requireAuth, (req, res) => {
+  const products = readProducts();
+  const index = products.findIndex(p => p.id === req.params.id || p.productCode === req.params.id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: 'Product not found' });
+  }
+
+  const { productCode, name, category, status, description, material, featured, finishes, sizes, image } = req.body || {};
+  
+  if (productCode && productCode !== products[index].productCode) {
+    if (products.find(p => p.productCode === productCode)) {
+      return res.status(400).json({ error: 'Product code already exists' });
+    }
+  }
+
+  products[index] = {
+    ...products[index],
+    productCode: productCode || products[index].productCode,
+    name: name || products[index].name,
+    modelCode: productCode || products[index].modelCode,
+    category: category || products[index].category,
+    categoryName: (category || products[index].category) === 'pull' ? 'Main Door Handles' : 'Mortise Handles',
+    status: status || products[index].status,
+    description: description !== undefined ? description : products[index].description,
+    material: material || products[index].material,
+    featured: featured !== undefined ? featured : products[index].featured,
+    finishes: finishes ? (Array.isArray(finishes) ? finishes : finishes.split('\n').map(f => f.trim()).filter(f => f)) : products[index].finishes,
+    sizes: sizes ? (Array.isArray(sizes) ? sizes : sizes.split('\n').map(s => s.trim()).filter(s => s)) : products[index].sizes,
+    image: image !== undefined ? image : products[index].image,
+    updatedAt: new Date().toISOString()
+  };
+
+  writeProducts(products);
+  res.json({ success: true, product: products[index] });
+});
+
+app.delete('/api/admin/products/:id', requireAuth, (req, res) => {
+  let products = readProducts();
+  const index = products.findIndex(p => p.id === req.params.id || p.productCode === req.params.id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: 'Product not found' });
+  }
+
+  products.splice(index, 1);
+  writeProducts(products);
+  res.json({ success: true, message: 'Product deleted successfully' });
+});
+
+// Admin Categories API
+app.get('/api/admin/categories', requireAuth, (req, res) => {
+  const categories = readCategories();
+  res.json({ categories });
+});
+
+app.post('/api/admin/categories', requireAuth, (req, res) => {
+  const categories = readCategories();
+  const { name, slug, description, image, status } = req.body || {};
+  
+  if (!name || !slug) {
+    return res.status(400).json({ error: 'Name and slug are required' });
+  }
+  
+  if (categories.find(c => c.slug === slug)) {
+    return res.status(400).json({ error: 'Category slug already exists' });
+  }
+
+  const newCategory = {
+    id: `cat-${Date.now()}`,
+    name,
+    slug,
+    description: description || '',
+    image: image || '/images/placeholder.jpg',
+    status: status || 'active',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+
+  categories.push(newCategory);
+  writeCategories(categories);
+  res.status(201).json({ success: true, category: newCategory });
+});
+
+app.put('/api/admin/categories/:id', requireAuth, (req, res) => {
+  const categories = readCategories();
+  const index = categories.findIndex(c => c.id === req.params.id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: 'Category not found' });
+  }
+
+  const { name, slug, description, image, status } = req.body || {};
+  
+  if (slug && slug !== categories[index].slug) {
+    if (categories.find(c => c.slug === slug)) {
+      return res.status(400).json({ error: 'Category slug already exists' });
+    }
+  }
+
+  categories[index] = {
+    ...categories[index],
+    name: name || categories[index].name,
+    slug: slug || categories[index].slug,
+    description: description !== undefined ? description : categories[index].description,
+    image: image !== undefined ? image : categories[index].image,
+    status: status || categories[index].status,
+    updatedAt: new Date().toISOString()
+  };
+
+  writeCategories(categories);
+  res.json({ success: true, category: categories[index] });
+});
+
+app.delete('/api/admin/categories/:id', requireAuth, (req, res) => {
+  let categories = readCategories();
+  const index = categories.findIndex(c => c.id === req.params.id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: 'Category not found' });
+  }
+
+  categories.splice(index, 1);
+  writeCategories(categories);
+  res.json({ success: true, message: 'Category deleted successfully' });
+});
+
+// Admin Enquiries API
+app.get('/api/admin/enquiries', requireAuth, (req, res) => {
+  const inquiries = readInquiries();
+  let filtered = inquiries;
+  const { search, status } = req.query;
+
+  if (status && status !== 'all') {
+    filtered = filtered.filter((i) => i.status === status);
+  }
+
+  if (search) {
+    const searchTerm = String(search).toLowerCase();
+    filtered = filtered.filter((i) => {
+      const values = [i.name, i.email, i.phone, i.subject, i.message, i.productCode, i.company];
+      return values.some((v) => String(v || '').toLowerCase().includes(searchTerm));
+    });
+  }
+
+  res.json({ enquiries: filtered });
+});
+
+app.patch('/api/admin/enquiries/:id', requireAuth, (req, res) => {
   const { status } = req.body || {};
   const inquiries = readInquiries();
   const item = inquiries.find((entry) => entry.id === req.params.id);
 
   if (!item) {
-    return res.status(404).json({ error: 'Inquiry not found.' });
+    return res.status(404).json({ error: 'Enquiry not found.' });
   }
 
   item.status = status || item.status;
   item.updatedAt = new Date().toISOString();
   writeInquiries(inquiries);
-  return res.json({ success: true, inquiry: item });
+  return res.json({ success: true, enquiry: item });
 });
 
+app.delete('/api/admin/enquiries/:id', requireAuth, (req, res) => {
+  let inquiries = readInquiries();
+  const index = inquiries.findIndex(i => i.id === req.params.id);
+  
+  if (index === -1) {
+    return res.status(404).json({ error: 'Enquiry not found' });
+  }
+
+  inquiries.splice(index, 1);
+  writeInquiries(inquiries);
+  res.json({ success: true, message: 'Enquiry deleted successfully' });
+});
+
+// Admin Settings API
+app.get('/api/admin/settings', requireAuth, (req, res) => {
+  const site = readSiteData();
+  res.json(site);
+});
+
+app.post('/api/admin/settings', requireAuth, (req, res) => {
+  const site = readSiteData();
+  const incoming = req.body || {};
+  
+  if (incoming.company) site.company = { ...site.company, ...incoming.company };
+  if (incoming.hero) site.hero = { ...site.hero, ...incoming.hero };
+  if (incoming.seo) site.seo = { ...site.seo, ...incoming.seo };
+  if (Array.isArray(incoming.services)) site.services = incoming.services;
+  if (Array.isArray(incoming.projects)) site.projects = incoming.projects;
+  if (Array.isArray(incoming.testimonials)) site.testimonials = incoming.testimonials;
+  if (Array.isArray(incoming.faq)) site.faq = incoming.faq;
+  if (Array.isArray(incoming.process)) site.process = incoming.process;
+  if (Array.isArray(incoming.stats)) site.stats = incoming.stats;
+  
+  writeSiteData(site);
+  res.json({ success: true, message: 'Settings saved successfully.' });
+});
+
+// 404 handler
 app.use((req, res) => {
   res.status(404).sendFile(path.join(PUBLIC_DIR, '404.html'));
 });

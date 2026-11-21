@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Management | INNOVIX GLOBAL Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <a href="dashboard.html" class="admin-brand">
+          <div class="admin-brand-icon">
+            <img src="../images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <span class="admin-brand-name">INNOVIX GLOBAL</span>
+        </a>
+      </div>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="dashboard.html" class="admin-nav-item"><i class="ri-dashboard-line"></i> Dashboard</a>
+        <a href="products.html" class="admin-nav-item active"><i class="ri-grid-line"></i> Products</a>
+        <a href="categories.html" class="admin-nav-item"><i class="ri-folder-line"></i> Categories</a>
+        <a href="enquiries.html" class="admin-nav-item"><i class="ri-message-3-line"></i> Enquiries</a>
+        <a href="settings.html" class="admin-nav-item"><i class="ri-settings-3-line"></i> Settings</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-user">
+          <div class="admin-user-avatar"><span id="adminInitials">SA</span></div>
+          <div class="admin-user-info">
+            <div class="admin-user-name" id="adminName">Super Admin</div>
+            <div class="admin-user-role" id="adminRole">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mobile-menu-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="mobile-menu-btn" id="sidebarToggle" aria-label="Toggle sidebar" style="display: none;"><i class="ri-menu-line"></i></button>
+          <h1 class="admin-header-title">Products Management</h1>
+        </div>
+        <div class="admin-header-actions">
+          <button class="btn btn-primary" id="addProductBtn"><i class="ri-add-line"></i> Add Product</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="admin-page-header">
+          <h1 class="admin-page-title">Products</h1>
+          <div style="color: var(--color-neutral-muted);">Manage your product catalog</div>
+        </div>
+
+        <!-- Search & Filter -->
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; align-items: center;">
+          <div style="flex: 1; min-width: 280px; position: relative;">
+            <i class="ri-search-line" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--color-neutral-muted);"></i>
+            <input type="text" id="searchProducts" class="form-input" placeholder="Search products..." style="padding-left: 48px;">
+          </div>
+          <select id="filterCategory" class="form-select" style="width: auto; min-width: 200px;">
+            <option value="">All Categories</option>
+            <option value="pull">Main Door Handles</option>
+            <option value="mortise">Mortise Handles</option>
+          </select>
+          <select id="filterStatus" class="form-select" style="width: auto; min-width: 180px;">
+            <option value="">All Status</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+          </select>
+        </div>
+
+        <!-- Products Table -->
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Image</th>
+                <th>Product Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Material</th>
+                <th>Finishes</th>
+                <th>Status</th>
+                <th style="width: 120px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; gap: 16px;">
+          <div style="color: var(--color-neutral-muted);" id="paginationInfo">Showing 0 of 0 products</div>
+          <div style="display: flex; gap: 8px;" id="paginationControls"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal" style="max-width: 900px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="productModalTitle">Add Product</h2>
+        <button class="modal-close" id="productModalClose" aria-label="Close modal"><i class="ri-close-line"></i></button>
+      </div>
+      <form class="modal-body" id="productForm">
+        <input type="hidden" name="id" id="productId">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productCode" class="form-label">Product Code <span style="color: var(--color-gold);">*</span></label>
+            <input type="text" id="productCode" name="productCode" class="form-input" placeholder="e.g., IGPH-211" required>
+          </div>
+          <div class="form-group">
+            <label for="productName" class="form-label">Product Name <span style="color: var(--color-gold);">*</span></label>
+            <input type="text" id="productName" name="name" class="form-input" placeholder="e.g., Aura Lattice Imperial Pull Handle" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productCategory" class="form-label">Category <span style="color: var(--color-gold);">*</span></label>
+            <select id="productCategory" name="category" class="form-select" required>
+              <option value="pull">Main Door Handles</option>
+              <option value="mortise">Mortise Handles</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="productStatus" class="form-label">Status</label>
+            <select id="productStatus" name="status" class="form-select">
+              <option value="published">Published</option>
+              <option value="draft">Draft</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="productDescription" class="form-label">Description</label>
+          <textarea id="productDescription" name="description" class="form-textarea" placeholder="Product description..." rows="3"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productMaterial" class="form-label">Material <span style="color: var(--color-gold);">*</span></label>
+            <input type="text" id="productMaterial" name="material" class="form-input" placeholder="e.g., SS + Brass" required>
+          </div>
+          <div class="form-group">
+            <label for="productFeatured" class="form-label">Featured</label>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="checkbox" id="productFeatured" name="featured" value="true" style="width: 20px; height: 20px; accent-color: var(--color-gold);">
+              <label for="productFeatured" style="font-weight: 500; cursor: pointer;">Mark as featured</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Finishes (one per line) <span style="color: var(--color-gold);">*</span></label>
+          <textarea id="productFinishes" name="finishes" class="form-textarea" placeholder="Black/R.Gold&#10;AB/Gold&#10;R.Gold/TT" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Sizes (one per line) <span style="color: var(--color-gold);">*</span></label>
+          <textarea id="productSizes" name="sizes" class="form-textarea" placeholder="300mm&#10;450mm&#10;600mm" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="productImage" class="form-label">Main Image URL</label>
+          <input type="url" id="productImage" name="image" class="form-input" placeholder="/images/IGPH-211.jpg">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="productModalCancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="productModalSubmit">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+    <div class="modal" style="max-width: 480px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="deleteModalTitle">Delete Product</h2>
+        <button class="modal-close" id="deleteModalClose" aria-label="Close modal"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--color-neutral);">Are you sure you want to delete <strong id="deleteProductName"></strong>? This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="deleteModalCancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="deleteModalConfirm">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile sidebar toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const adminSidebar = document.getElementById('adminSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (sidebarToggle && adminSidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        adminSidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('active');
+      });
+      sidebarOverlay.addEventListener('click', () => {
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      });
+    }
+
+    function checkScreenSize() {
+      if (window.innerWidth < 992) {
+        sidebarToggle.style.display = 'flex';
+      } else {
+        sidebarToggle.style.display = 'none';
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      }
+    }
+    window.addEventListener('resize', checkScreenSize);
+    checkScreenSize();
+
+    // State
+    let allProducts = [];
+    let currentPage = 1;
+    const productsPerPage = 20;
+    let deleteProductId = null;
+
+    async function fetchJSON(url, options) {
+      const res = await fetch(url, options || {});
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Request failed.');
+      return payload;
+    }
+
+    // Toast notifications
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer') || createToastContainer();
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = {
+        success: '<i class="ri-checkbox-circle-line toast-icon"></i>',
+        error: '<i class="ri-error-warning-line toast-icon"></i>',
+        warning: '<i class="ri-alert-line toast-icon"></i>',
+        info: '<i class="ri-information-line toast-icon"></i>'
+      };
+      toast.innerHTML = `${icons[type] || icons.info}<span class="toast-message">${message}</span><button class="toast-close" onclick="this.parentElement.remove()"><i class="ri-close-line"></i></button>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.style.animation = 'slideInRight 0.3s ease-out reverse'; setTimeout(() => toast.remove(), 300); }, 5000);
+    }
+    function createToastContainer() { const c = document.createElement('div'); c.id = 'toastContainer'; c.className = 'toast-container'; document.body.appendChild(c); return c; }
+
+    // Load products
+    async function loadProducts() {
+      try {
+        const params = new URLSearchParams();
+        const search = document.getElementById('searchProducts').value;
+        const category = document.getElementById('filterCategory').value;
+        const status = document.getElementById('filterStatus').value;
+        
+        if (search) params.set('search', search);
+        if (category) params.set('category', category);
+        if (status) params.set('status', status);
+        
+        const data = await fetchJSON('/api/admin/products?' + params.toString());
+        allProducts = data.products || [];
+        renderProducts();
+      } catch (error) {
+        showToast(error.message, 'error');
+        document.getElementById('productsTableBody').innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px; color: #EF4444;">' + error.message + '</td></tr>';
+      }
+    }
+
+    function getStatusClass(status) {
+      return status === 'published' ? 'status-published' : 'status-draft';
+    }
+
+    function getStatusLabel(status) {
+      return status === 'published' ? 'Published' : 'Draft';
+    }
+
+    function renderProducts() {
+      const tbody = document.getElementById('productsTableBody');
+      const start = (currentPage - 1) * productsPerPage;
+      const end = start + productsPerPage;
+      const pageProducts = allProducts.slice(start, end);
+
+      if (!pageProducts.length) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--color-neutral-muted);">No products found.</td></tr>';
+      } else {
+        tbody.innerHTML = pageProducts.map(p => `
+          <tr>
+            <td><img src="${p.image || '/images/placeholder.jpg'}" alt="${p.name}" class="product-image" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm);"></td>
+            <td style="font-weight: 600; font-family: var(--font-display);">${p.productCode || p.id}</td>
+            <td>${p.name}</td>
+            <td><span class="badge badge-primary">${p.category === 'pull' ? 'Main Door' : 'Mortise'}</span></td>
+            <td>${p.material}</td>
+            <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${(p.finishes || []).join(', ')}</td>
+            <td><span class="status-badge ${getStatusClass(p.status)}">${getStatusLabel(p.status)}</span></td>
+            <td>
+              <div class="admin-actions">
+                <button class="admin-action-btn" data-id="${p.id}" data-action="edit" aria-label="Edit"><i class="ri-edit-line"></i></button>
+                <button class="admin-action-btn delete" data-id="${p.id}" data-action="delete" aria-label="Delete"><i class="ri-delete-bin-line"></i></button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+
+        // Action buttons
+        tbody.querySelectorAll('.admin-action-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            const action = btn.dataset.action;
+            if (action === 'edit') openProductModal(id);
+            if (action === 'delete') openDeleteModal(id);
+          });
+        });
+      }
+
+      // Pagination
+      const totalPages = Math.ceil(allProducts.length / productsPerPage);
+      const info = document.getElementById('paginationInfo');
+      const controls = document.getElementById('paginationControls');
+      
+      info.textContent = `Showing ${Math.min(start + 1, allProducts.length)}–${Math.min(end, allProducts.length)} of ${allProducts.length} products`;
+      
+      if (totalPages <= 1) {
+        controls.innerHTML = '';
+        return;
+      }
+
+      let paginationHtml = '';
+      if (currentPage > 1) {
+        paginationHtml += `<button class="btn btn-secondary btn-sm" data-page="${currentPage - 1}"><i class="ri-arrow-left-line"></i></button>`;
+      }
+      
+      const startPage = Math.max(1, currentPage - 2);
+      const endPage = Math.min(totalPages, currentPage + 2);
+      
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHtml += `<button class="btn ${i === currentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" data-page="${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</button>`;
+      }
+      
+      if (currentPage < totalPages) {
+        paginationHtml += `<button class="btn btn-secondary btn-sm" data-page="${currentPage + 1}"><i class="ri-arrow-right-line"></i></button>`;
+      }
+      
+      controls.innerHTML = paginationHtml;
+      controls.querySelectorAll('[data-page]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentPage = parseInt(btn.dataset.page);
+          renderProducts();
+        });
+      });
+    }
+
+    // Modal handling
+    const productModal = document.getElementById('productModal');
+    const productForm = document.getElementById('productForm');
+    const productModalClose = document.getElementById('productModalClose');
+    const productModalCancel = document.getElementById('productModalCancel');
+    const addProductBtn = document.getElementById('addProductBtn');
+
+    function openProductModal(id = null) {
+      const product = id ? allProducts.find(p => p.id === id) : null;
+      const isEdit = !!product;
+      
+      document.getElementById('productModalTitle').textContent = isEdit ? 'Edit Product' : 'Add Product';
+      productForm.reset();
+      document.getElementById('productId').value = '';
+      
+      if (isEdit) {
+        document.getElementById('productId').value = product.id;
+        document.getElementById('productCode').value = product.productCode || product.id;
+        document.getElementById('productName').value = product.name;
+        document.getElementById('productCategory').value = product.category;
+        document.getElementById('productStatus').value = product.status || 'published';
+        document.getElementById('productDescription').value = product.description || '';
+        document.getElementById('productMaterial').value = product.material || '';
+        document.getElementById('productFeatured').checked = product.featured || false;
+        document.getElementById('productFinishes').value = (product.finishes || []).join('\n');
+        document.getElementById('productSizes').value = (product.sizes || []).join('\n');
+        document.getElementById('productImage').value = product.image || '';
+      }
+      
+      productModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      productModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    productModalClose.addEventListener('click', closeProductModal);
+    productModalCancel.addEventListener('click', closeProductModal);
+    productModal.addEventListener('click', (e) => { if (e.target === productModal) closeProductModal(); });
+    addProductBtn.addEventListener('click', () => openProductModal());
+
+    // Form submission
+    productForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('productModalSubmit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Saving...';
+
+      const id = document.getElementById('productId').value;
+      const isEdit = !!id;
+      
+      const finishes = document.getElementById('productFinishes').value.split('\n').map(f => f.trim()).filter(f => f);
+      const sizes = document.getElementById('productSizes').value.split('\n').map(s => s.trim()).filter(s => s);
+      
+      const payload = {
+        productCode: document.getElementById('productCode').value.trim(),
+        name: document.getElementById('productName').value.trim(),
+        category: document.getElementById('productCategory').value,
+        status: document.getElementById('productStatus').value,
+        description: document.getElementById('productDescription').value.trim(),
+        material: document.getElementById('productMaterial').value.trim(),
+        featured: document.getElementById('productFeatured').checked,
+        finishes: finishes,
+        sizes: sizes,
+        image: document.getElementById('productImage').value.trim() || (finishes[0] ? `/images/${document.getElementById('productCode').value.toLowerCase()}.jpg` : '')
+      };
+
+      try {
+        const url = isEdit ? `/api/admin/products/${id}` : '/api/admin/products';
+        const method = isEdit ? 'PUT' : 'POST';
+        
+        await fetchJSON(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        showToast(isEdit ? 'Product updated successfully' : 'Product created successfully', 'success');
+        closeProductModal();
+        loadProducts();
+      } catch (error) {
+        showToast(error.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
+    // Delete modal
+    const deleteModal = document.getElementById('deleteModal');
+    const deleteModalClose = document.getElementById('deleteModalClose');
+    const deleteModalCancel = document.getElementById('deleteModalCancel');
+    const deleteModalConfirm = document.getElementById('deleteModalConfirm');
+
+    function openDeleteModal(id) {
+      const product = allProducts.find(p => p.id === id);
+      if (!product) return;
+      deleteProductId = id;
+      document.getElementById('deleteProductName').textContent = `${product.productCode || product.id} - ${product.name}`;
+      deleteModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDeleteModal() {
+      deleteModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      deleteProductId = null;
+    }
+
+    deleteModalClose.addEventListener('click', closeDeleteModal);
+    deleteModalCancel.addEventListener('click', closeDeleteModal);
+    deleteModal.addEventListener('click', (e) => { if (e.target === deleteModal) closeDeleteModal(); });
+
+    deleteModalConfirm.addEventListener('click', async () => {
+      if (!deleteProductId) return;
+      const btn = document.getElementById('deleteModalConfirm');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Deleting...';
+      
+      try {
+        await fetchJSON(`/api/admin/products/${deleteProductId}`, { method: 'DELETE' });
+        showToast('Product deleted successfully', 'success');
+        closeDeleteModal();
+        loadProducts();
+      } catch (error) {
+        showToast(error.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
+
+    // Search & Filter
+    document.getElementById('searchProducts').addEventListener('input', debounce(loadProducts, 300));
+    document.getElementById('filterCategory').addEventListener('change', () => { currentPage = 1; loadProducts(); });
+    document.getElementById('filterStatus').addEventListener('change', () => { currentPage = 1; loadProducts(); });
+
+    function debounce(fn, delay) {
+      let timeoutId;
+      return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await fetch('/admin/logout', { method: 'POST' });
+      window.location.href = '/admin/login';
+    });
+
+    // Initialize
+    loadProducts();
+  </script>
+</body>
+</html>

@@ -3,269 +3,437 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us & Showroom Location | Innovix Global</title>
-  <meta name="description" content="Contact Innovix Global in Rajkot. Email: innovixxglobal@gmail.com. Address: Matel, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003. Direct Representatives: Dholariya Sneh (+91 91061 84146) & Ramani Prem (+91 82382 82481).">
+  <meta name="description" content="Contact INNOVIX GLOBAL for architectural hardware enquiries. Send us a message, request a quote, or connect via WhatsApp.">
+  <meta name="keywords" content="Contact, Enquiry, Quote, Architectural Hardware, INNOVIX GLOBAL, Rajkot, WhatsApp">
+  <meta name="author" content="INNOVIX GLOBAL">
   
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us | INNOVIX GLOBAL - Architectural Hardware">
+  <meta property="og:description" content="Get in touch with INNOVIX GLOBAL for premium architectural hardware enquiries and quotes.">
+  <meta property="og:image" content="/images/IGPH-211.jpg">
+  
+  <link rel="canonical" href="https://www.innovixglobal.in/contact.html">
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
+  
+  <title>Contact Us | INNOVIX GLOBAL - Architectural Hardware</title>
 </head>
 <body>
+  <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Header / Navigation Bar -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
-          <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
+          <li><a href="how-to-clean.html" class="nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
+          <li><a href="contact.html" class="nav-link active"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Contact Us</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="how-to-clean.html" class="mobile-nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Contact & <span class="text-gold">Showroom Location</span></h1>
-      <p class="page-subtitle">
-        Reach out to Innovix Global for sales inquiries, custom product quotes, architectural specifications, or showroom visits in Rajkot.
-      </p>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <!-- Contact Grid -->
-  <section class="section">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Information -->
-        <div class="contact-info-card">
-          <h3 style="font-size: 1.4rem; margin-bottom: 24px; color: #fff; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
-            Corporate Office & Factory Address
-          </h3>
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">GET IN TOUCH</span>
+          <h1 class="page-header-title">Contact Us</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">
+            Have questions about our architectural hardware? Need a quote for your project? 
+            Our team is ready to assist you with expert guidance and support.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-map-pin-2-fill"></i>
-            </div>
-            <div class="contact-text">
-              <h4>Registered Address</h4>
-              <p style="color: #fff; font-weight: 500;">
-                “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
-              </p>
-            </div>
-          </div>
+    <!-- Contact Content -->
+    <section class="section" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="grid grid-2 gap-xl">
+          <!-- Contact Info -->
+          <div class="reveal">
+            <h2 id="contactTitle" class="section-title gold-divider-left" style="margin-bottom: 32px;">Let's Start a Conversation</h2>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 40px;">
+              Whether you're an architect specifying hardware for a luxury project, a homeowner 
+              looking for the perfect door handle, or a dealer interested in partnership, 
+              we're here to help you find the right solution.
+            </p>
 
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-mail-send-fill"></i>
-            </div>
-            <div class="contact-text">
-              <h4>Email Communication</h4>
-              <p><a href="mailto:innovixxglobal@gmail.com" style="color: var(--accent-gold); font-size: 1.05rem; font-weight: 600;">innovixxglobal@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-phone-fill"></i>
-            </div>
-            <div class="contact-text" style="width: 100%;">
-              <h4>Direct Contact Representatives</h4>
-              <div class="contacts-list">
-                <div class="contact-person">
-                  <div>
-                    <strong style="color: #fff; font-size: 0.95rem;">Dholariya Sneh</strong>
-                    <div style="font-size: 0.82rem; color: var(--accent-gold);">Key Accounts & Sales</div>
-                  </div>
-                  <a href="tel:+919106184146" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+            <div class="space-y-8">
+              <div class="contact-person">
+                <div>
+                  <h3 class="contact-name">Dholariya Sneh</h3>
+                  <div class="contact-role">Key Accounts & Sales Management</div>
+                </div>
+                <div class="contact-actions">
+                  <a href="tel:+919106184146" class="btn btn-outline">
                     <i class="ri-phone-line"></i> +91 91061 84146
                   </a>
+                  <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                    <i class="ri-whatsapp-line"></i> WhatsApp
+                  </a>
                 </div>
+              </div>
 
-                <div class="contact-person">
-                  <div>
-                    <strong style="color: #fff; font-size: 0.95rem;">Ramani Prem</strong>
-                    <div style="font-size: 0.82rem; color: var(--accent-gold);">Business Operations</div>
-                  </div>
-                  <a href="tel:+918238282481" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+              <div class="contact-person">
+                <div>
+                  <h3 class="contact-name">Ramani Prem</h3>
+                  <div class="contact-role">Business Operations & Logistics</div>
+                </div>
+                <div class="contact-actions">
+                  <a href="tel:+918238282481" class="btn btn-outline">
                     <i class="ri-phone-line"></i> +91 82382 82481
+                  </a>
+                  <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                    <i class="ri-whatsapp-line"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-person" style="background: transparent; border: 1px solid var(--border-gold);">
+                <div>
+                  <h3 class="contact-name">Email Us</h3>
+                  <div class="contact-role">General Enquiries & Support</div>
+                </div>
+                <div class="contact-actions">
+                  <a href="mailto:innovixxglobal@gmail.com" class="btn btn-primary">
+                    <i class="ri-mail-line"></i> innovixxglobal@gmail.com
                   </a>
                 </div>
               </div>
             </div>
+
+            <div style="margin-top: 40px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl);">
+              <h4 style="font-family: var(--font-display); font-size: 1.125rem; margin-bottom: 16px;">Our Address</h4>
+              <address style="font-style: normal; color: var(--color-neutral); line-height: 1.8;">
+                "Matel", Brahmaniyapara-19,<br>
+                Near Govindbag Vegetable Market,<br>
+                Pedak Road, Rajkot-360003,<br>
+                Gujarat, India
+              </address>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="reveal">
+            <div class="contact-form">
+              <h3 class="contact-form-title">Send Us a Message</h3>
+              <p class="contact-form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+              
+              <form id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Full Name <span style="color: var(--color-gold);">*</span></label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required aria-required="true">
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email <span style="color: var(--color-gold);">*</span></label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required aria-required="true">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number <span style="color: var(--color-gold);">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXXXXXXX" required aria-required="true">
+                  </div>
+                  <div class="form-group">
+                    <label for="company" class="form-label">Company Name</label>
+                    <input type="text" id="company" name="company" class="form-input" placeholder="Optional">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject</label>
+                  <select id="subject" name="subject" class="form-select">
+                    <option value="Product Enquiry">Product Enquiry</option>
+                    <option value="Quote Request">Quote Request</option>
+                    <option value="Bulk Order">Bulk Order</option>
+                    <option value="Dealership Enquiry">Dealership Enquiry</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message" class="form-label">Message <span style="color: var(--color-gold);">*</span></label>
+                  <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, product interest, or any questions you have..." required aria-required="true"></textarea>
+                </div>
+                
+                <div id="formNotification" style="display: none; padding: 12px 16px; border-radius: var(--radius-md); margin-top: 16px;"></div>
+                
+                <div class="form-submit">
+                  <button type="submit" class="btn btn-primary btn-lg" style="flex: 1;">
+                    <i class="ri-send-plane-line"></i> Send Enquiry
+                  </button>
+                  <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" style="flex: 1; text-align: center;">
+                    <i class="ri-whatsapp-line"></i> WhatsApp Us
+                  </a>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Inquiry Form -->
-        <div class="form-card">
-          <h3 style="font-size: 1.4rem; margin-bottom: 24px; color: #fff; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
-            Send Inquiry / Request Quote
-          </h3>
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">FREQUENTLY ASKED</span>
+          <h2 id="faqTitle" class="section-title">Common Questions</h2>
+          <p class="section-subtitle">Quick answers to help you get started</p>
+        </div>
 
-          <div id="formNotification" style="display: none; padding: 12px; border-radius: var(--radius-sm); margin-bottom: 20px; background: rgba(255,255,255,0.05); font-size: 0.9rem;"></div>
-
-          <form id="contactForm">
-            <div class="form-group">
-              <label class="form-label" for="formName">Full Name *</label>
-              <input type="text" id="formName" name="name" class="form-control" placeholder="Enter your name" required>
+        <div class="space-y-4" style="max-width: 800px; margin: 0 auto;">
+          <details class="reveal" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <summary style="padding: 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 500; color: var(--color-white);">
+              Do you provide custom finish requests?
+              <i class="ri-add-line" style="color: var(--color-gold); transition: transform 0.3s;"></i>
+            </summary>
+            <div style="padding: 0 24px 24px; color: var(--color-neutral); line-height: 1.7;">
+              Yes, we discuss finish, size, and project-based specifications with our sales and operations teams. Contact us with your requirements for a custom consultation.
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="formEmail">Email Address *</label>
-                <input type="email" id="formEmail" name="email" class="form-control" placeholder="name@company.com" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="formPhone">Phone / Mobile *</label>
-                <input type="tel" id="formPhone" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
-              </div>
+          </details>
+          
+          <details class="reveal" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <summary style="padding: 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 500; color: var(--color-white);">
+              Can you support bulk or dealer orders?
+              <i class="ri-add-line" style="color: var(--color-gold); transition: transform 0.3s;"></i>
+            </summary>
+            <div style="padding: 0 24px 24px; color: var(--color-neutral); line-height: 1.7;">
+              We supply architectural and dealer channels with project coordination for volume requirements. Reach out to our sales team for dealer partnership opportunities.
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="formModel">Interested Model / Handle Type</label>
-              <input type="text" id="formModel" name="productModel" class="form-control" placeholder="e.g. IGM-001 Royal Mortise Handle">
+          </details>
+          
+          <details class="reveal" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <summary style="padding: 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 500; color: var(--color-white);">
+              Are your products suitable for hospitality and commercial use?
+              <i class="ri-add-line" style="color: var(--color-gold); transition: transform 0.3s;"></i>
+            </summary>
+            <div style="padding: 0 24px 24px; color: var(--color-neutral); line-height: 1.7;">
+              Yes. Our hardware is chosen for durability, finish consistency, and premium everyday performance in hotels, offices, retail spaces, and corporate reception areas.
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="formMessage">Message / Project Requirements</label>
-              <textarea id="formMessage" name="message" class="form-control" placeholder="Specify order quantities, finish preferences, or project details..."></textarea>
+          </details>
+          
+          <details class="reveal" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <summary style="padding: 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 500; color: var(--color-white);">
+              What is the lead time for orders?
+              <i class="ri-add-line" style="color: var(--color-gold); transition: transform 0.3s;"></i>
+            </summary>
+            <div style="padding: 0 24px 24px; color: var(--color-neutral); line-height: 1.7;">
+              Lead times vary based on product availability, finish selection, and order quantity. Standard items typically ship within 2-3 weeks. Custom finishes may require 4-6 weeks. Our team will provide exact timelines during quotation.
             </div>
-
-            <button type="submit" class="btn btn-gold" style="width: 100%;">
-              <i class="ri-send-plane-fill"></i> Submit Inquiry
-            </button>
-          </form>
+          </details>
+          
+          <details class="reveal" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <summary style="padding: 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 500; color: var(--color-white);">
+              Do you ship internationally?
+              <i class="ri-add-line" style="color: var(--color-gold); transition: transform 0.3s;"></i>
+            </summary>
+            <div style="padding: 0 24px 24px; color: var(--color-neutral); line-height: 1.7;">
+              Currently we focus on Pan-India delivery with our secure logistics network. For international enquiries, please contact our sales team to discuss feasibility and shipping arrangements.
+            </div>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive Location Map -->
-  <section class="section" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 30px auto;">
-        <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;">
-          Find Us In Rajkot
+    <!-- CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%); position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; opacity: 0.03; background-image: url('/images/IGPH-211.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Ready to Start Your Project?</h2>
+          <p class="section-subtitle">Connect with our experts today for personalized assistance</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+              <i class="ri-whatsapp-line"></i> WhatsApp Now
+            </a>
+            <a href="tel:+919106184146" class="btn btn-primary btn-lg">
+              <i class="ri-phone-line"></i> Call Us
+            </a>
+          </div>
         </div>
-        <h2 style="font-size: 2.2rem; margin-bottom: 8px;">
-          Rajkot Location <span class="text-gold">Map</span>
-        </h2>
       </div>
+    </section>
+  </main>
 
-      <div class="map-embed">
-        <iframe 
-          title="Innovix Global Rajkot Location Map"
-          src="https://maps.google.com/maps?q=Pedak+Road,+Rajkot,+Gujarat+360003&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating WhatsApp Action -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/919106184146" target="_blank" class="wa-btn" aria-label="Chat with Dholariya Sneh">
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Dholariya Sneh</span>
     </a>
-    <a href="https://wa.me/918238282481" target="_blank" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Ramani Prem</span>
     </a>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon"><img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark"></div>
-            <div class="brand-info">
-              <span class="brand-name" style="color: #fff;">INNOVIX GLOBAL</span>
-              <span class="brand-sub">Innovix Architectural Products</span>
-            </div>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon">
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            Manufacturer of premium Mortise Handles, Main Door Pull Handles, and premium architectural hardware solutions.
-          </p>
+            <div class="brand-info">
+              <span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span>
+              <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
+            </div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
         </div>
-
         <div>
-          <h4>Navigation</h4>
+          <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products Catalog</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="manufacturing.html">Manufacturing</a></li>
-            <li><a href="dealership.html">Dealership</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="how-to-clean.html">How to Clean</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div>
-          <h4>Product Lines</h4>
+          <h4 class="footer-title">Products</h4>
           <ul class="footer-links">
+            <li><a href="products.html?category=pull">Main Door Handles</a></li>
             <li><a href="products.html?category=mortise">Mortise Handles</a></li>
-            <li><a href="products.html?category=pull">Main Door Pull Handles</a></li>
           </ul>
         </div>
-
         <div>
-          <h4>Contact & Address</h4>
-          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
-            “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px;">
-            <i class="ri-mail-line" style="color: var(--accent-gold);"></i> innovixxglobal@gmail.com
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem;">
-            <i class="ri-phone-line" style="color: var(--accent-gold);"></i> +91 91061 84146 / +91 82382 82481
-          </p>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;">
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p>
+          </address>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved. Architectural Hardware.</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Contact form enhancement
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contactForm');
+      const formNotification = document.getElementById('formNotification');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const formData = new FormData(contactForm);
+          const payload = Object.fromEntries(formData.entries());
+          
+          const submitBtn = contactForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Sending...';
+          
+          formNotification.style.display = 'block';
+          formNotification.style.background = 'rgba(197, 161, 90, 0.1)';
+          formNotification.style.border = '1px solid var(--border-gold)';
+          formNotification.style.color = 'var(--color-gold)';
+          formNotification.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Submitting your enquiry...';
+          
+          try {
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const res = await response.json();
+            
+            if (response.ok && res.success) {
+              formNotification.style.background = 'rgba(34, 197, 94, 0.1)';
+              formNotification.style.border = '1px solid rgba(34, 197, 94, 0.3)';
+              formNotification.style.color = '#22c55e';
+              formNotification.innerHTML = '<i class="ri-checkbox-circle-line"></i> ' + res.message;
+              contactForm.reset();
+            } else {
+              throw new Error(res.error || 'Failed to submit form');
+            }
+          } catch (err) {
+            formNotification.style.background = 'rgba(239, 68, 68, 0.1)';
+            formNotification.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+            formNotification.style.color = '#EF4444';
+            formNotification.innerHTML = '<i class="ri-error-warning-line"></i> ' + err.message;
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        });
+      }
+      
+      // FAQ accordion animation
+      document.querySelectorAll('details').forEach(detail => {
+        detail.addEventListener('toggle', () => {
+          const icon = detail.querySelector('i');
+          if (detail.open) {
+            icon.style.transform = 'rotate(45deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

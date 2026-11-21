@@ -3,177 +3,542 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products Catalog | Architectural Hardware by Innovix Global</title>
-  <meta name="description" content="Browse the Innovix Global 2026 Architectural Hardware Catalog. Mortise Handles, Pull Handles, and premium hardware solutions. Request pricing & custom quotes.">
+  <meta name="description" content="Browse INNOVIX GLOBAL's complete catalogue of premium architectural hardware. Main door handles (IGPH series) and mortise handles (IGM series) with multiple finishes and sizes.">
+  <meta name="keywords" content="Architectural Hardware, Luxury Door Handles, Main Door Handles, Mortise Handles, Designer Door Handles, Premium Door Hardware, Product Catalogue, INNOVIX GLOBAL">
+  <meta name="author" content="INNOVIX GLOBAL">
   
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Product Catalogue | INNOVIX GLOBAL">
+  <meta property="og:description" content="Browse our complete range of premium main door handles and mortise handles.">
+  <meta property="og:image" content="/images/IGPH-211.jpg">
+  <meta property="og:url" content="https://www.innovixglobal.in/products.html">
+  
+  <link rel="canonical" href="https://www.innovixglobal.in/products.html">
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
+  
+  <title>Product Catalogue | INNOVIX GLOBAL - Architectural Hardware</title>
 </head>
 <body>
+  <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Header / Navigation Bar -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="products.html" class="nav-link active"><i class="ri-grid-line"></i> Products</a></li>
+          <li><a href="how-to-clean.html" class="nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Page Subpage Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Products Catalog</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="how-to-clean.html" class="mobile-nav-link"><i class="ri-shield-check-line"></i> How to Clean</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Innovix Global 2026 <span class="text-gold">Catalog Index</span></h1>
-      <p class="page-subtitle">
-        Explore 41 mastercrafted architectural door handle and pull models (IGM Mortise & IGPH Grand Pull Series) engineered with solid brass and 304 stainless steel. Select any model to view technical specs or inquire instantly.
-      </p>
-    </div>
-  </section>
-
-  <!-- Category Filter & Search Section -->
-  <section class="filter-section" id="catalog">
-    <div class="container filter-bar">
-      <div class="category-tabs">
-        <button class="category-tab active" data-category="all">
-          <i class="ri-apps-2-line"></i> All Hardware (41)
-        </button>
-        <button class="category-tab" data-category="mortise">
-          <i class="ri-door-open-line"></i> Mortise Handles (22)
-        </button>
-        <button class="category-tab" data-category="pull">
-          <i class="ri-drag-move-fill"></i> Main Door Pull Handles (19)
-        </button>
-      </div>
-
-      <div class="search-box">
-        <i class="ri-search-line search-icon"></i>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search model code, finish, material...">
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Product Catalog Grid -->
-      <div class="catalog-grid" id="productGrid">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div class="modal-backdrop" id="productModal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
-        <i class="ri-close-line"></i>
-      </button>
-      <div class="modal-body" id="modalBodyContent">
-        <!-- Rendered dynamically by main.js -->
-      </div>
-    </div>
+    </nav>
   </div>
 
-  <!-- Floating WhatsApp Action -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/919106184146" target="_blank" class="wa-btn" aria-label="Chat with Dholariya Sneh">
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">PRODUCT CATALOGUE</span>
+          <h1 class="page-header-title">Complete Collection</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">
+            Explore our premium range of main door handles and mortise handles. 
+            Filter by category, finish, material, or search by product code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="breadcrumb-link"><i class="ri-home-4-line"></i> Home</a>
+          </li>
+          <li class="breadcrumb-separator"><i class="ri-arrow-right-s-line"></i></li>
+          <li class="breadcrumb-item">
+            <span class="breadcrumb-current">Product Catalogue</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Filters & Products -->
+    <section class="section" aria-labelledby="catalogueTitle">
+      <div class="container">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Sidebar Filters -->
+          <aside class="lg:w-64 flex-shrink-0" aria-label="Product filters">
+            <div class="sticky" style="top: calc(var(--header-height) + 24px);">
+              <!-- Mobile Filter Toggle -->
+              <button class="btn btn-secondary w-full justify-between lg:hidden mb-6" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+                <i class="ri-filter-line"></i>
+                <span>Filters</span>
+              </button>
+
+              <div id="filterPanel" class="space-y-8 lg:block">
+                <!-- Search -->
+                <div class="reveal">
+                  <label for="searchInput" class="form-label">Search Products</label>
+                  <div style="position: relative;">
+                    <i class="ri-search-line" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--color-neutral-muted);"></i>
+                    <input type="text" id="searchInput" class="form-input" placeholder="Search by code..." style="padding-left: 48px;">
+                  </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="reveal">
+                  <label class="form-label">Category</label>
+                  <div class="space-y-2">
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); transition: var(--transition-fast);">
+                      <input type="radio" name="category" value="all" id="cat-all" checked style="accent-color: var(--color-gold);">
+                      <span style="color: var(--color-neutral);">All Products</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); transition: var(--transition-fast);">
+                      <input type="radio" name="category" value="pull" id="cat-pull" style="accent-color: var(--color-gold);">
+                      <span style="color: var(--color-neutral);">Main Door Handles</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); transition: var(--transition-fast);">
+                      <input type="radio" name="category" value="mortise" id="cat-mortise" style="accent-color: var(--color-gold);">
+                      <span style="color: var(--color-neutral);">Mortise Handles</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Sort -->
+                <div class="reveal">
+                  <label for="sortSelect" class="form-label">Sort By</label>
+                  <select id="sortSelect" class="form-select">
+                    <option value="featured">Featured First</option>
+                    <option value="code-asc">Product Code (A-Z)</option>
+                    <option value="code-desc">Product Code (Z-A)</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Products Grid -->
+          <div class="flex-1">
+            <!-- Toolbar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 reveal">
+              <div class="flex items-center gap-4">
+                <span style="color: var(--color-neutral); font-size: 0.9375rem;" id="resultsCount">
+                  <span id="productCount">0</span> product<span id="productPlural">s</span> found
+                </span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <button id="viewGrid" class="btn btn-ghost" aria-label="Grid view" aria-pressed="true">
+                  <i class="ri-layout-4-line"></i>
+                </button>
+                <button id="viewList" class="btn btn-ghost" aria-label="List view" aria-pressed="false">
+                  <i class="ri-layout-list-line"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Products -->
+            <div id="productGrid" class="grid grid-4" role="list" aria-label="Product catalogue">
+              <!-- Products loaded via JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" style="display: none; text-align: center; padding: 80px 20px; background: var(--bg-card); border-radius: var(--radius-xl); border: 1px solid var(--border-subtle);" class="reveal">
+              <i class="ri-search-line" style="font-size: 4rem; color: var(--color-gold);"></i>
+              <h3 style="margin-top: 24px; font-size: 1.5rem; color: var(--color-white);">No products found</h3>
+              <p style="color: var(--color-neutral-muted); margin-top: 12px;">Try adjusting your filters or search query</p>
+              <button id="clearFilters" class="btn btn-secondary mt-6">Clear All Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories CTA -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="exploreTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">EXPLORE BY CATEGORY</span>
+          <h2 id="exploreTitle" class="section-title">Browse Collections</h2>
+          <p class="section-subtitle">Each collection offers distinctive designs for specific architectural needs</p>
+        </div>
+
+        <div class="grid grid-2">
+          <a href="products.html?category=pull" class="category-card reveal">
+            <img src="/images/IGPH-211.jpg" alt="Main Door Handles" class="category-card-image" loading="lazy">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Main Door Handles</h3>
+              <p class="category-card-description">19 premium designs — IGPH-211 through IGPH-337</p>
+              <span class="category-card-link">Browse Collection <i class="ri-arrow-right-line"></i></span>
+            </div>
+          </a>
+          <a href="products.html?category=mortise" class="category-card reveal">
+            <img src="/images/IGM-001.jpg" alt="Mortise Handles" class="category-card-image" loading="lazy">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Mortise Handles</h3>
+              <p class="category-card-description">22 sophisticated designs — IGM-001 through IGM-022</p>
+              <span class="category-card-link">Browse Collection <i class="ri-arrow-right-line"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Dholariya Sneh</span>
     </a>
-    <a href="https://wa.me/918238282481" target="_blank" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem">
       <i class="ri-whatsapp-line"></i>
       <span class="wa-tooltip">Chat with Ramani Prem</span>
     </a>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon"><img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark"></div>
-            <div class="brand-info">
-              <span class="brand-name" style="color: #fff;">INNOVIX GLOBAL</span>
-              <span class="brand-sub">Innovix Architectural Products</span>
-            </div>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon">
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            High-precision Mortise Handles and premium architectural door hardware for modern residential and commercial projects.
+            <div class="brand-info">
+              <span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span>
+              <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
+            </div>
+          </a>
+          <p class="footer-description">
+            Premium architectural hardware crafted with precision and elegance.
           </p>
+          <div style="display: flex; gap: 16px; margin-top: 24px;">
+            <a href="#" class="share-btn" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="share-btn" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+            <a href="#" class="share-btn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="share-btn" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
         </div>
 
         <div>
-          <h4>Navigation</h4>
+          <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products Catalog</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="manufacturing.html">Manufacturing</a></li>
-            <li><a href="dealership.html">Dealership</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="how-to-clean.html">How to Clean</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div>
-          <h4>Product Lines</h4>
+          <h4 class="footer-title">Products</h4>
           <ul class="footer-links">
+            <li><a href="products.html?category=pull">Main Door Handles</a></li>
             <li><a href="products.html?category=mortise">Mortise Handles</a></li>
-            <li><a href="products.html?category=pull">Main Door Pull Handles</a></li>
           </ul>
         </div>
 
         <div>
-          <h4>Contact & Address</h4>
-          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
-            “Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px;">
-            <i class="ri-mail-line" style="color: var(--accent-gold);"></i> innovixxglobal@gmail.com
-          </p>
-          <p style="color: #94a3b8; font-size: 0.88rem;">
-            <i class="ri-phone-line" style="color: var(--accent-gold);"></i> +91 91061 84146 / +91 82382 82481
-          </p>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;">
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">
+              "Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India
+            </p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;">
+              <i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com
+            </p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;">
+              <i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146
+            </p>
+            <p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;">
+              <i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481
+            </p>
+            <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-gold); font-weight: 500; margin-top: 8px;">
+              <i class="ri-whatsapp-line"></i> WhatsApp Us
+            </a>
+          </address>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved. Architectural Hardware.</p>
+        <p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Products page specific functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      let viewMode = 'grid';
+      let sortBy = 'featured';
+      let allProductsCache = [];
+
+      // Store original filterAndRenderProducts
+      const originalFilterAndRender = window.filterAndRenderProducts;
+
+      // Override to add sorting
+      window.filterAndRenderProducts = function() {
+        if (!window.productGrid) return;
+        
+        let filtered = window.allProducts || [];
+
+        if (window.currentCategory !== 'all') {
+          filtered = filtered.filter(p => p.category === window.currentCategory);
+        }
+
+        if (window.searchQuery) {
+          filtered = filtered.filter(p =>
+            p.name.toLowerCase().includes(window.searchQuery) ||
+            p.modelCode.toLowerCase().includes(window.searchQuery) ||
+            p.material.toLowerCase().includes(window.searchQuery) ||
+            p.description.toLowerCase().includes(window.searchQuery)
+          );
+        }
+
+        // Sort
+        switch (sortBy) {
+          case 'code-asc':
+            filtered.sort((a, b) => a.modelCode.localeCompare(b.modelCode));
+            break;
+          case 'code-desc':
+            filtered.sort((a, b) => b.modelCode.localeCompare(a.modelCode));
+            break;
+          case 'name-asc':
+            filtered.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+          case 'featured':
+          default:
+            filtered.sort((a, b) => (b.featured === a.featured) ? 0 : b.featured ? 1 : -1);
+            break;
+        }
+
+        // Update count
+        const countEl = document.getElementById('productCount');
+        const pluralEl = document.getElementById('productPlural');
+        if (countEl) countEl.textContent = filtered.length;
+        if (pluralEl) pluralEl.textContent = filtered.length !== 1 ? 's' : '';
+
+        // Toggle no results
+        const noResults = document.getElementById('noResults');
+        const productGrid = document.getElementById('productGrid');
+        
+        if (filtered.length === 0) {
+          if (productGrid) productGrid.style.display = 'none';
+          if (noResults) noResults.style.display = 'block';
+          return;
+        } else {
+          if (productGrid) productGrid.style.display = 'grid';
+          if (noResults) noResults.style.display = 'none';
+        }
+
+        // Apply view mode
+        if (productGrid) {
+          productGrid.className = viewMode === 'grid' ? 'grid grid-4' : 'grid';
+          productGrid.style.gridTemplateColumns = viewMode === 'list' ? '1fr' : '';
+        }
+
+        // Render
+        productGrid.innerHTML = filtered.map((product, idx) => {
+          if (viewMode === 'list') {
+            return `
+              <article class="product-card" style="display: flex; gap: 24px; transition-delay: ${Math.min(idx * 0.04, 0.3)}s;">
+                <a href="product-detail.html?id=${product.id}" class="product-card-link" style="width: 180px; flex-shrink: 0;">
+                  <div class="product-card-image-wrapper" style="aspect-ratio: 4/3;">
+                    <img src="${product.image}" alt="${product.name}" class="product-card-image" loading="lazy">
+                  </div>
+                </a>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 24px;">
+                  <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <span class="badge badge-primary">${product.categoryName}</span>
+                  </div>
+                  <h3 class="product-card-code" style="font-size: 1.5rem;">${product.modelCode}</h3>
+                  <p style="color: var(--color-neutral); margin-bottom: 16px;">${product.material}</p>
+                  <div class="product-card-finishes" style="margin-bottom: 20px;">
+                    ${product.finishes.slice(0, 4).map(f => `<span class="finish-tag">${f}</span>`).join('')}
+                    ${product.finishes.length > 4 ? `<span class="finish-tag more">+${product.finishes.length - 4} more</span>` : ''}
+                  </div>
+                  <div class="product-card-footer">
+                    <div class="product-card-specs">
+                      <span><i class="ri-ruler-line"></i> ${product.sizes.length} size${product.sizes.length !== 1 ? 's' : ''}</span>
+                      <span><i class="ri-palette-line"></i> ${product.finishes.length} finish${product.finishes.length !== 1 ? 'es' : ''}</span>
+                    </div>
+                    <a href="product-detail.html?id=${product.id}" class="product-card-action">View Details <i class="ri-arrow-right-line"></i></a>
+                  </div>
+                </div>
+              </article>
+            `;
+          }
+          return `
+            <article class="product-card reveal" style="transition-delay: ${Math.min(idx * 0.04, 0.3)}s;">
+              <a href="product-detail.html?id=${product.id}" class="product-card-link">
+                <div class="product-card-image-wrapper">
+                  <img src="${product.image}" alt="${product.name}" class="product-card-image" loading="lazy">
+                  <div class="product-card-badges">
+                    <span class="badge badge-primary">${product.categoryName}</span>
+                  </div>
+                </div>
+                <div class="product-card-overlay">
+                  <div class="product-card-overlay-content">
+                    <span class="product-card-category">${product.categoryName}</span>
+                    <h3 class="product-card-code">${product.modelCode}</h3>
+                    <p class="product-card-material">${product.material}</p>
+                  </div>
+                </div>
+              </a>
+              <div class="product-card-content">
+                <div class="product-card-finishes">
+                  ${product.finishes.slice(0, 3).map(f => `<span class="finish-tag">${f}</span>`).join('')}
+                  ${product.finishes.length > 3 ? `<span class="finish-tag more">+${product.finishes.length - 3} more</span>` : ''}
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-card-specs">
+                    <span><i class="ri-ruler-line"></i> ${product.sizes.length} size${product.sizes.length !== 1 ? 's' : ''}</span>
+                    <span><i class="ri-palette-line"></i> ${product.finishes.length} finish${product.finishes.length !== 1 ? 'es' : ''}</span>
+                  </div>
+                  <span class="product-card-action">View Details <i class="ri-arrow-right-line"></i></span>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        // Re-observe for animations
+        const newReveals = productGrid.querySelectorAll('.reveal');
+        newReveals.forEach(el => el.classList.add('active'));
+      };
+
+      // Category radio buttons
+      document.querySelectorAll('input[name="category"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          window.currentCategory = radio.value;
+          window.filterAndRenderProducts();
+        });
+      });
+
+      // Sort select
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+          sortBy = sortSelect.value;
+          window.filterAndRenderProducts();
+        });
+      }
+
+      // View mode buttons
+      const viewGrid = document.getElementById('viewGrid');
+      const viewList = document.getElementById('viewList');
+      if (viewGrid && viewList) {
+        viewGrid.addEventListener('click', () => {
+          viewMode = 'grid';
+          viewGrid.setAttribute('aria-pressed', 'true');
+          viewList.setAttribute('aria-pressed', 'false');
+          viewGrid.classList.add('btn-secondary');
+          viewGrid.classList.remove('btn-ghost');
+          viewList.classList.add('btn-ghost');
+          viewList.classList.remove('btn-secondary');
+          window.filterAndRenderProducts();
+        });
+        viewList.addEventListener('click', () => {
+          viewMode = 'list';
+          viewList.setAttribute('aria-pressed', 'true');
+          viewGrid.setAttribute('aria-pressed', 'false');
+          viewList.classList.add('btn-secondary');
+          viewList.classList.remove('btn-ghost');
+          viewGrid.classList.add('btn-ghost');
+          viewGrid.classList.remove('btn-secondary');
+          window.filterAndRenderProducts();
+        });
+      }
+
+      // Clear filters
+      const clearFilters = document.getElementById('clearFilters');
+      if (clearFilters) {
+        clearFilters.addEventListener('click', () => {
+          window.searchQuery = '';
+          window.currentCategory = 'all';
+          sortBy = 'featured';
+          
+          const searchInput = document.getElementById('searchInput');
+          if (searchInput) searchInput.value = '';
+          
+          document.querySelectorAll('input[name="category"]').forEach(radio => {
+            radio.checked = radio.value === 'all';
+          });
+          
+          if (sortSelect) sortSelect.value = 'featured';
+          
+          window.filterAndRenderProducts();
+        });
+      }
+
+      // Mobile filter toggle
+      const filterToggle = document.getElementById('filterToggle');
+      const filterPanel = document.getElementById('filterPanel');
+      if (filterToggle && filterPanel) {
+        filterToggle.addEventListener('click', () => {
+          const isOpen = filterPanel.style.display === 'none' || filterPanel.style.display === '';
+          filterPanel.style.display = isOpen ? 'block' : 'none';
+          filterToggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

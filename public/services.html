@@ -3,178 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Innovix Global</title>
-  <meta name="description" content="Innovix Global delivers premium architectural hardware, project consultation, custom finish coordination, and dealer support for residential and commercial applications.">
-  <link rel="icon" type="image/svg+xml" href="images/innovix-logo-mark.svg">
+  <meta name="description" content="INNOVIX GLOBAL Services - Premium architectural hardware solutions for residential, hospitality, and commercial projects.">
+  <title>Our Services | INNOVIX GLOBAL - Architectural Hardware</title>
+  <link rel="icon" type="image/svg+xml" href="/images/innovix-logo-full.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/reference-theme.css">
 </head>
 <body>
-  <header class="header">
+  <div id="toastContainer" class="toast-container"></div>
+
+  <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="Innovix Global home">
+      <a href="index.html" class="brand-logo" aria-label="INNOVIX GLOBAL Home">
         <div class="brand-icon">
-          <img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
-        </div>
+            <img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
         <div class="brand-info">
           <span class="brand-name">INNOVIX GLOBAL</span>
-          <span class="brand-sub">Innovix Architectural Products</span>
+          <span class="brand-tagline">THE STRUCTURE OF STYLE</span>
         </div>
       </a>
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-links" id="navLinks">
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
           <li><a href="index.html" class="nav-link"><i class="ri-home-4-line"></i> Home</a></li>
-          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
           <li><a href="about.html" class="nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
-          <li><a href="manufacturing.html" class="nav-link"><i class="ri-tools-line"></i> Quality</a></li>
-          <li><a href="dealership.html" class="nav-link"><i class="ri-store-2-line"></i> Dealership</a></li>
+          <li><a href="products.html" class="nav-link"><i class="ri-grid-line"></i> Products</a></li>
+          <li><a href="services.html" class="nav-link active"><i class="ri-settings-4-line"></i> Services</a></li>
           <li><a href="contact.html" class="nav-link"><i class="ri-phone-line"></i> Contact</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
-        <a href="products.html" class="btn btn-outline">
-          <i class="ri-search-line"></i> Catalog
-        </a>
-        <a href="https://wa.me/919106184146" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="ri-whatsapp-line"></i> WhatsApp
         </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="ri-menu-line"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <span>Services</span>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link"><i class="ri-home-4-line"></i> Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="ri-building-4-line"></i> About Us</a></li>
+        <li><a href="products.html" class="mobile-nav-link"><i class="ri-grid-line"></i> Products</a></li>
+        <li><a href="services.html" class="mobile-nav-link"><i class="ri-settings-4-line"></i> Services</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="ri-phone-line"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-contact">
+        <a href="tel:+919106184146" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 91061 84146</a>
+        <a href="tel:+918238282481" class="mobile-contact-link"><i class="ri-phone-line"></i> +91 82382 82481</a>
+        <a href="mailto:innovixxglobal@gmail.com" class="mobile-contact-link"><i class="ri-mail-line"></i> innovixxglobal@gmail.com</a>
+        <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="mobile-contact-link btn btn-whatsapp" style="text-align: center; justify-content: center;">
+          <i class="ri-whatsapp-line"></i> WhatsApp Us
+        </a>
       </div>
-      <h1 class="page-title">Project Support & <span class="text-gold">Premium Hardware Services</span></h1>
-      <p class="page-subtitle">We help architects, developers, dealers, and homeowners select premium door hardware solutions that balance design vision, durability, and operational performance.</p>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <section class="section">
-    <div class="container">
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="process-step-num">01</div>
-          <div class="feature-icon"><i class="ri-chat-quote-line"></i></div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#fff;">Consultation</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">We assess design intent, door requirements, finish preferences, and project scope to recommend the right hardware package.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-step-num">02</div>
-          <div class="feature-icon"><i class="ri-ruler-line"></i></div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#fff;">Technical Guidance</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">Our team advises on fitment, installation compatibility, durability standards, and finish coordination across residential and commercial specifications.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-step-num">03</div>
-          <div class="feature-icon"><i class="ri-tools-line"></i></div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#fff;">Manufacturing Support</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">From material choice to plating quality and testing, we maintain a strong control process for consistent premium output.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-step-num">04</div>
-          <div class="feature-icon"><i class="ri-truck-line"></i></div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#fff;">Delivery & After-Sales</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">We support smooth dispatch coordination, product follow-up, and responsive communication after purchase.</p>
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" aria-label="Page header">
+      <div class="page-header-background">
+        <img src="/images/IGPH-211.jpg" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header-content reveal">
+          <span class="page-header-eyebrow">OUR SERVICES</span>
+          <h1 class="page-header-title">Comprehensive Solutions</h1>
+          <div class="page-header-divider"></div>
+          <p class="page-header-description">
+            From product selection to project delivery, we provide end-to-end architectural hardware solutions tailored to your needs.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" style="background: rgba(255,255,255,0.02); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
-    <div class="container">
-      <div style="text-align:center; max-width:760px; margin:0 auto 40px auto;">
-        <div style="color: var(--accent-gold); font-size:0.85rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px;">What we offer</div>
-        <h2 style="font-size:2.5rem; margin-bottom:12px;">Hardware solutions for <span class="text-gold">architects, dealers and homeowners</span></h2>
-      </div>
-      <div class="card-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-home-4-line"></i></div>
-          <h3 style="font-size:1.28rem; margin-bottom:12px; color:#fff;">Residential Projects</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">Premium entry hardware and interior door solutions for villas, apartments, and bespoke homes.</p>
+    <!-- Services -->
+    <section class="section" aria-labelledby="servicesTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">WHAT WE OFFER</span>
+          <h2 id="servicesTitle" class="section-title">Our Services</h2>
+          <p class="section-subtitle">Specialized services for architects, designers, and project managers</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-building-2-line"></i></div>
-          <h3 style="font-size:1.28rem; margin-bottom:12px; color:#fff;">Commercial Spaces</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">Commercial-grade design hardware for offices, hotels, showrooms, retail environments, and hospitality properties.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="ri-award-line"></i></div>
-          <h3 style="font-size:1.28rem; margin-bottom:12px; color:#fff;">Dealer & Bulk Supply</h3>
-          <p style="color: var(--text-muted); line-height:1.7;">Multi-unit supply coordination, pricing support, and sales assistance for distribution partners.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="split-grid-aside">
-        <div>
-          <div style="color: var(--accent-gold); font-size: 0.85rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px;">Why choose us</div>
-          <h2 style="font-size:2.5rem; margin-bottom:20px;">Designed around <span class="text-gold">quality, fit, and long-term value</span></h2>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:16px; color: var(--text-muted); font-size:1rem; line-height:1.7;">
-            <li><i class="ri-checkbox-circle-fill" style="color: var(--accent-gold); margin-right:8px;"></i> Precision craftsmanship and finish consistency</li>
-            <li><i class="ri-checkbox-circle-fill" style="color: var(--accent-gold); margin-right:8px;"></i> Strong appeal for architectural and high-end applications</li>
-            <li><i class="ri-checkbox-circle-fill" style="color: var(--accent-gold); margin-right:8px;"></i> Dedicated sales support for project and dealer coordination</li>
-          </ul>
-        </div>
-        <div class="form-card">
-          <h3 style="font-size:1.4rem; margin-bottom:16px; color:#fff;">Request a consultation</h3>
-          <p style="color: var(--text-muted); margin-bottom:16px;">Tell us about your project and our team will respond with product guidance and commercial support.</p>
-          <a href="contact.html" class="btn btn-gold" style="width:100%;">Contact Innovix Global</a>
+        <div class="grid grid-2">
+          <article class="card reveal" style="padding: 40px;">
+            <div class="feature-icon" style="margin-bottom: 24px;"><i class="ri-search-line"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px;">Product Consultation</h3>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+              Our experts help you select the perfect hardware for your project. We align product selection with design intent, door type, usage requirements, and budget considerations.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Design intent alignment</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Door type compatibility</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Usage requirement analysis</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Budget optimization</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" style="padding: 40px;">
+            <div class="feature-icon" style="margin-bottom: 24px;"><i class="ri-palette-line"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px;">Design & Specification Support</h3>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+              Our engineering team evaluates finish options, metal grades, and installation compatibility to ensure seamless integration with your architectural vision.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Finish & material evaluation</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Installation compatibility</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Technical drawings support</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Specification writing assistance</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" style="padding: 40px;">
+            <div class="feature-icon" style="margin-bottom: 24px;"><i class="ri-factory-line"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px;">Manufacturing Excellence</h3>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+              Precision machining, multi-layer plating, and rigorous quality control ensure consistent premium output across every production batch.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Precision CNC machining</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Multi-layer electroplating</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> PVD vacuum coating</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> 250,000+ cycle testing</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" style="padding: 40px;">
+            <div class="feature-icon" style="margin-bottom: 24px;"><i class="ri-truck-line"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 16px;">Project Delivery & Support</h3>
+            <p style="color: var(--color-neutral); line-height: 1.8; margin-bottom: 24px;">
+              We support project delivery with efficient dispatch, sales coordination, and ongoing technical support throughout the project lifecycle.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--color-neutral);">
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Efficient dispatch & logistics</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Sales coordination</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> On-site installation guidance</li>
+              <li style="display: flex; align-items: center; gap: 10px;"><i class="ri-checkbox-circle-line" style="color: var(--color-gold);"></i> Post-installation support</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
+    <!-- Process -->
+    <section class="section" style="background: var(--bg-secondary);" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">OUR PROCESS</span>
+          <h2 id="processTitle" class="section-title">How We Work</h2>
+          <p class="section-subtitle">A streamlined approach from concept to completion</p>
+        </div>
+
+        <div class="grid grid-4">
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-message-3-line"></i></div>
+            <h3 class="feature-title">1. Consult</h3>
+            <p class="feature-description">We align product selection with design intent, door type, and usage requirements.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-palette-line"></i></div>
+            <h3 class="feature-title">2. Design</h3>
+            <p class="feature-description">Our engineering team evaluates finish, metal grade, and installation compatibility.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-factory-line"></i></div>
+            <h3 class="feature-title">3. Manufacture</h3>
+            <p class="feature-description">Precision machining, plating, and quality control ensure consistent premium output.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="ri-truck-line"></i></div>
+            <h3 class="feature-title">4. Deliver</h3>
+            <p class="feature-description">We support project delivery with efficient dispatch and sales coordination.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%); position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; opacity: 0.03; background-image: url('/images/IGPH-211.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Ready to Start Your Project?</h2>
+          <p class="section-subtitle">Connect with our experts for personalized consultation</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+            <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg"><i class="ri-whatsapp-line"></i> WhatsApp Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-whatsapp" aria-label="Quick WhatsApp contacts">
+    <a href="https://wa.me/919106184146" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat with Dholariya Sneh"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Dholariya Sneh</span></a>
+    <a href="https://wa.me/918238282481" target="_blank" rel="noopener noreferrer" class="wa-btn" style="background: #128c7e;" aria-label="Chat with Ramani Prem"><i class="ri-whatsapp-line"></i><span class="wa-tooltip">Chat with Ramani Prem</span></a>
+  </div>
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo" style="margin-bottom: 16px;">
-            <div class="brand-icon"><img src="images/innovix-logo-mark.svg" alt="Innovix Global logo mark"></div>
-            <div class="brand-info">
-              <span class="brand-name" style="color: #fff;">INNOVIX GLOBAL</span>
-              <span class="brand-sub">Innovix Architectural Products</span>
-            </div>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; max-width: 320px;">Architectural hardware for luxury residences, hospitality projects, and commercial developments.</p>
+          <a href="index.html" class="brand-logo footer-brand" aria-label="INNOVIX GLOBAL Home">
+            <div class="brand-icon"><img src="/images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;"></div>
+            <div class="brand-info"><span class="brand-name" style="color: var(--color-white);">INNOVIX GLOBAL</span><span class="brand-tagline">THE STRUCTURE OF STYLE</span></div>
+          </a>
+          <p class="footer-description">Premium architectural hardware crafted with precision and elegance.</p>
         </div>
         <div>
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul>
         </div>
         <div>
-          <h4>Support</h4>
-          <ul class="footer-links">
-            <li><a href="services.html">Services</a></li>
-            <li><a href="dealership.html">Dealership</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-and-conditions.html">Terms</a></li>
-          </ul>
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links"><li><a href="products.html?category=pull">Main Door Handles</a></li><li><a href="products.html?category=mortise">Mortise Handles</a></li></ul>
         </div>
         <div>
-          <h4>Contact</h4>
-          <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">“Matel”, Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px;"><i class="ri-mail-line" style="color: var(--accent-gold);"></i> innovixxglobal@gmail.com</p>
-          <p style="color: #94a3b8; font-size: 0.88rem;"><i class="ri-phone-line" style="color: var(--accent-gold);"></i> +91 91061 84146 / +91 82382 82481</p>
+          <h4 class="footer-title">Contact Us</h4>
+          <address style="font-style: normal;"><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 16px;">"Matel", Brahmaniyapara-19, Near govindbag vegetable market, Pedak road, Rajkot-360003, Gujarat, India</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-mail-line" style="color: var(--color-gold);"></i> innovixxglobal@gmail.com</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 91061 84146</p><p style="color: var(--color-neutral-muted); font-size: 0.9375rem; margin-bottom: 8px;"><i class="ri-phone-line" style="color: var(--color-gold);"></i> +91 82382 82481</p></address>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Innovix Global. All Rights Reserved.</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 INNOVIX GLOBAL. All rights reserved. Architectural Hardware.</p></div>
     </div>
   </footer>
 

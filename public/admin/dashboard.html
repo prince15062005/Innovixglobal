@@ -1,72 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard | Innovix Global</title>
-  <meta name="description" content="Website management dashboard for Innovix Global." />
-  <link rel="icon" type="image/svg+xml" href="../images/innovix-logo-mark.svg">
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    body { background: #04060a; }
-    .admin-layout { min-height: 100vh; padding: 32px 20px 80px; }
-    .admin-wrap { max-width: 1200px; margin: 0 auto; }
-    .admin-topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(15,22,36,0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; margin-bottom: 24px; }
-    .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; margin-bottom: 24px; }
-    .admin-stat { background: rgba(21,29,48,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; }
-    .admin-stat-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .admin-stat-value { font-size: 2rem; color: var(--accent-gold); font-weight: 800; margin-top: 8px; }
-    .admin-panel { background: rgba(21,29,48,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 26px; }
-    .admin-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .admin-table th, .admin-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .status-pill { display: inline-block; border-radius: 999px; padding: 6px 10px; font-size: 0.76rem; font-weight: 700; }
-    .status-new { background: rgba(245,158,11,0.12); color: var(--accent-gold); }
-    .status-read { background: rgba(59,130,246,0.12); color: #7dd3fc; }
-    .status-replied { background: rgba(16,185,129,0.12); color: #6ee7b7; }
-    .logout-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: white; }
-    @media (max-width: 768px) { .admin-topbar { flex-direction: column; align-items: flex-start; } }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website management dashboard for INNOVIX GLOBAL.">
+  <title>Admin Dashboard | INNOVIX GLOBAL</title>
+  <link rel="icon" type="image/svg+xml" href="../images/innovix-logo-full.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="admin-layout">
-    <div class="admin-wrap">
-      <div class="admin-topbar">
-        <div class="brand-logo">
-          <div class="brand-icon">
-            <img src="../images/innovix-logo-mark.svg" alt="Innovix Global logo mark">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <a href="dashboard.html" class="admin-brand">
+          <div class="admin-brand-icon">
+            <img src="../images/innovix-logo-full.svg" alt="INNOVIX GLOBAL Logo" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
-          <div class="brand-info">
-            <span class="brand-name">INNOVIX GLOBAL</span>
-            <span class="brand-sub">ADMIN DASHBOARD</span>
-          </div>
-        </div>
-        <button id="logoutBtn" class="btn logout-btn">Logout</button>
+          <span class="admin-brand-name">INNOVIX GLOBAL</span>
+        </a>
       </div>
-
-      <div class="admin-grid" id="statsGrid"></div>
-
-      <section class="admin-panel">
-        <h2 style="font-size: 1.6rem; margin-bottom: 8px;">Recent inquiries</h2>
-        <p style="color: var(--text-muted); margin-bottom: 16px;">Review and update the latest contact and quote requests.</p>
-        <div style="overflow-x:auto;">
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Subject</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="inquiriesTable"></tbody>
-          </table>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="dashboard.html" class="admin-nav-item active"><i class="ri-dashboard-line"></i> Dashboard</a>
+        <a href="products.html" class="admin-nav-item"><i class="ri-grid-line"></i> Products</a>
+        <a href="categories.html" class="admin-nav-item"><i class="ri-folder-line"></i> Categories</a>
+        <a href="enquiries.html" class="admin-nav-item"><i class="ri-message-3-line"></i> Enquiries</a>
+        <a href="settings.html" class="admin-nav-item"><i class="ri-settings-3-line"></i> Settings</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-user">
+          <div class="admin-user-avatar">
+            <span id="adminInitials">SA</span>
+          </div>
+          <div class="admin-user-info">
+            <div class="admin-user-name" id="adminName">Super Admin</div>
+            <div class="admin-user-role" id="adminRole">Super Admin</div>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-menu-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="mobile-menu-btn" id="sidebarToggle" aria-label="Toggle sidebar" style="display: none;">
+            <i class="ri-menu-line"></i>
+          </button>
+          <h1 class="admin-header-title">Dashboard</h1>
+        </div>
+        <div class="admin-header-actions">
+          <a href="../index.html" target="_blank" class="btn btn-ghost" style="padding: 10px 16px;">
+            <i class="ri-external-link-line"></i> View Site
+          </a>
+          <button id="logoutBtn" class="btn btn-secondary">
+            <i class="ri-logout-box-line"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="admin-page-header">
+          <h1 class="admin-page-title">Dashboard Overview</h1>
+          <div style="color: var(--color-neutral-muted);">Welcome back! Here's what's happening with your website.</div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="admin-stats-grid" id="statsGrid"></div>
+
+        <!-- Recent Enquiries -->
+        <section class="admin-panel">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+            <div>
+              <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 4px;">Recent Enquiries</h2>
+              <p style="color: var(--color-neutral-muted);">Review and update the latest contact and quote requests.</p>
+            </div>
+            <a href="enquiries.html" class="btn btn-secondary">View All</a>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Subject</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="inquiriesTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
 
   <script>
+    // Mobile sidebar toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const adminSidebar = document.getElementById('adminSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (sidebarToggle && adminSidebar && sidebarOverlay) {
+      sidebarToggle.addEventListener('click', () => {
+        adminSidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('active');
+      });
+      
+      sidebarOverlay.addEventListener('click', () => {
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      });
+    }
+
+    // Show mobile toggle on small screens
+    function checkScreenSize() {
+      if (window.innerWidth < 992) {
+        sidebarToggle.style.display = 'flex';
+      } else {
+        sidebarToggle.style.display = 'none';
+        adminSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+      }
+    }
+    window.addEventListener('resize', checkScreenSize);
+    checkScreenSize();
+
     async function fetchJSON(url, options) {
       const res = await fetch(url, options || {});
       const payload = await res.json();
@@ -76,55 +145,125 @@
 
     function renderStats(summary) {
       const stats = [
-        ['services', 'Services'],
-        ['projects', 'Projects'],
-        ['testimonials', 'Testimonials'],
-        ['products', 'Catalog Products'],
-        ['inquiries', 'Inquiries'],
-        ['blogPosts', 'Blog Posts']
+        { key: 'products', label: 'Products', icon: 'ri-grid-line' },
+        { key: 'inquiries', label: 'Enquiries', icon: 'ri-message-3-line' },
+        { key: 'services', label: 'Services', icon: 'ri-shield-line' },
+        { key: 'projects', label: 'Projects', icon: 'ri-building-line' }
       ];
 
       const grid = document.getElementById('statsGrid');
-      grid.innerHTML = stats.map(([key, label]) => `
-        <div class="admin-stat">
-          <div class="admin-stat-label">${label}</div>
+      grid.innerHTML = stats.map(({ key, label, icon }) => `
+        <div class="admin-stat-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <div class="admin-stat-label">${label}</div>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(197, 161, 90, 0.1); display: flex; align-items: center; justify-content: center; color: var(--color-gold);">
+              <i class="${icon}" style="font-size: 1.25rem;"></i>
+            </div>
+          </div>
           <div class="admin-stat-value">${summary.totals[key] ?? 0}</div>
         </div>
       `).join('');
     }
 
+    function getStatusClass(status) {
+      const classes = {
+        'new': 'status-new',
+        'pending': 'status-new',
+        'contacted': 'status-contacted',
+        'completed': 'status-completed',
+        'read': 'status-contacted'
+      };
+      return classes[status] || 'status-new';
+    }
+
+    function getStatusLabel(status) {
+      const labels = {
+        'new': 'New',
+        'pending': 'Pending',
+        'contacted': 'Contacted',
+        'completed': 'Completed',
+        'read': 'Read'
+      };
+      return labels[status] || status;
+    }
+
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-IN', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    }
+
     function renderInquiries(items) {
       const tbody = document.getElementById('inquiriesTable');
       if (!items.length) {
-        tbody.innerHTML = '<tr><td colspan="5" style="color: var(--text-muted); padding: 20px;">No inquiries found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px; color: var(--color-neutral-muted);">No enquiries found.</td></tr>';
         return;
       }
 
-      tbody.innerHTML = items.map((item) => `
+      tbody.innerHTML = items.slice(0, 10).map((item) => `
         <tr>
-          <td>${item.name}</td>
-          <td>${item.subject || 'General inquiry'}</td>
+          <td style="font-weight: 500;">${item.name}</td>
+          <td>${item.subject || 'General enquiry'}</td>
           <td>${item.email}</td>
-          <td><span class="status-pill status-${item.status || 'new'}">${(item.status || 'new').toUpperCase()}</span></td>
+          <td>${item.phone || '-'}</td>
           <td>
-            <select data-id="${item.id}" class="form-control" style="max-width: 160px; padding: 8px 10px;">
+            <select data-id="${item.id}" class="form-select" style="width: auto; padding: 8px 32px 8px 12px; font-size: 0.8125rem;">
               <option value="new" ${item.status === 'new' ? 'selected' : ''}>New</option>
-              <option value="read" ${item.status === 'read' ? 'selected' : ''}>Read</option>
-              <option value="replied" ${item.status === 'replied' ? 'selected' : ''}>Replied</option>
+              <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
+              <option value="contacted" ${item.status === 'contacted' ? 'selected' : ''}>Contacted</option>
+              <option value="completed" ${item.status === 'completed' ? 'selected' : ''}>Completed</option>
             </select>
+          </td>
+          <td style="color: var(--color-neutral-muted); font-size: 0.875rem;">${formatDate(item.createdAt)}</td>
+          <td>
+            <div class="admin-actions">
+              <button class="admin-action-btn" data-id="${item.id}" data-action="view" aria-label="View details"><i class="ri-eye-line"></i></button>
+              <button class="admin-action-btn delete" data-id="${item.id}" data-action="delete" aria-label="Delete"><i class="ri-delete-bin-line"></i></button>
+            </div>
           </td>
         </tr>
       `).join('');
 
-      tbody.querySelectorAll('select').forEach((select) => {
-        select.addEventListener('change', async (event) => {
-          const id = event.target.dataset.id;
-          await fetchJSON('/api/admin/inquiries/' + id, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ status: event.target.value })
-          });
-          loadDashboard();
+      // Status change handlers
+      tbody.querySelectorAll('select[data-id]').forEach(select => {
+        select.addEventListener('change', async (e) => {
+          const id = e.target.dataset.id;
+          try {
+            await fetchJSON('/api/admin/inquiries/' + id, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ status: e.target.value })
+            });
+            showToast('Status updated successfully', 'success');
+            loadDashboard();
+          } catch (error) {
+            showToast(error.message, 'error');
+            loadDashboard();
+          }
+        });
+      });
+
+      // Action buttons
+      tbody.querySelectorAll('.admin-action-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const action = btn.dataset.action;
+          
+          if (action === 'delete') {
+            if (!confirm('Are you sure you want to delete this enquiry?')) return;
+            try {
+              await fetchJSON('/api/admin/inquiries/' + id, { method: 'DELETE' });
+              showToast('Enquiry deleted', 'success');
+              loadDashboard();
+            } catch (error) {
+              showToast(error.message, 'error');
+            }
+          }
         });
       });
     }
@@ -136,15 +275,57 @@
         const items = await fetchJSON('/api/admin/inquiries');
         renderInquiries(items);
       } catch (error) {
-        document.getElementById('inquiriesTable').innerHTML = '<tr><td colspan="5" style="color: #ef4444; padding: 20px;">' + error.message + '</td></tr>';
+        console.error('Dashboard load error:', error);
+        document.getElementById('inquiriesTable').innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px; color: #EF4444;">' + error.message + '</td></tr>';
       }
     }
 
+    // Logout
     document.getElementById('logoutBtn').addEventListener('click', async () => {
-      await fetch('/admin/logout', { method: 'POST' });
-      window.location.href = '/admin/login';
+      try {
+        await fetch('/admin/logout', { method: 'POST' });
+        window.location.href = '/admin/login';
+      } catch (error) {
+        window.location.href = '/admin/login';
+      }
     });
 
+    // Toast notifications
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer') || createToastContainer();
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      
+      const icons = {
+        success: '<i class="ri-checkbox-circle-line toast-icon"></i>',
+        error: '<i class="ri-error-warning-line toast-icon"></i>',
+        warning: '<i class="ri-alert-line toast-icon"></i>',
+        info: '<i class="ri-information-line toast-icon"></i>'
+      };
+
+      toast.innerHTML = `
+        ${icons[type] || icons.info}
+        <span class="toast-message">${message}</span>
+        <button class="toast-close" onclick="this.parentElement.remove()"><i class="ri-close-line"></i></button>
+      `;
+
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.animation = 'slideInRight 0.3s ease-out reverse';
+        setTimeout(() => toast.remove(), 300);
+      }, 5000);
+    }
+
+    function createToastContainer() {
+      const container = document.createElement('div');
+      container.id = 'toastContainer';
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+      return container;
+    }
+
+    // Initialize
     loadDashboard();
   </script>
 </body>

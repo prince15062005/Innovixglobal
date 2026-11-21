@@ -1,4 +1,15 @@
+# INNOVIX GLOBAL - Robots.txt
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://www.innovixglobal.in/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /data/
+Disallow: /*.json$
+
+# Crawl-delay
+Crawl-delay: 10
